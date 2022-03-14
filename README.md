@@ -18,7 +18,7 @@
     - 이동하셨다면 아래 명령어를 따라 입력해보세요!
         * 이따가 또 다른 명령어를 입력해야 하니, 명령 프롬포트 (터미널)을 아예 닫지는 말아주세요!
     ```
-    git clone https://github.com/Gachon-UMC/[운영진이 레포 주소 넣기]
+    git clone https://github.com/Gachon-UMC/2022-1_iOS
     ```
     <img width="800" alt="clone_example" src="https://user-images.githubusercontent.com/3215313/158018063-d3115ca0-aeda-4198-aba5-bb5d55206271.png">
 
@@ -44,7 +44,7 @@
         * 아까 열었던 명령창을 닫았다면, 1번 과정에 있는 명령창 여는 방법을 다시 한 번 따라해주세요! (git clone 명령어는 다시 치지 않아도 됩니다!)
 
     ```
-        cd [운영진이 레포 이름 넣기]
+        cd 2022-1_iOS
         git add .
         git commit -m "My First Update"
         git push origin main
