@@ -7,66 +7,66 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BC5317BF27E4D8D00098DAA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5317BE27E4D8D00098DAA2 /* AppDelegate.swift */; };
-		BC5317C127E4D8D00098DAA2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5317C027E4D8D00098DAA2 /* SceneDelegate.swift */; };
-		BC5317C327E4D8D00098DAA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5317C227E4D8D00098DAA2 /* ViewController.swift */; };
-		BC5317C627E4D8D00098DAA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC5317C427E4D8D00098DAA2 /* Main.storyboard */; };
-		BC5317C827E4D8D10098DAA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC5317C727E4D8D10098DAA2 /* Assets.xcassets */; };
-		BC5317CB27E4D8D10098DAA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC5317C927E4D8D10098DAA2 /* LaunchScreen.storyboard */; };
-		BC5317D627E4D8D10098DAA2 /* diceeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5317D527E4D8D10098DAA2 /* diceeTests.swift */; };
-		BC5317E027E4D8D10098DAA2 /* diceeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5317DF27E4D8D10098DAA2 /* diceeUITests.swift */; };
-		BC5317E227E4D8D10098DAA2 /* diceeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5317E127E4D8D10098DAA2 /* diceeUITestsLaunchTests.swift */; };
+		BCEAA75E27E72EC30099D777 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEAA75D27E72EC30099D777 /* AppDelegate.swift */; };
+		BCEAA76027E72EC30099D777 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEAA75F27E72EC30099D777 /* SceneDelegate.swift */; };
+		BCEAA76227E72EC30099D777 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEAA76127E72EC30099D777 /* ViewController.swift */; };
+		BCEAA76527E72EC30099D777 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCEAA76327E72EC30099D777 /* Main.storyboard */; };
+		BCEAA76727E72EC40099D777 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCEAA76627E72EC40099D777 /* Assets.xcassets */; };
+		BCEAA76A27E72EC40099D777 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCEAA76827E72EC40099D777 /* LaunchScreen.storyboard */; };
+		BCEAA77527E72EC40099D777 /* AutoLayoutExTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEAA77427E72EC40099D777 /* AutoLayoutExTests.swift */; };
+		BCEAA77F27E72EC40099D777 /* AutoLayoutExUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEAA77E27E72EC40099D777 /* AutoLayoutExUITests.swift */; };
+		BCEAA78127E72EC40099D777 /* AutoLayoutExUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEAA78027E72EC40099D777 /* AutoLayoutExUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BC5317D227E4D8D10098DAA2 /* PBXContainerItemProxy */ = {
+		BCEAA77127E72EC40099D777 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = BC5317B327E4D8D00098DAA2 /* Project object */;
+			containerPortal = BCEAA75227E72EC30099D777 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = BC5317BA27E4D8D00098DAA2;
-			remoteInfo = dicee;
+			remoteGlobalIDString = BCEAA75927E72EC30099D777;
+			remoteInfo = AutoLayoutEx;
 		};
-		BC5317DC27E4D8D10098DAA2 /* PBXContainerItemProxy */ = {
+		BCEAA77B27E72EC40099D777 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = BC5317B327E4D8D00098DAA2 /* Project object */;
+			containerPortal = BCEAA75227E72EC30099D777 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = BC5317BA27E4D8D00098DAA2;
-			remoteInfo = dicee;
+			remoteGlobalIDString = BCEAA75927E72EC30099D777;
+			remoteInfo = AutoLayoutEx;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BC5317BB27E4D8D00098DAA2 /* dicee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dicee.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BC5317BE27E4D8D00098DAA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BC5317C027E4D8D00098DAA2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BC5317C227E4D8D00098DAA2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BC5317C527E4D8D00098DAA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BC5317C727E4D8D10098DAA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BC5317CA27E4D8D10098DAA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		BC5317CC27E4D8D10098DAA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BC5317D127E4D8D10098DAA2 /* diceeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = diceeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BC5317D527E4D8D10098DAA2 /* diceeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diceeTests.swift; sourceTree = "<group>"; };
-		BC5317DB27E4D8D10098DAA2 /* diceeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = diceeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BC5317DF27E4D8D10098DAA2 /* diceeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diceeUITests.swift; sourceTree = "<group>"; };
-		BC5317E127E4D8D10098DAA2 /* diceeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diceeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BCEAA75A27E72EC30099D777 /* AutoLayoutEx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoLayoutEx.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCEAA75D27E72EC30099D777 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BCEAA75F27E72EC30099D777 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BCEAA76127E72EC30099D777 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BCEAA76427E72EC30099D777 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BCEAA76627E72EC40099D777 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BCEAA76927E72EC40099D777 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BCEAA76B27E72EC40099D777 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCEAA77027E72EC40099D777 /* AutoLayoutExTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoLayoutExTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCEAA77427E72EC40099D777 /* AutoLayoutExTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutExTests.swift; sourceTree = "<group>"; };
+		BCEAA77A27E72EC40099D777 /* AutoLayoutExUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoLayoutExUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCEAA77E27E72EC40099D777 /* AutoLayoutExUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutExUITests.swift; sourceTree = "<group>"; };
+		BCEAA78027E72EC40099D777 /* AutoLayoutExUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutExUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BC5317B827E4D8D00098DAA2 /* Frameworks */ = {
+		BCEAA75727E72EC30099D777 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BC5317CE27E4D8D10098DAA2 /* Frameworks */ = {
+		BCEAA76D27E72EC40099D777 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BC5317D827E4D8D10098DAA2 /* Frameworks */ = {
+		BCEAA77727E72EC40099D777 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -76,137 +76,137 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BC5317B227E4D8D00098DAA2 = {
+		BCEAA75127E72EC30099D777 = {
 			isa = PBXGroup;
 			children = (
-				BC5317BD27E4D8D00098DAA2 /* dicee */,
-				BC5317D427E4D8D10098DAA2 /* diceeTests */,
-				BC5317DE27E4D8D10098DAA2 /* diceeUITests */,
-				BC5317BC27E4D8D00098DAA2 /* Products */,
+				BCEAA75C27E72EC30099D777 /* AutoLayoutEx */,
+				BCEAA77327E72EC40099D777 /* AutoLayoutExTests */,
+				BCEAA77D27E72EC40099D777 /* AutoLayoutExUITests */,
+				BCEAA75B27E72EC30099D777 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		BC5317BC27E4D8D00098DAA2 /* Products */ = {
+		BCEAA75B27E72EC30099D777 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BC5317BB27E4D8D00098DAA2 /* dicee.app */,
-				BC5317D127E4D8D10098DAA2 /* diceeTests.xctest */,
-				BC5317DB27E4D8D10098DAA2 /* diceeUITests.xctest */,
+				BCEAA75A27E72EC30099D777 /* AutoLayoutEx.app */,
+				BCEAA77027E72EC40099D777 /* AutoLayoutExTests.xctest */,
+				BCEAA77A27E72EC40099D777 /* AutoLayoutExUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BC5317BD27E4D8D00098DAA2 /* dicee */ = {
+		BCEAA75C27E72EC30099D777 /* AutoLayoutEx */ = {
 			isa = PBXGroup;
 			children = (
-				BC5317BE27E4D8D00098DAA2 /* AppDelegate.swift */,
-				BC5317C027E4D8D00098DAA2 /* SceneDelegate.swift */,
-				BC5317C227E4D8D00098DAA2 /* ViewController.swift */,
-				BC5317C427E4D8D00098DAA2 /* Main.storyboard */,
-				BC5317C727E4D8D10098DAA2 /* Assets.xcassets */,
-				BC5317C927E4D8D10098DAA2 /* LaunchScreen.storyboard */,
-				BC5317CC27E4D8D10098DAA2 /* Info.plist */,
+				BCEAA75D27E72EC30099D777 /* AppDelegate.swift */,
+				BCEAA75F27E72EC30099D777 /* SceneDelegate.swift */,
+				BCEAA76127E72EC30099D777 /* ViewController.swift */,
+				BCEAA76327E72EC30099D777 /* Main.storyboard */,
+				BCEAA76627E72EC40099D777 /* Assets.xcassets */,
+				BCEAA76827E72EC40099D777 /* LaunchScreen.storyboard */,
+				BCEAA76B27E72EC40099D777 /* Info.plist */,
 			);
-			path = dicee;
+			path = AutoLayoutEx;
 			sourceTree = "<group>";
 		};
-		BC5317D427E4D8D10098DAA2 /* diceeTests */ = {
+		BCEAA77327E72EC40099D777 /* AutoLayoutExTests */ = {
 			isa = PBXGroup;
 			children = (
-				BC5317D527E4D8D10098DAA2 /* diceeTests.swift */,
+				BCEAA77427E72EC40099D777 /* AutoLayoutExTests.swift */,
 			);
-			path = diceeTests;
+			path = AutoLayoutExTests;
 			sourceTree = "<group>";
 		};
-		BC5317DE27E4D8D10098DAA2 /* diceeUITests */ = {
+		BCEAA77D27E72EC40099D777 /* AutoLayoutExUITests */ = {
 			isa = PBXGroup;
 			children = (
-				BC5317DF27E4D8D10098DAA2 /* diceeUITests.swift */,
-				BC5317E127E4D8D10098DAA2 /* diceeUITestsLaunchTests.swift */,
+				BCEAA77E27E72EC40099D777 /* AutoLayoutExUITests.swift */,
+				BCEAA78027E72EC40099D777 /* AutoLayoutExUITestsLaunchTests.swift */,
 			);
-			path = diceeUITests;
+			path = AutoLayoutExUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BC5317BA27E4D8D00098DAA2 /* dicee */ = {
+		BCEAA75927E72EC30099D777 /* AutoLayoutEx */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BC5317E527E4D8D10098DAA2 /* Build configuration list for PBXNativeTarget "dicee" */;
+			buildConfigurationList = BCEAA78427E72EC40099D777 /* Build configuration list for PBXNativeTarget "AutoLayoutEx" */;
 			buildPhases = (
-				BC5317B727E4D8D00098DAA2 /* Sources */,
-				BC5317B827E4D8D00098DAA2 /* Frameworks */,
-				BC5317B927E4D8D00098DAA2 /* Resources */,
+				BCEAA75627E72EC30099D777 /* Sources */,
+				BCEAA75727E72EC30099D777 /* Frameworks */,
+				BCEAA75827E72EC30099D777 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = dicee;
-			productName = dicee;
-			productReference = BC5317BB27E4D8D00098DAA2 /* dicee.app */;
+			name = AutoLayoutEx;
+			productName = AutoLayoutEx;
+			productReference = BCEAA75A27E72EC30099D777 /* AutoLayoutEx.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BC5317D027E4D8D10098DAA2 /* diceeTests */ = {
+		BCEAA76F27E72EC40099D777 /* AutoLayoutExTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BC5317E827E4D8D10098DAA2 /* Build configuration list for PBXNativeTarget "diceeTests" */;
+			buildConfigurationList = BCEAA78727E72EC40099D777 /* Build configuration list for PBXNativeTarget "AutoLayoutExTests" */;
 			buildPhases = (
-				BC5317CD27E4D8D10098DAA2 /* Sources */,
-				BC5317CE27E4D8D10098DAA2 /* Frameworks */,
-				BC5317CF27E4D8D10098DAA2 /* Resources */,
+				BCEAA76C27E72EC40099D777 /* Sources */,
+				BCEAA76D27E72EC40099D777 /* Frameworks */,
+				BCEAA76E27E72EC40099D777 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				BC5317D327E4D8D10098DAA2 /* PBXTargetDependency */,
+				BCEAA77227E72EC40099D777 /* PBXTargetDependency */,
 			);
-			name = diceeTests;
-			productName = diceeTests;
-			productReference = BC5317D127E4D8D10098DAA2 /* diceeTests.xctest */;
+			name = AutoLayoutExTests;
+			productName = AutoLayoutExTests;
+			productReference = BCEAA77027E72EC40099D777 /* AutoLayoutExTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		BC5317DA27E4D8D10098DAA2 /* diceeUITests */ = {
+		BCEAA77927E72EC40099D777 /* AutoLayoutExUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BC5317EB27E4D8D10098DAA2 /* Build configuration list for PBXNativeTarget "diceeUITests" */;
+			buildConfigurationList = BCEAA78A27E72EC40099D777 /* Build configuration list for PBXNativeTarget "AutoLayoutExUITests" */;
 			buildPhases = (
-				BC5317D727E4D8D10098DAA2 /* Sources */,
-				BC5317D827E4D8D10098DAA2 /* Frameworks */,
-				BC5317D927E4D8D10098DAA2 /* Resources */,
+				BCEAA77627E72EC40099D777 /* Sources */,
+				BCEAA77727E72EC40099D777 /* Frameworks */,
+				BCEAA77827E72EC40099D777 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				BC5317DD27E4D8D10098DAA2 /* PBXTargetDependency */,
+				BCEAA77C27E72EC40099D777 /* PBXTargetDependency */,
 			);
-			name = diceeUITests;
-			productName = diceeUITests;
-			productReference = BC5317DB27E4D8D10098DAA2 /* diceeUITests.xctest */;
+			name = AutoLayoutExUITests;
+			productName = AutoLayoutExUITests;
+			productReference = BCEAA77A27E72EC40099D777 /* AutoLayoutExUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		BC5317B327E4D8D00098DAA2 /* Project object */ = {
+		BCEAA75227E72EC30099D777 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
-					BC5317BA27E4D8D00098DAA2 = {
+					BCEAA75927E72EC30099D777 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
-					BC5317D027E4D8D10098DAA2 = {
+					BCEAA76F27E72EC40099D777 = {
 						CreatedOnToolsVersion = 13.2.1;
-						TestTargetID = BC5317BA27E4D8D00098DAA2;
+						TestTargetID = BCEAA75927E72EC30099D777;
 					};
-					BC5317DA27E4D8D10098DAA2 = {
+					BCEAA77927E72EC40099D777 = {
 						CreatedOnToolsVersion = 13.2.1;
-						TestTargetID = BC5317BA27E4D8D00098DAA2;
+						TestTargetID = BCEAA75927E72EC30099D777;
 					};
 				};
 			};
-			buildConfigurationList = BC5317B627E4D8D00098DAA2 /* Build configuration list for PBXProject "dicee" */;
+			buildConfigurationList = BCEAA75527E72EC30099D777 /* Build configuration list for PBXProject "AutoLayoutEx" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -214,37 +214,37 @@
 				en,
 				Base,
 			);
-			mainGroup = BC5317B227E4D8D00098DAA2;
-			productRefGroup = BC5317BC27E4D8D00098DAA2 /* Products */;
+			mainGroup = BCEAA75127E72EC30099D777;
+			productRefGroup = BCEAA75B27E72EC30099D777 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BC5317BA27E4D8D00098DAA2 /* dicee */,
-				BC5317D027E4D8D10098DAA2 /* diceeTests */,
-				BC5317DA27E4D8D10098DAA2 /* diceeUITests */,
+				BCEAA75927E72EC30099D777 /* AutoLayoutEx */,
+				BCEAA76F27E72EC40099D777 /* AutoLayoutExTests */,
+				BCEAA77927E72EC40099D777 /* AutoLayoutExUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BC5317B927E4D8D00098DAA2 /* Resources */ = {
+		BCEAA75827E72EC30099D777 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC5317CB27E4D8D10098DAA2 /* LaunchScreen.storyboard in Resources */,
-				BC5317C827E4D8D10098DAA2 /* Assets.xcassets in Resources */,
-				BC5317C627E4D8D00098DAA2 /* Main.storyboard in Resources */,
+				BCEAA76A27E72EC40099D777 /* LaunchScreen.storyboard in Resources */,
+				BCEAA76727E72EC40099D777 /* Assets.xcassets in Resources */,
+				BCEAA76527E72EC30099D777 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BC5317CF27E4D8D10098DAA2 /* Resources */ = {
+		BCEAA76E27E72EC40099D777 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BC5317D927E4D8D10098DAA2 /* Resources */ = {
+		BCEAA77827E72EC40099D777 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -254,61 +254,61 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BC5317B727E4D8D00098DAA2 /* Sources */ = {
+		BCEAA75627E72EC30099D777 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC5317C327E4D8D00098DAA2 /* ViewController.swift in Sources */,
-				BC5317BF27E4D8D00098DAA2 /* AppDelegate.swift in Sources */,
-				BC5317C127E4D8D00098DAA2 /* SceneDelegate.swift in Sources */,
+				BCEAA76227E72EC30099D777 /* ViewController.swift in Sources */,
+				BCEAA75E27E72EC30099D777 /* AppDelegate.swift in Sources */,
+				BCEAA76027E72EC30099D777 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BC5317CD27E4D8D10098DAA2 /* Sources */ = {
+		BCEAA76C27E72EC40099D777 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC5317D627E4D8D10098DAA2 /* diceeTests.swift in Sources */,
+				BCEAA77527E72EC40099D777 /* AutoLayoutExTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BC5317D727E4D8D10098DAA2 /* Sources */ = {
+		BCEAA77627E72EC40099D777 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC5317E027E4D8D10098DAA2 /* diceeUITests.swift in Sources */,
-				BC5317E227E4D8D10098DAA2 /* diceeUITestsLaunchTests.swift in Sources */,
+				BCEAA78127E72EC40099D777 /* AutoLayoutExUITestsLaunchTests.swift in Sources */,
+				BCEAA77F27E72EC40099D777 /* AutoLayoutExUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BC5317D327E4D8D10098DAA2 /* PBXTargetDependency */ = {
+		BCEAA77227E72EC40099D777 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BC5317BA27E4D8D00098DAA2 /* dicee */;
-			targetProxy = BC5317D227E4D8D10098DAA2 /* PBXContainerItemProxy */;
+			target = BCEAA75927E72EC30099D777 /* AutoLayoutEx */;
+			targetProxy = BCEAA77127E72EC40099D777 /* PBXContainerItemProxy */;
 		};
-		BC5317DD27E4D8D10098DAA2 /* PBXTargetDependency */ = {
+		BCEAA77C27E72EC40099D777 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BC5317BA27E4D8D00098DAA2 /* dicee */;
-			targetProxy = BC5317DC27E4D8D10098DAA2 /* PBXContainerItemProxy */;
+			target = BCEAA75927E72EC30099D777 /* AutoLayoutEx */;
+			targetProxy = BCEAA77B27E72EC40099D777 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BC5317C427E4D8D00098DAA2 /* Main.storyboard */ = {
+		BCEAA76327E72EC30099D777 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BC5317C527E4D8D00098DAA2 /* Base */,
+				BCEAA76427E72EC30099D777 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		BC5317C927E4D8D10098DAA2 /* LaunchScreen.storyboard */ = {
+		BCEAA76827E72EC40099D777 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BC5317CA27E4D8D10098DAA2 /* Base */,
+				BCEAA76927E72EC40099D777 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -316,7 +316,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		BC5317E327E4D8D10098DAA2 /* Debug */ = {
+		BCEAA78227E72EC40099D777 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -377,7 +377,7 @@
 			};
 			name = Debug;
 		};
-		BC5317E427E4D8D10098DAA2 /* Release */ = {
+		BCEAA78327E72EC40099D777 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -432,7 +432,7 @@
 			};
 			name = Release;
 		};
-		BC5317E627E4D8D10098DAA2 /* Debug */ = {
+		BCEAA78527E72EC40099D777 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -440,7 +440,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = dicee/Info.plist;
+				INFOPLIST_FILE = AutoLayoutEx/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -451,7 +451,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jaem.dicee;
+				PRODUCT_BUNDLE_IDENTIFIER = jaem.AutoLayoutEx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -459,7 +459,7 @@
 			};
 			name = Debug;
 		};
-		BC5317E727E4D8D10098DAA2 /* Release */ = {
+		BCEAA78627E72EC40099D777 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -467,7 +467,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = dicee/Info.plist;
+				INFOPLIST_FILE = AutoLayoutEx/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -478,7 +478,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jaem.dicee;
+				PRODUCT_BUNDLE_IDENTIFIER = jaem.AutoLayoutEx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -486,7 +486,7 @@
 			};
 			name = Release;
 		};
-		BC5317E927E4D8D10098DAA2 /* Debug */ = {
+		BCEAA78827E72EC40099D777 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -496,16 +496,16 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jaem.diceeTests;
+				PRODUCT_BUNDLE_IDENTIFIER = jaem.AutoLayoutExTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/dicee.app/dicee";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AutoLayoutEx.app/AutoLayoutEx";
 			};
 			name = Debug;
 		};
-		BC5317EA27E4D8D10098DAA2 /* Release */ = {
+		BCEAA78927E72EC40099D777 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -515,16 +515,16 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jaem.diceeTests;
+				PRODUCT_BUNDLE_IDENTIFIER = jaem.AutoLayoutExTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/dicee.app/dicee";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AutoLayoutEx.app/AutoLayoutEx";
 			};
 			name = Release;
 		};
-		BC5317EC27E4D8D10098DAA2 /* Debug */ = {
+		BCEAA78B27E72EC40099D777 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -532,16 +532,16 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jaem.diceeUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = jaem.AutoLayoutExUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = dicee;
+				TEST_TARGET_NAME = AutoLayoutEx;
 			};
 			name = Debug;
 		};
-		BC5317ED27E4D8D10098DAA2 /* Release */ = {
+		BCEAA78C27E72EC40099D777 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -549,55 +549,55 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jaem.diceeUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = jaem.AutoLayoutExUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = dicee;
+				TEST_TARGET_NAME = AutoLayoutEx;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BC5317B627E4D8D00098DAA2 /* Build configuration list for PBXProject "dicee" */ = {
+		BCEAA75527E72EC30099D777 /* Build configuration list for PBXProject "AutoLayoutEx" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BC5317E327E4D8D10098DAA2 /* Debug */,
-				BC5317E427E4D8D10098DAA2 /* Release */,
+				BCEAA78227E72EC40099D777 /* Debug */,
+				BCEAA78327E72EC40099D777 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BC5317E527E4D8D10098DAA2 /* Build configuration list for PBXNativeTarget "dicee" */ = {
+		BCEAA78427E72EC40099D777 /* Build configuration list for PBXNativeTarget "AutoLayoutEx" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BC5317E627E4D8D10098DAA2 /* Debug */,
-				BC5317E727E4D8D10098DAA2 /* Release */,
+				BCEAA78527E72EC40099D777 /* Debug */,
+				BCEAA78627E72EC40099D777 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BC5317E827E4D8D10098DAA2 /* Build configuration list for PBXNativeTarget "diceeTests" */ = {
+		BCEAA78727E72EC40099D777 /* Build configuration list for PBXNativeTarget "AutoLayoutExTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BC5317E927E4D8D10098DAA2 /* Debug */,
-				BC5317EA27E4D8D10098DAA2 /* Release */,
+				BCEAA78827E72EC40099D777 /* Debug */,
+				BCEAA78927E72EC40099D777 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BC5317EB27E4D8D10098DAA2 /* Build configuration list for PBXNativeTarget "diceeUITests" */ = {
+		BCEAA78A27E72EC40099D777 /* Build configuration list for PBXNativeTarget "AutoLayoutExUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BC5317EC27E4D8D10098DAA2 /* Debug */,
-				BC5317ED27E4D8D10098DAA2 /* Release */,
+				BCEAA78B27E72EC40099D777 /* Debug */,
+				BCEAA78C27E72EC40099D777 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = BC5317B327E4D8D00098DAA2 /* Project object */;
+	rootObject = BCEAA75227E72EC30099D777 /* Project object */;
 }

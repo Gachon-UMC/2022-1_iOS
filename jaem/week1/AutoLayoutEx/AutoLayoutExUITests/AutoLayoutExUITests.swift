@@ -1,13 +1,13 @@
 //
-//  diceeUITests.swift
-//  diceeUITests
+//  AutoLayoutExUITests.swift
+//  AutoLayoutExUITests
 //
-//  Created by 송재민 on 2022/03/19.
+//  Created by 송재민 on 2022/03/20.
 //
 
 import XCTest
 
-class diceeUITests: XCTestCase {
+class AutoLayoutExUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

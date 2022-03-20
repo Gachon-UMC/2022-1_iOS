@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  dicee
+//  AutoLayoutEx
 //
-//  Created by 송재민 on 2022/03/19.
+//  Created by 송재민 on 2022/03/20.
 //
 
 import UIKit
