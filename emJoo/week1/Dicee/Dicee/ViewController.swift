@@ -6,63 +6,12 @@ class ViewController: UIViewController {
     
     /* Interface (Subviews) */
     
-    lazy var logo: UIImageView = {
-        let img = UIImageView()
-        img.image = UIImage(named: "DiceeLogo")
-
-        return img
-    }()
-    
-    lazy var mainLabel: UILabel = {
-       let label = UILabel()
-        label.text = "Start Game"
-        label.textColor = .white
-        label.font = label.font.withSize(50)
-        
-        
-        return label
-    }()
-    
-    
-    lazy var dice1: UIButton = {
-        var config = UIButton.Configuration.plain()
-        config.image = UIImage(named: "DiceOne")
-        
-        let btn = UIButton(configuration: config, primaryAction: nil)
-        
-        return btn
-    }()
-    
-    lazy var dice2: UIButton = {
-        var config = UIButton.Configuration.plain()
-        config.image = UIImage(named: "DiceOne")
-        
-        let btn = UIButton(configuration: config, primaryAction: nil)
-        
-        return btn
-    }()
-    
-    
-    lazy var buttonStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [dice1, dice2])
-        stackView.axis = .horizontal
-        stackView.spacing = 28
-        
-        return stackView
-    }()
-    
-    lazy var rollButton: UIButton = {
-        var config = UIButton.Configuration.filled()
-        config.baseBackgroundColor = .red
-        config.buttonSize = .large
-        config.title = "Roll"
-        config.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 28, bottom: 10, trailing: 28)
-
-        
-        let btn = UIButton(configuration: config, primaryAction: nil)
-        
-        return btn
-    }()
+    lazy var logo = SubView().logo
+    lazy var mainLabel = SubView().mainLabel
+    lazy var dice1 = SubView().dice1
+    lazy var dice2 = SubView().dice2
+    lazy var buttonStackView = SubView().buttonStackView
+    lazy var rollButton = SubView().rollButton
     
     
 
