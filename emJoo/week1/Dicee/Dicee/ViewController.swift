@@ -49,6 +49,8 @@ class ViewController: UIViewController {
         
         // Add target (타겟 메소드 적용)
         rollButton.addTarget(self, action: #selector(tapRollButton), for: .touchUpInside)
+        dice1.addTarget(self, action: #selector(tapDice), for: .touchUpInside)
+        dice2.addTarget(self, action: #selector(tapDice), for: .touchUpInside)
     
         
         
@@ -77,10 +79,23 @@ class ViewController: UIViewController {
         ])
     }
     
+    // MARK: Intent (내부 비즈니스 로직)
     
     
+//    dev : dice Button 메소드 연결 (전달받은 UIButton의 Tag 값에 따라 예외처리 진행)
 //    // 주사위를 클릭 했을 때
-//    @objc func tapDice () {}
+    @objc func tapDice (sender: UIButton) {
+        let randomDiceNum = Int.random(in: 0..<5)
+        
+        if sender.tag == 1 { // 조건: 첫 번째 주사위 버튼이 클릭 되었을 경우
+            self.dice1.configuration?.image = UIImage(named: ViewController.diceImagePath[randomDiceNum])
+            
+            
+        } else { // 조건 : 두 번째 주사위 버튼이 클릭 되었을 경우
+            self.dice2.configuration?.image = UIImage(named: ViewController.diceImagePath[randomDiceNum])
+            
+        }
+    }
 
     
     

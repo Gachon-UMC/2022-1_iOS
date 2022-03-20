@@ -28,6 +28,7 @@ class SubView {
         config.image = UIImage(named: "DiceOne")
         
         let btn = UIButton(configuration: config, primaryAction: nil)
+        btn.tag = 1
         
         return btn
     }()
@@ -37,6 +38,7 @@ class SubView {
         config.image = UIImage(named: "DiceOne")
         
         let btn = UIButton(configuration: config, primaryAction: nil)
+        btn.tag = 2
         
         return btn
     }()
