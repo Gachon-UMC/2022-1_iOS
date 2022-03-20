@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     /* State Variables (상태를 저장하는 변수) */
     var isPlaying: Bool = false
     var displayNum: Int?
+    var firstDiceNum: Int?
+    var secondDiceNum: Int?
     
     
     /* Interface (Subviews) */
@@ -83,16 +85,17 @@ class ViewController: UIViewController {
     
     
 //    dev : dice Button 메소드 연결 (전달받은 UIButton의 Tag 값에 따라 예외처리 진행)
-//    // 주사위를 클릭 했을 때
     @objc func tapDice (sender: UIButton) {
         let randomDiceNum = Int.random(in: 0..<5)
         
         if sender.tag == 1 { // 조건: 첫 번째 주사위 버튼이 클릭 되었을 경우
             self.dice1.configuration?.image = UIImage(named: ViewController.diceImagePath[randomDiceNum])
+            checkAnswer(dice1Num: randomDiceNum, dice2Num: nil)
             
             
         } else { // 조건 : 두 번째 주사위 버튼이 클릭 되었을 경우
             self.dice2.configuration?.image = UIImage(named: ViewController.diceImagePath[randomDiceNum])
+            checkAnswer(dice1Num: nil, dice2Num: randomDiceNum)
             
         }
     }
@@ -105,6 +108,8 @@ class ViewController: UIViewController {
         // Genereate Random Int Number (랜덤 숫자 생성)
         let randomDiceNum1 = Int.random(in: 0..<5)
         let randomDiceNum2 = Int.random(in: 0..<5)
+        self.firstDiceNum = randomDiceNum1
+        self.secondDiceNum = randomDiceNum2
         
         if !isPlaying { // 조건: 게임을 진행하고 있지 않다면 == 초기화면 화면 일 때
             let generateNum = Int.random(in: 2..<13)
@@ -126,9 +131,8 @@ class ViewController: UIViewController {
         }
 
         // 게임 성공 여부 확인 로직
-        if self.displayNum == randomDiceNum1 + randomDiceNum2 + 2{
-            showAlert()
-        }
+        checkAnswer(dice1Num: randomDiceNum1, dice2Num: randomDiceNum2)
+        
         
     }
     
@@ -150,13 +154,25 @@ class ViewController: UIViewController {
     func resetHandler () {
         self.mainLabel.text = "Start Game"
         self.displayNum = nil
+        self.firstDiceNum = nil
+        self.secondDiceNum = nil
         self.isPlaying = false
         self.dice1.configuration?.image = UIImage(named: "DiceOne")
         self.dice2.configuration?.image = UIImage(named: "DiceOne")
-
     }
     
     
-    
+    // 주사위 숫자를 파라미터로 받아 정답을 판별하는 로직
+    func checkAnswer(dice1Num: Int?, dice2Num: Int?) {
+        // 전달 받은 dice 숫자를 Nullable을 기준으로 예외처리를 진행 (삼항연산자)
+        // ex) 첫 번째 주사위 클릭 -> 두 번째 주사위 == nil -> 두 번째 주사위 숫자 값에 전역변수에 저장된 값 할당
+        guard let firsNum = dice1Num == nil ? self.firstDiceNum : dice1Num else { return }
+        guard let secondNum = dice2Num == nil ? self.secondDiceNum : dice2Num else { return }
+        
+        if self.displayNum == firsNum + secondNum + 2 {
+            showAlert()
+        }
+        
+    }
 }
 
