@@ -1,17 +1,34 @@
 /* Anchor & NSLayout을 이용하여 인터페이스 구현 */
 
+/*   TroubleShooting
+ 1.  UIStackView 다른 클래스 호출할 경우 Subview들의 property를 변경하지 못함.
+ */
+
+
 import UIKit
 
 class ViewController: UIViewController {
+    static let diceImagePath = ["DiceOne", "DiceTwo" ,"DiceThree", "DiceFour", "DiceFive", "DiceSix"]
+    
+    
+    /* State Variables (상태를 저장하는 변수) */
+    var isPlaying: Bool = false
+    var displayNum: Int?
+    
     
     /* Interface (Subviews) */
-    
     lazy var logo = SubView().logo
     lazy var mainLabel = SubView().mainLabel
     lazy var dice1 = SubView().dice1
     lazy var dice2 = SubView().dice2
-    lazy var buttonStackView = SubView().buttonStackView
     lazy var rollButton = SubView().rollButton
+    lazy var buttonStackView: UIStackView = { // TS(1)
+        let stackView = UIStackView(arrangedSubviews: [dice1, dice2])
+        stackView.axis = .horizontal
+        stackView.spacing = 28
+        
+        return stackView
+    }()
     
     
 
@@ -28,6 +45,10 @@ class ViewController: UIViewController {
         view.addSubview(mainLabel)
         view.addSubview(buttonStackView)
         view.addSubview(rollButton)
+        
+        
+        // Add target (타겟 메소드 적용)
+        rollButton.addTarget(self, action: #selector(tapRollButton), for: .touchUpInside)
         
         
         
@@ -54,6 +75,39 @@ class ViewController: UIViewController {
             rollButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
+    
+    
+    
+    @objc func tapRollButton () {
+
+        
+        let generateNum = Int.random(in: 2..<13)
+        let randomDiceNum1 = Int.random(in: 0..<5)
+        let randomDiceNum2 = Int.random(in: 0..<5)
+        
+        if !isPlaying { // 조건: 게임을 진행하고 있지 않다면 == 초기화면 화면 일 때
+            self.mainLabel.text = String(generateNum)
+            self.displayNum = generateNum
+            
+            // Dice 이미지 변경
+            self.dice1.configuration?.image = UIImage(named: ViewController.diceImagePath[randomDiceNum1])
+            self.dice2.configuration?.image = UIImage(named: ViewController.diceImagePath[randomDiceNum2])
+            
+            
+
+            
+            
+            isPlaying = true
+            
+        } else { // 조건 : 게임을 진행하고 있을 때
+            // Dice 이미지 변경
+            self.dice1.configuration?.image = UIImage(named: ViewController.diceImagePath[randomDiceNum1])
+            self.dice2.configuration?.image = UIImage(named: ViewController.diceImagePath[randomDiceNum2])
+            
+        }
+        
+    }
+
     
     
 }

@@ -42,13 +42,6 @@ class SubView {
     }()
     
     
-    lazy var buttonStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [dice1, dice2])
-        stackView.axis = .horizontal
-        stackView.spacing = 28
-        
-        return stackView
-    }()
     
     lazy var rollButton: UIButton = {
         var config = UIButton.Configuration.filled()
