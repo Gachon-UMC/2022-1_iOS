@@ -21,7 +21,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DiceeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="aaN-Ej-UxP">
-                                <rect key="frame" x="87" y="124" width="239" height="128"/>
+                                <rect key="frame" x="87" y="124" width="240" height="128"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6E-fZ-nIT">
                                 <rect key="frame" x="151" y="744" width="111" height="48"/>
@@ -53,24 +53,35 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DiceOne" translatesAutoresizingMaskIntoConstraints="NO" id="sy2-rc-IL3">
-                                <rect key="frame" x="255" y="556" width="100" height="100"/>
+                                <rect key="frame" x="256" y="556" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="AQT-JV-Hed"/>
+                                </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgZ-vg-UEh">
+                                <rect key="frame" x="85" y="305" width="252" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="252" id="Db1-ZS-JZf"/>
+                                    <constraint firstAttribute="height" constant="59" id="LqK-NW-3D3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="adZ-Mj-64c" firstAttribute="top" secondItem="aaN-Ej-UxP" secondAttribute="bottom" constant="304" id="8dv-qh-CNG"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="v6E-fZ-nIT" secondAttribute="bottom" constant="70" id="9FQ-nQ-8yR"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sy2-rc-IL3" secondAttribute="trailing" constant="58" id="Csj-q0-a1q"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v6E-fZ-nIT" secondAttribute="trailing" constant="151" id="GGO-2k-8J1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="v6E-fZ-nIT" secondAttribute="bottom" constant="70" id="09h-3W-suS"/>
+                            <constraint firstItem="fgZ-vg-UEh" firstAttribute="top" secondItem="aaN-Ej-UxP" secondAttribute="bottom" constant="53" id="6bm-hN-pK4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sy2-rc-IL3" secondAttribute="trailing" constant="58" id="8hq-U5-g4u"/>
+                            <constraint firstItem="sy2-rc-IL3" firstAttribute="top" secondItem="fgZ-vg-UEh" secondAttribute="bottom" constant="192" id="CUF-kY-Bxg"/>
                             <constraint firstItem="aaN-Ej-UxP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="IX7-En-MQ2"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="v6E-fZ-nIT" secondAttribute="bottom" constant="70" id="J6u-FD-ZUc"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v6E-fZ-nIT" secondAttribute="trailing" constant="151" id="Jfp-IK-g4k"/>
-                            <constraint firstItem="sy2-rc-IL3" firstAttribute="top" secondItem="aaN-Ej-UxP" secondAttribute="bottom" constant="304" id="MPB-C1-UfX"/>
-                            <constraint firstItem="adZ-Mj-64c" firstAttribute="top" secondItem="aaN-Ej-UxP" secondAttribute="bottom" constant="304" id="SXy-Z9-rAA"/>
+                            <constraint firstItem="adZ-Mj-64c" firstAttribute="top" secondItem="fgZ-vg-UEh" secondAttribute="bottom" constant="192" id="YRR-Zz-agY"/>
                             <constraint firstItem="v6E-fZ-nIT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="151" id="c8D-hB-fUj"/>
                             <constraint firstItem="aaN-Ej-UxP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="elz-Tn-lfA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aaN-Ej-UxP" secondAttribute="trailing" constant="87" id="gX6-La-lxM"/>
+                            <constraint firstItem="fgZ-vg-UEh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="85" id="lAv-CK-3m5"/>
                             <constraint firstItem="adZ-Mj-64c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="58" id="vXH-ao-eVz"/>
                             <constraint firstItem="v6E-fZ-nIT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="151" id="xLl-2T-LTf"/>
                         </constraints>
@@ -78,6 +89,7 @@
                     <connections>
                         <outlet property="dice1View" destination="adZ-Mj-64c" id="IHU-7i-067"/>
                         <outlet property="dice2View" destination="sy2-rc-IL3" id="Cjy-sp-2xf"/>
+                        <outlet property="randNumLabel" destination="fgZ-vg-UEh" id="VmR-9w-m8K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
