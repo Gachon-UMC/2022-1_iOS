@@ -17,14 +17,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GreenBackground" translatesAutoresizingMaskIntoConstraints="NO" id="oTz-gP-1av">
-                                <rect key="frame" x="0.0" y="0.0" width="389" height="844"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DiceOne" id="Ed3-23-vCe">
                                 <rect key="frame" x="45" y="471" width="118" height="147"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L61-Vt-Lsq">
-                                <rect key="frame" x="148" y="688" width="93" height="67"/>
+                                <rect key="frame" x="148.66666666666666" y="688" width="93" height="67"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Roll">
                                     <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="44"/>
@@ -68,6 +68,7 @@
                     <connections>
                         <outlet property="leftDice" destination="Ed3-23-vCe" id="TR8-ag-SJc"/>
                         <outlet property="mainLabel" destination="4s8-ba-5lz" id="PpN-7P-Olp"/>
+                        <outlet property="rightDice" destination="ItO-XE-IC3" id="1Nn-OC-tnW"/>
                         <outlet property="rollButton" destination="L61-Vt-Lsq" id="RnJ-yP-A4e"/>
                     </connections>
                 </viewController>
