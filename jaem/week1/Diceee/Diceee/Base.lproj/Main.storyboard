@@ -68,6 +68,30 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owv-V7-2jm">
+                                <rect key="frame" x="58" y="556" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="RyD-sd-w9u"/>
+                                    <constraint firstAttribute="width" constant="100" id="gEp-dh-gRU"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="dice1BtnClickHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VAh-nd-1yq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKn-PB-pJb">
+                                <rect key="frame" x="256" y="556" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Mgj-7h-GVy"/>
+                                    <constraint firstAttribute="width" constant="100" id="O6E-gU-Iqu"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="dice2BtnClickHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yOJ-Ca-ieX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -75,10 +99,14 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="v6E-fZ-nIT" secondAttribute="bottom" constant="70" id="09h-3W-suS"/>
                             <constraint firstItem="fgZ-vg-UEh" firstAttribute="top" secondItem="aaN-Ej-UxP" secondAttribute="bottom" constant="53" id="6bm-hN-pK4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sy2-rc-IL3" secondAttribute="trailing" constant="58" id="8hq-U5-g4u"/>
+                            <constraint firstItem="owv-V7-2jm" firstAttribute="top" secondItem="fgZ-vg-UEh" secondAttribute="bottom" constant="192" id="9V7-7j-9xF"/>
                             <constraint firstItem="sy2-rc-IL3" firstAttribute="top" secondItem="fgZ-vg-UEh" secondAttribute="bottom" constant="192" id="CUF-kY-Bxg"/>
+                            <constraint firstItem="PKn-PB-pJb" firstAttribute="top" secondItem="fgZ-vg-UEh" secondAttribute="bottom" constant="192" id="Gz1-FM-X7d"/>
                             <constraint firstItem="aaN-Ej-UxP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="IX7-En-MQ2"/>
+                            <constraint firstItem="owv-V7-2jm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="58" id="JGc-dT-P3V"/>
                             <constraint firstItem="adZ-Mj-64c" firstAttribute="top" secondItem="fgZ-vg-UEh" secondAttribute="bottom" constant="192" id="YRR-Zz-agY"/>
                             <constraint firstItem="v6E-fZ-nIT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="151" id="c8D-hB-fUj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PKn-PB-pJb" secondAttribute="trailing" constant="58" id="dhf-qn-3lw"/>
                             <constraint firstItem="aaN-Ej-UxP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="elz-Tn-lfA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aaN-Ej-UxP" secondAttribute="trailing" constant="87" id="gX6-La-lxM"/>
                             <constraint firstItem="fgZ-vg-UEh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="85" id="lAv-CK-3m5"/>
@@ -87,7 +115,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dice1Btn" destination="owv-V7-2jm" id="HEU-qf-ahZ"/>
                         <outlet property="dice1View" destination="adZ-Mj-64c" id="IHU-7i-067"/>
+                        <outlet property="dice2Btn" destination="PKn-PB-pJb" id="9HW-Zz-IYa"/>
                         <outlet property="dice2View" destination="sy2-rc-IL3" id="Cjy-sp-2xf"/>
                         <outlet property="randNumLabel" destination="fgZ-vg-UEh" id="VmR-9w-m8K"/>
                     </connections>
