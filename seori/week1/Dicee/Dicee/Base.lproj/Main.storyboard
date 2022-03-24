@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,18 +13,18 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Dicee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GreenBackground" translatesAutoresizingMaskIntoConstraints="NO" id="oTz-gP-1av">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DiceOne" id="Ed3-23-vCe">
-                                <rect key="frame" x="45" y="471" width="118" height="147"/>
+                                <rect key="frame" x="45" y="533" width="131" height="167"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L61-Vt-Lsq">
-                                <rect key="frame" x="148.66666666666666" y="688" width="93" height="67"/>
+                                <rect key="frame" x="167.66666666666666" y="770" width="92.999999999999972" height="67"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Roll">
                                     <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="44"/>
@@ -35,34 +35,33 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" image="DiceeLogo" id="9RH-8x-gft">
-                                <rect key="frame" x="77" y="79" width="236" height="135"/>
+                                <rect key="frame" x="85" y="87" width="258" height="148"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" layoutMarginsFollowReadableWidth="YES" text="Start Game" textAlignment="center" lineBreakMode="wordWrap" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" id="4s8-ba-5lz">
-                                <rect key="frame" x="33" y="255" width="325" height="85"/>
+                                <rect key="frame" x="36" y="280" width="357" height="93"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="49"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DiceOne" id="ItO-XE-IC3">
-                                <rect key="frame" x="226" y="471" width="118" height="147"/>
+                                <rect key="frame" x="251" y="533" width="131" height="167"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="oTz-gP-1av" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5kf-1d-EKj"/>
-                            <constraint firstItem="oTz-gP-1av" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Lqj-NA-LxK"/>
                             <constraint firstItem="L61-Vt-Lsq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NgC-T3-Jn6"/>
                             <constraint firstItem="L61-Vt-Lsq" firstAttribute="top" secondItem="Ed3-23-vCe" secondAttribute="bottom" constant="70" id="OKv-Z8-9y6"/>
                             <constraint firstItem="9RH-8x-gft" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PLW-im-rPa"/>
+                            <constraint firstItem="oTz-gP-1av" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QJ4-Vk-PDd"/>
                             <constraint firstItem="oTz-gP-1av" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="Z3T-Ch-FF5"/>
                             <constraint firstItem="4s8-ba-5lz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bHa-NH-HTg"/>
-                            <constraint firstItem="9RH-8x-gft" firstAttribute="centerY" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-200" id="eBh-Vs-QI9"/>
                             <constraint firstItem="L61-Vt-Lsq" firstAttribute="top" secondItem="ItO-XE-IC3" secondAttribute="bottom" constant="70" id="gE4-uL-gBp"/>
                             <constraint firstItem="oTz-gP-1av" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="lnl-du-jBZ"/>
+                            <constraint firstItem="oTz-gP-1av" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uNH-Vp-cYi"/>
                         </constraints>
                     </view>
                     <connections>
