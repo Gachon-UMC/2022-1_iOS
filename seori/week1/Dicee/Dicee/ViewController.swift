@@ -21,6 +21,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // view 모서리를 둥글게 만든다.
+        rollButton.layer.cornerRadius = 10
     }
 
 
