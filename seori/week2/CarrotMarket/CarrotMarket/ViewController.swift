@@ -11,12 +11,20 @@ class ViewController: UIViewController {
 
     var usedItems = UsedItemModel().usedItems
     
+    @IBOutlet weak var leftStackView: UIStackView!
+    @IBOutlet weak var rightStackView: UIStackView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        print(usedItems[0].title)
+        
+        initNavi()
     }
 
+    // navigation bar 구성.
+    func initNavi() {
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: leftStackView)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: rightStackView)
+    }
 
 }
 
