@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A22DD34D27F0CD4C00FCD6AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A22DD34C27F0CD4C00FCD6AA /* Main.storyboard */; };
+		A243B7D927F2BC100069195C /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A243B7D827F2BC100069195C /* CustomCell.swift */; };
 		A2C96E7127F042B700FDD7BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C96E7027F042B700FDD7BC /* AppDelegate.swift */; };
 		A2C96E7327F042B700FDD7BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C96E7227F042B700FDD7BC /* SceneDelegate.swift */; };
 		A2C96E7527F042B700FDD7BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C96E7427F042B700FDD7BC /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		A22DD34C27F0CD4C00FCD6AA /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A243B7D827F2BC100069195C /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		A2C96E6D27F042B700FDD7BC /* CarrotMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarrotMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2C96E7027F042B700FDD7BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2C96E7227F042B700FDD7BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				A2C96E7027F042B700FDD7BC /* AppDelegate.swift */,
 				A2C96E7227F042B700FDD7BC /* SceneDelegate.swift */,
 				A2C96E7427F042B700FDD7BC /* ViewController.swift */,
+				A243B7D827F2BC100069195C /* CustomCell.swift */,
 				A2C96E7927F042B700FDD7BC /* Assets.xcassets */,
 				A22DD34C27F0CD4C00FCD6AA /* Main.storyboard */,
 				A2C96E7B27F042B700FDD7BC /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 			files = (
 				A2C96E7527F042B700FDD7BC /* ViewController.swift in Sources */,
 				A2C96E8527F0456000FDD7BC /* UsedItemModel.swift in Sources */,
+				A243B7D927F2BC100069195C /* CustomCell.swift in Sources */,
 				A2C96E7127F042B700FDD7BC /* AppDelegate.swift in Sources */,
 				A2C96E7327F042B700FDD7BC /* SceneDelegate.swift in Sources */,
 			);
