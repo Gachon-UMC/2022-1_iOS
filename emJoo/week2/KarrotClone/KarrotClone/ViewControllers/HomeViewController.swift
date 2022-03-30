@@ -7,24 +7,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
    
     /* Dummy Data */
     var usedItems = UsedItemModel().usedItems
     
     /* Subviews  */
-    lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.register(UsedItemTableViewCell.self, forCellReuseIdentifier: "usedItemCell")
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        
-        // TableView 마진 레이아웃 (양옆 공백)
-        tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-        tableView.frame.inset(by: UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20))
-        tableView.tableHeaderView = UIView()
-        
-        return tableView
+    let locationBarButton = AppbarViews().locationBarButton
+    let groupButton = AppbarViews().rightGroupBarButtons
+    lazy var rightGroupBarButtons: UIBarButtonItem = {
+        let barbtnitem = UIBarButtonItem(customView: groupButton)
+        return barbtnitem
     }()
+    
+    lazy var tableView = TableVeiw().tableView
     
     
     override func viewDidLoad() {
@@ -32,15 +28,32 @@ class ViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        let heartIcon = groupButton.subviews[1] as! UIButton
+        heartIcon.addTarget(self, action: #selector(routeToFavoriteView), for: .touchUpInside)
+        
     }
     
+    
+    
+    
+    
     override func viewDidLayoutSubviews() {
-        self.navigationItem.leftBarButtonItem = AppbarViews().locationBarButton
-        self.navigationItem.rightBarButtonItem = AppbarViews().rightGroupBarButtons
+        self.navigationItem.leftBarButtonItem = locationBarButton
+        self.navigationItem.rightBarButtonItem = rightGroupBarButtons
         self.view.backgroundColor = .white
         
         setTableView()
+
         
+    }
+    
+    
+    @objc func routeToFavoriteView() {
+        let vc = FavoriteViewController()
+//        vc.userdetails = userViewModels[indexPath.row]
+        vc.usedItems = usedItems
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func setTableView() {
@@ -54,7 +67,7 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
+extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return usedItems.count
     }
@@ -70,17 +83,11 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     
-    
-
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         usedItems[indexPath.row].isLiked = !usedItems[indexPath.row].isLiked
         tableView.reloadRows(at: [indexPath], with: .automatic)
     }
-    
-     func toggleLikedButton() {
-        print("something")
-    }
-    
+
 
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

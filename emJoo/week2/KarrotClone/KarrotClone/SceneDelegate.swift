@@ -17,7 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        let vc = ViewController()
+//        let vc = FavoriteViewController()
+        let vc = HomeViewController()
         
         let navVC = UINavigationController(rootViewController: vc)
         

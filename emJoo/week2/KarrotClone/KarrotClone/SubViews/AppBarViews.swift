@@ -29,7 +29,7 @@ class AppbarViews {
     }()
     
     /* Right Bar Custom Button */
-    let rightGroupBarButtons: UIBarButtonItem = {
+    let rightGroupBarButtons: UIStackView = {
         var searchConfig = UIButton.Configuration.plain()
         var heartConfig = UIButton.Configuration.plain()
         var bellConfig = UIButton.Configuration.plain()
@@ -45,16 +45,22 @@ class AppbarViews {
         searchConfig.buttonSize = .small
         searchConfig.buttonSize = .small
         bellConfig.buttonSize = .small
-      
+        
         let serachIconBtn = UIButton(configuration: searchConfig, primaryAction: nil)
-        let heartIconBtn = UIButton(configuration: heartConfig, primaryAction: nil)
+        var heartIconBtn = UIButton(configuration: heartConfig, primaryAction: nil)
         let bellIconBtn = UIButton(configuration: bellConfig, primaryAction: nil)
         
+        heartIconBtn.tag = 1
 
+        
+       
         let stackView = UIStackView(arrangedSubviews: [serachIconBtn, heartIconBtn, bellIconBtn])
         
         let barButton = UIBarButtonItem(customView: stackView)
-        return barButton
+        return stackView
     }()
+    
+
+
     
 }
