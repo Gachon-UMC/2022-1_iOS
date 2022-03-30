@@ -11,7 +11,7 @@
 		6F4A40A827F43FB40056DDC1 /* TouchableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4A40A727F43FB40056DDC1 /* TouchableButton.swift */; };
 		6F4A40AB27F443280056DDC1 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4A40AA27F443280056DDC1 /* FavoriteViewController.swift */; };
 		6F4A40AD27F44AD20056DDC1 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4A40AC27F44AD20056DDC1 /* TableView.swift */; };
-		6F4A40AF27F45D0C0056DDC1 /* UsedItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4A40AE27F45D0C0056DDC1 /* UsedItemViewModel.swift */; };
+		6F4A40B227F46CF20056DDC1 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4A40B127F46CF20056DDC1 /* ColorPalette.swift */; };
 		6FEAFA2D27F4127F00D9DAF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEAFA2C27F4127F00D9DAF7 /* AppDelegate.swift */; };
 		6FEAFA2F27F4127F00D9DAF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEAFA2E27F4127F00D9DAF7 /* SceneDelegate.swift */; };
 		6FEAFA3127F4127F00D9DAF7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEAFA3027F4127F00D9DAF7 /* HomeViewController.swift */; };
@@ -26,7 +26,7 @@
 		6F4A40A727F43FB40056DDC1 /* TouchableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchableButton.swift; sourceTree = "<group>"; };
 		6F4A40AA27F443280056DDC1 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		6F4A40AC27F44AD20056DDC1 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
-		6F4A40AE27F45D0C0056DDC1 /* UsedItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedItemViewModel.swift; sourceTree = "<group>"; };
+		6F4A40B127F46CF20056DDC1 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		6FEAFA2927F4127F00D9DAF7 /* KarrotClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KarrotClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FEAFA2C27F4127F00D9DAF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6FEAFA2E27F4127F00D9DAF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +58,14 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		6F4A40B027F46CCF0056DDC1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6F4A40B127F46CF20056DDC1 /* ColorPalette.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		6FEAFA2027F4127F00D9DAF7 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +85,7 @@
 		6FEAFA2B27F4127F00D9DAF7 /* KarrotClone */ = {
 			isa = PBXGroup;
 			children = (
+				6F4A40B027F46CCF0056DDC1 /* Extension */,
 				6F4A40A927F4430C0056DDC1 /* ViewControllers */,
 				6FEAFA4027F41C8000D9DAF7 /* SubViews */,
 				6FEAFA2C27F4127F00D9DAF7 /* AppDelegate.swift */,
@@ -85,7 +94,6 @@
 				6FEAFA3727F4128000D9DAF7 /* LaunchScreen.storyboard */,
 				6FEAFA3A27F4128000D9DAF7 /* Info.plist */,
 				6FEAFA4527F4221200D9DAF7 /* UsedItemModel.swift */,
-				6F4A40AE27F45D0C0056DDC1 /* UsedItemViewModel.swift */,
 			);
 			path = KarrotClone;
 			sourceTree = "<group>";
@@ -173,10 +181,10 @@
 			files = (
 				6FEAFA4227F41C9200D9DAF7 /* AppBarViews.swift in Sources */,
 				6F4A40A827F43FB40056DDC1 /* TouchableButton.swift in Sources */,
-				6F4A40AF27F45D0C0056DDC1 /* UsedItemViewModel.swift in Sources */,
 				6FEAFA3127F4127F00D9DAF7 /* HomeViewController.swift in Sources */,
 				6FEAFA4627F4221200D9DAF7 /* UsedItemModel.swift in Sources */,
 				6F4A40AD27F44AD20056DDC1 /* TableView.swift in Sources */,
+				6F4A40B227F46CF20056DDC1 /* ColorPalette.swift in Sources */,
 				6FEAFA2D27F4127F00D9DAF7 /* AppDelegate.swift in Sources */,
 				6FEAFA2F27F4127F00D9DAF7 /* SceneDelegate.swift in Sources */,
 				6F4A40AB27F443280056DDC1 /* FavoriteViewController.swift in Sources */,

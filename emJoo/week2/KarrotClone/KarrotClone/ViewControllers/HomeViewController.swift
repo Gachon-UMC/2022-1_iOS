@@ -11,14 +11,12 @@ class HomeViewController: UIViewController, ReceiveDataDelegate {
     /* Dummy Data */
     var usedItems = UsedItemModel().usedItems
     
-    func receiveChildData(_ child: UIViewController, data: [UsedItemModel.UsedItem]) {
-        usedItems = data
-        tableView.reloadData()
-    }
-    
+ 
     
     /* Subviews  */
+    
     let locationBarButton = AppbarViews().locationBarButton
+    
     let groupButton = AppbarViews().rightGroupBarButtons
     lazy var rightGroupBarButtons: UIBarButtonItem = {
         let barbtnitem = UIBarButtonItem(customView: groupButton)
@@ -31,12 +29,13 @@ class HomeViewController: UIViewController, ReceiveDataDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Tableview Default Setting
         tableView.dataSource = self
         tableView.delegate = self
         
+        // Register Route Action
         let heartIcon = groupButton.subviews[1] as! UIButton
         heartIcon.addTarget(self, action: #selector(routeToFavoriteView), for: .touchUpInside)
-        
     }
     
     
@@ -44,19 +43,12 @@ class HomeViewController: UIViewController, ReceiveDataDelegate {
         self.navigationItem.leftBarButtonItem = locationBarButton
         self.navigationItem.rightBarButtonItem = rightGroupBarButtons
         self.view.backgroundColor = .white
-        
         setTableView()
 
     }
     
     
-    @objc func routeToFavoriteView() {
-        let vc = FavoriteViewController()        
-        vc.usedItems = usedItems
-        vc.delegate = self
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
+    // TableView Contraints 설정
     func setTableView() {
         self.view.addSubview(tableView)
         tableView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
@@ -64,6 +56,26 @@ class HomeViewController: UIViewController, ReceiveDataDelegate {
         tableView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0).isActive = true
         tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
     }
+    
+    // MARK: INTENT
+    
+    // `FavoriteViewController`로 Route
+    /// 1. usedItems 값들 전달
+    /// 2. delegate 연결
+    @objc func routeToFavoriteView() {
+        let vc = FavoriteViewController()
+        vc.usedItems = usedItems
+        vc.delegate = self
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    // 이전 ViewController에서 받은 값들을 Tableview에 업데이트
+    func receiveChildData(_ child: UIViewController, data: [UsedItemModel.UsedItem]) {
+        usedItems = data
+        tableView.reloadData()
+    }
+    
     
     
 }
@@ -74,11 +86,14 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "usedItemCell", for: indexPath) as! UsedItemTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: UsedItemTableViewCell.cellId, for: indexPath) as! UsedItemTableViewCell
+        let selectedItem = usedItems[indexPath.row]
         
-        cell.titleLabel.text = usedItems[indexPath.row].title
-        cell.thumnail.image = UIImage(named: usedItems[indexPath.row].imagePath)
-        cell.heartIcon.configuration?.image = usedItems[indexPath.row].isLiked ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
+        cell.titleLabel.text = selectedItem.title
+        cell.thumnail.image = UIImage(named: selectedItem.imagePath)
+        cell.locationLabel.text = selectedItem.subDescription
+        cell.priceLabel.text = String(selectedItem.price)
+        cell.heartIcon.image = selectedItem.isLiked ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
         
         return cell
     }
@@ -97,6 +112,10 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
 }
+
+
+// MARK: Delegate Protocol
+// `FavoriteViewContrller`에서 isLiked Toggle 값을 `HomeViewController`에서 받기 위한 프로토콜
 
 protocol ReceiveDataDelegate: AnyObject {
     func receiveChildData(_ child: UIViewController, data: [UsedItemModel.UsedItem])

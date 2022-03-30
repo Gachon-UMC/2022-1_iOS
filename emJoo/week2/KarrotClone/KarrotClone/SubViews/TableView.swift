@@ -9,10 +9,9 @@ import UIKit
 
 class UsedItemTableView {
     
-    
     lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(UsedItemTableViewCell.self, forCellReuseIdentifier: "usedItemCell")
+        tableView.register(UsedItemTableViewCell.self, forCellReuseIdentifier: UsedItemTableViewCell.cellId)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         // TableView 마진 레이아웃 (양옆 공백)

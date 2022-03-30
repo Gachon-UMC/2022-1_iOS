@@ -34,9 +34,8 @@ class UsedItemTableViewCell: UITableViewCell {
         label.numberOfLines = 1
         label.sizeToFit()
         label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
-        label.tintColor = .systemGray6
-        
-        
+        label.textColor = UIColor(rgb: 0x888D95)
+
         return label
     }()
     
@@ -77,13 +76,12 @@ class UsedItemTableViewCell: UITableViewCell {
     }()
     
     
-    let heartIcon: UIButton = {
-        var config = UIButton.Configuration.plain()
-        config.image = UIImage(systemName: "heart")
-        let btn = UIButton(configuration: config, primaryAction: nil)
-        btn.translatesAutoresizingMaskIntoConstraints = false
+    let heartIcon: UIImageView = {
+        let img = UIImageView(image: UIImage(systemName: "heart"))
+        img.tintColor = .orange
+        img.translatesAutoresizingMaskIntoConstraints = false
         
-        return btn
+        return img
     }()
     
     /* Filled Align Sized Box*/

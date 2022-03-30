@@ -10,57 +10,39 @@ import UIKit
 
 class FavoriteViewController: UIViewController {
     
-    var delegate: ReceiveDataDelegate!
-    var originItems: [UsedItemModel.UsedItem] = []
-    var usedItems: [UsedItemModel.UsedItem] = []
+    /* Dummy Data & State Variables */
     
-
+    var delegate: ReceiveDataDelegate! // Delegate 연동
+    var originItems: [UsedItemModel.UsedItem] = [] // 이전 ViewController 전달할 값.
+    var usedItems: [UsedItemModel.UsedItem] = [] // 해당 ViewController의 Tableview에서 보여줄 값
     
-
+    /* Subviews */
     
     lazy var backArrowButton: UIBarButtonItem = {
         let barBtnItem = UIBarButtonItem(image: UIImage(systemName: "arrow.left"), style: .done, target: self, action: #selector(routeBack))
+        barBtnItem.tintColor = .black
         return barBtnItem
     }()
     
-    @objc func routeBack() {
-        delegate.receiveChildData(self, data: originItems)
-        _ = navigationController?.popToRootViewController(animated: true)
-
-    }
-            
-    
-    
-    /* Subviews */
     
     lazy var tableView = UsedItemTableView().tableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.navigationItem.leftBarButtonItem = backArrowButton
         
         tableView.dataSource = self
         tableView.delegate = self
         originItems = usedItems
         
-
-        
-        let filteredItems = usedItems.filter { item in
-            item.isLiked == true
-        }
-        
-        usedItems = filteredItems
-
-    
-
+        filterUsedItems()
     }
     
     override func viewDidLayoutSubviews() {
         self.view.backgroundColor = .white
         self.title = "관심목록"
         self.view.addSubview(tableView)
-        
         
         setTableView()
     }
@@ -74,6 +56,23 @@ class FavoriteViewController: UIViewController {
         tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
     }
     
+    // MARK: INTENT
+    
+    // Route Back 메소드
+    @objc func routeBack() {
+        delegate.receiveChildData(self, data: originItems) // 이전 ViewController로 값 전달
+        _ = navigationController?.popToRootViewController(animated: true) // 이전 View Controller로 이동
+
+    }
+    
+    // usedItems 리스트 중 isLiked 값이 false인 값만 필터링
+    func filterUsedItems() {
+        let filteredItems = usedItems.filter { item in
+            item.isLiked == true
+        }
+        usedItems = filteredItems
+    }
+    
 
 }
 
@@ -85,10 +84,13 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "usedItemCell", for: indexPath) as! UsedItemTableViewCell
+        let selectedItem = usedItems[indexPath.row]
         
-        cell.titleLabel.text = usedItems[indexPath.row].title
-        cell.thumnail.image = UIImage(named: usedItems[indexPath.row].imagePath)
-        cell.heartIcon.configuration?.image = usedItems[indexPath.row].isLiked ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
+        cell.titleLabel.text = selectedItem.title
+        cell.thumnail.image = UIImage(named: selectedItem.imagePath)
+        cell.locationLabel.text = selectedItem.subDescription
+        cell.priceLabel.text = String(selectedItem.price)
+        cell.heartIcon.image = selectedItem.isLiked ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
         
         return cell
     }
