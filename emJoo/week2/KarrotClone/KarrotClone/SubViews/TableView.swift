@@ -7,7 +7,8 @@
 
 import UIKit
 
-class TableVeiw {
+class UsedItemTableView {
+    
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -21,5 +22,16 @@ class TableVeiw {
         
         return tableView
     }()
+    
+    
+    func setTableView(_ view: UIView) {
+        tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        tableView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
+        tableView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+    }
+    
+    
+
     
 }

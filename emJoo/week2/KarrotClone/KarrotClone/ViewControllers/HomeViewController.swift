@@ -7,10 +7,15 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
-   
+class HomeViewController: UIViewController, ReceiveDataDelegate {
     /* Dummy Data */
     var usedItems = UsedItemModel().usedItems
+    
+    func receiveChildData(_ child: UIViewController, data: [UsedItemModel.UsedItem]) {
+        usedItems = data
+        tableView.reloadData()
+    }
+    
     
     /* Subviews  */
     let locationBarButton = AppbarViews().locationBarButton
@@ -20,7 +25,7 @@ class HomeViewController: UIViewController {
         return barbtnitem
     }()
     
-    lazy var tableView = TableVeiw().tableView
+    lazy var tableView = UsedItemTableView().tableView
     
     
     override func viewDidLoad() {
@@ -35,9 +40,6 @@ class HomeViewController: UIViewController {
     }
     
     
-    
-    
-    
     override func viewDidLayoutSubviews() {
         self.navigationItem.leftBarButtonItem = locationBarButton
         self.navigationItem.rightBarButtonItem = rightGroupBarButtons
@@ -45,14 +47,13 @@ class HomeViewController: UIViewController {
         
         setTableView()
 
-        
     }
     
     
     @objc func routeToFavoriteView() {
-        let vc = FavoriteViewController()
-//        vc.userdetails = userViewModels[indexPath.row]
+        let vc = FavoriteViewController()        
         vc.usedItems = usedItems
+        vc.delegate = self
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -95,9 +96,9 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         return responsiveCellHeight
     }
     
-    
-        
-    
-    
-    
 }
+
+protocol ReceiveDataDelegate: AnyObject {
+    func receiveChildData(_ child: UIViewController, data: [UsedItemModel.UsedItem])
+}
+
