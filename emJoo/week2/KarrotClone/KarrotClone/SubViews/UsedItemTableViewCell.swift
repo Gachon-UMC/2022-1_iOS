@@ -57,7 +57,7 @@ class UsedItemTableViewCell: UITableViewCell {
         label.numberOfLines = 2
         label.font = label.font.withSize(17)
         label.sizeToFit()
-        label.lineBreakMode = .byWordWrapping
+
         
         return label
     }()

@@ -14,7 +14,6 @@ class HomeViewController: UIViewController, ReceiveDataDelegate {
  
     
     /* Subviews  */
-    
     let locationBarButton = AppbarViews().locationBarButton
     
     let groupButton = AppbarViews().rightGroupBarButtons
@@ -43,10 +42,10 @@ class HomeViewController: UIViewController, ReceiveDataDelegate {
         self.navigationItem.leftBarButtonItem = locationBarButton
         self.navigationItem.rightBarButtonItem = rightGroupBarButtons
         self.view.backgroundColor = .white
+
         setTableView()
 
     }
-    
     
     // TableView Contraints 설정
     func setTableView() {
@@ -88,11 +87,13 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: UsedItemTableViewCell.cellId, for: indexPath) as! UsedItemTableViewCell
         let selectedItem = usedItems[indexPath.row]
-        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = NumberFormatter.Style.decimal
+
         cell.titleLabel.text = selectedItem.title
         cell.thumnail.image = UIImage(named: selectedItem.imagePath)
         cell.locationLabel.text = selectedItem.subDescription
-        cell.priceLabel.text = String(selectedItem.price)
+        cell.priceLabel.text = formatter.string(for: selectedItem.price)
         cell.heartIcon.image = selectedItem.isLiked ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
         
         return cell
