@@ -106,8 +106,8 @@ class ViewController: UIViewController {
     @objc func tapRollButton () {
                 
         // Genereate Random Int Number (랜덤 숫자 생성)
-        let randomDiceNum1 = Int.random(in: 0..<5)
-        let randomDiceNum2 = Int.random(in: 0..<5)
+        let randomDiceNum1 = Int.random(in: 0..<6)
+        let randomDiceNum2 = Int.random(in: 0..<6)
         self.firstDiceNum = randomDiceNum1
         self.secondDiceNum = randomDiceNum2
         
