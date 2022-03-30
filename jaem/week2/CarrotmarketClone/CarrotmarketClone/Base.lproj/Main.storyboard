@@ -126,6 +126,15 @@
                                                         <constraint firstAttribute="height" constant="20" id="zpr-lq-OhV"/>
                                                     </constraints>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uMv-1r-dft">
+                                                    <rect key="frame" x="358" y="109" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="eNq-RJ-bdB"/>
+                                                        <constraint firstAttribute="width" constant="20" id="wQb-F6-t2k"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Ipi-b1-gex" firstAttribute="leading" secondItem="kfb-Zv-wgY" secondAttribute="leading" constant="16" id="00H-0y-fKF"/>
@@ -136,6 +145,8 @@
                                                 <constraint firstItem="REm-Nx-nnL" firstAttribute="leading" secondItem="Ipi-b1-gex" secondAttribute="trailing" constant="14" id="BuH-yq-L2p"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="lg4-3j-rMe" secondAttribute="bottom" constant="8" id="KY2-b4-IDa"/>
                                                 <constraint firstItem="yKL-xi-6Kf" firstAttribute="leading" secondItem="Ipi-b1-gex" secondAttribute="trailing" constant="14" id="MeQ-SK-MXV"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="uMv-1r-dft" secondAttribute="bottom" constant="8" id="S69-Aq-FMr"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="uMv-1r-dft" secondAttribute="trailing" constant="16" id="TLg-WA-y5l"/>
                                                 <constraint firstItem="Vez-Zz-rrY" firstAttribute="top" secondItem="yKL-xi-6Kf" secondAttribute="bottom" constant="1" id="bh2-lu-pIj"/>
                                                 <constraint firstItem="Ipi-b1-gex" firstAttribute="top" secondItem="kfb-Zv-wgY" secondAttribute="top" constant="23.5" id="gHg-6V-Ewe"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="REm-Nx-nnL" secondAttribute="trailing" constant="16" id="xqn-nz-5WF"/>
@@ -144,6 +155,7 @@
                                         <connections>
                                             <outlet property="itemImg" destination="Ipi-b1-gex" id="HyM-2E-tV8"/>
                                             <outlet property="itemLike" destination="lg4-3j-rMe" id="trC-In-BHG"/>
+                                            <outlet property="itemLikeBtn" destination="uMv-1r-dft" id="I8h-4k-8uT"/>
                                             <outlet property="itemPrice" destination="Vez-Zz-rrY" id="9A5-QL-A3d"/>
                                             <outlet property="itemSubDes" destination="yKL-xi-6Kf" id="EF7-qt-A7h"/>
                                             <outlet property="itemTitle" destination="REm-Nx-nnL" id="sIZ-Vt-ipS"/>

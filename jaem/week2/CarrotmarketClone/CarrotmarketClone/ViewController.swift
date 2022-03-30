@@ -31,9 +31,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         cell.itemTitle.text = usedItems[indexPath.row].title
         cell.itemSubDes.text = usedItems[indexPath.row].subDescription
-        cell.itemPrice.text = String(usedItems[indexPath.row].price)
+        cell.itemPrice.text = String(usedItems[indexPath.row].price) + "원"
         cell.itemImg.image = UIImage(named: usedItems[indexPath.row].imagePath)
         cell.itemLike.image = UIImage(named: "orangeEmptyHeart")
+        
+        cell.likeClickedAction = {[unowned self] in
+            cell.itemLike.image = UIImage(named: "orangeFilledHeart")
+        }
         
         cell.itemImg.layer.cornerRadius = 6
         
