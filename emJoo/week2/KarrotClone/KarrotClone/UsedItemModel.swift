@@ -20,7 +20,7 @@ struct UsedItemModel {
         UsedItem(id: 3, title: "중고 물품4", subDescription: "서초4동 · 끌올 1분 전", price: 400000, imagePath: "image4"),
         UsedItem(id: 4, title: "중고 물품5", subDescription: "서초4동 · 끌올 1분 전", price: 400000, imagePath: "image5"),
         UsedItem(id: 5, title: "중고 물품6", subDescription: "서초4동 · 끌올 1분 전", price: 400000, imagePath: "image6"),
-        UsedItem(id: 6, title: "중고 물품7", subDescription: "서초4동 · 끌올 1분 전", price: 400000, imagePath: "image7"),
+        UsedItem(id: 6, title: "중고 물품7", subDescription: "서초4동 · 끌올 1분 전", price: 400000, imagePath: "image7", isLiked: true),
         UsedItem(id: 7, title: "중고 물품8", subDescription: "서초4동 · 끌올 1분 전", price: 400000, imagePath: "image8"),
         UsedItem(id: 8, title: "중고 물품8", subDescription: "서초4동 · 끌올 1분 전", price: 400000, imagePath: "image9")
     

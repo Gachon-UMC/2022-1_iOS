@@ -13,6 +13,7 @@ class UsedItemTableViewCell: UITableViewCell {
 
   
     static let cellId = "usedItemCell"
+    
 
     /* Cell Subvies */
     let thumnail: UIImageView = {
@@ -81,12 +82,11 @@ class UsedItemTableViewCell: UITableViewCell {
         config.image = UIImage(systemName: "heart")
         let btn = UIButton(configuration: config, primaryAction: nil)
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.addTarget(self, action: #selector(clickHeart) , for: .touchUpInside)
         
         return btn
     }()
     
-    /* Filled Align Sized Box */
+    /* Filled Align Sized Box*/
     let sizedBox: UIView = {
         let view = UIView()
         return view
@@ -95,6 +95,7 @@ class UsedItemTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+
     }
 
     
@@ -109,12 +110,7 @@ class UsedItemTableViewCell: UITableViewCell {
 
     }
     
-    
-    @objc func clickHeart() {
-        heartIcon.configuration?.image = UIImage(systemName: "heart.fill")
-    }
-    
-    
+
     
     func setStackView() {
         
@@ -139,11 +135,10 @@ class UsedItemTableViewCell: UITableViewCell {
   
     }
     
-    
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
 }
+
+

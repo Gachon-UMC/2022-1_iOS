@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
+   
     /* Dummy Data */
     var usedItems = UsedItemModel().usedItems
     
@@ -64,25 +64,32 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.titleLabel.text = usedItems[indexPath.row].title
         cell.thumnail.image = UIImage(named: usedItems[indexPath.row].imagePath)
-        
-    
-        cell.heartIcon.addTarget(self, action: #selector(tapHeartIcon), for: .allTouchEvents)
-    
-
-        
+        cell.heartIcon.configuration?.image = usedItems[indexPath.row].isLiked ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
         
         return cell
     }
     
-    @objc func tapHeartIcon() {
-        print("TAPPED")
+    
+    
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        usedItems[indexPath.row].isLiked = !usedItems[indexPath.row].isLiked
+        tableView.reloadRows(at: [indexPath], with: .automatic)
     }
+    
+     func toggleLikedButton() {
+        print("something")
+    }
+    
+
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let responsiveCellHeight = self.view.frame.height * CGFloat(0.19)
         return responsiveCellHeight
     }
     
+    
+        
     
     
     
