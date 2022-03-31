@@ -25,7 +25,7 @@ class CustomCell: UITableViewCell {
         // 제목 2줄까지만 보이도록 설정.
         usedItemTitle.numberOfLines = 2
         // 사진 모서리 둥글게 설정.
-        usedItemImage.layer.cornerRadius = 10
+        usedItemImage.layer.cornerRadius = 7
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
