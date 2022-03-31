@@ -37,6 +37,6 @@ class CustomCell: UITableViewCell {
     // 하트 눌렀을 때 색깔 바뀌는 액션 구현.
     @IBAction func tappedHeartBtn(_ sender: Any) {
         isPushed = !isPushed
-        heartButton.setImage(isPushed ? UIImage(named: "heartFill") : UIImage(named: "heart"), for: .normal)
+        heartButton.setImage(isPushed ? UIImage(named: "HeartFill") : UIImage(named: "Heart"), for: .normal)
     }
 }
