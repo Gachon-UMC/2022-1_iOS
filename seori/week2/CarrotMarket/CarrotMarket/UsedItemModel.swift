@@ -13,7 +13,7 @@ struct UsedItemModel {
     // UsedItem 구조체의 배열인 UsedItems
     var usedItems: [UsedItem] = [
         // MARK: title, subdecription, price, imagePath를 각각 다르게 설정해주세요!!
-        UsedItem(id: 0, title: "맥북 프로 13인치(8g/512g) 판매합니다. 정말 싸게 팝니다. 실사용 굉장히 적습니다. 연락 주세요", subDescription: "서초1동 · 끌올 2시간 전", price: 700000, imagePath: "MacBookPro"),
+        UsedItem(id: 0, title: "맥북 프로 13인치(8g/512g) 판매합니다. 실사용 굉장히 적습니다. 연락 주세요", subDescription: "서초1동 · 끌올 2시간 전", price: 70000000, imagePath: "MacBookPro"),
         UsedItem(id: 1, title: "새거나 다름 없는 가디건 팝니다!!", subDescription: "서초2동 · 끌올 4분 전", price: 15000, imagePath: "Cardigan"),
         UsedItem(id: 2, title: "자전거 싸게 드림", subDescription: "서초3동 · 끌올 10분 전", price: 81000, imagePath: "Bicycle"),
         UsedItem(id: 3, title: "갈축 키보드", subDescription: "서초4동 · 끌올 1분 전", price: 35000, imagePath: "Keyboard"),

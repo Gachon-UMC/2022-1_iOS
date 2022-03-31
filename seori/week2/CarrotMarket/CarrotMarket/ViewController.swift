@@ -59,7 +59,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
         customCell.usedItemTitle.text = usedItems[indexPath.row].title
         customCell.usedItemSubdescription.text = usedItems[indexPath.row].subDescription
-        customCell.usedItemPrice.text = String(usedItems[indexPath.row].price) + "원"
+        
+        // 32000 -> 32,000원으로 formatting.
+        customCell.usedItemPrice.text = usedItems[indexPath.row].price.formatted() + "원"
 
         return customCell
     }
