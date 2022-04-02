@@ -12,10 +12,12 @@ class LoginViewController: UIViewController {
     var email = String()
     var password = String()
     
+    @IBOutlet weak var popToSignupButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        setAttributesToButton()
     }
     
     @IBAction func emailTextFieldEditingChanged(_ sender: UITextField) {
@@ -48,5 +50,22 @@ class LoginViewController: UIViewController {
         self.navigationController?.pushViewController(registerViewController, animated: true)
     }
     
-    
+    // 버튼에 속성(글자마다 색을 다르게)을 주는 함수.
+    func setAttributesToButton() {
+        // 버튼 안의 텍스트의 폰트 사이즈 설정.
+        let fontSize = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12)]
+        
+        // 버튼의 titleLable을 NSMutableAttributedString으로 바꿔서 attributedStr에 저장한다.
+        // & 폰트 사이즈 속성 추가.
+        let attributedStr = NSMutableAttributedString(string: (popToSignupButton.titleLabel?.text)!, attributes: fontSize)
+        
+        
+        // text중 계정이 없으신가요? 에 해당하는 곳에 Light Gray 색을 준다.
+        attributedStr.addAttribute(.foregroundColor, value: UIColor.lightGray, range: ((popToSignupButton.titleLabel?.text)! as NSString).range(of: "계정이 없으신가요?"))
+
+        attributedStr.addAttribute(.foregroundColor, value: UIColor.init(named: "facebookColor")!, range: ((popToSignupButton.titleLabel?.text)! as NSString).range(of: "가입하기"))
+        
+        // 속성을 버튼에 적용시킨다.
+        popToSignupButton.setAttributedTitle(attributedStr, for: .normal)
+    }
 }
