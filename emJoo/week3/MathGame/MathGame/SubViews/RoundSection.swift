@@ -21,4 +21,15 @@ class RoundSection {
         return stackView
     }()
     
+    lazy var roundContainer: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(named: "lightDark")
+        view.layer.cornerRadius = 8
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.isUserInteractionEnabled = true
+
+        return view
+    }()
+    
+    
 }

@@ -4,6 +4,16 @@ class ViewController: UIViewController {
    
     let list = (1...20).map { "\($0)" }
     
+    
+    lazy var contentScrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.backgroundColor = .white
+        scrollView.showsVerticalScrollIndicator = false
+            
+        return scrollView
+    }()
+    
     lazy var contentView: UIView = {
         let view = UIView()
         view.layoutMargins = UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
@@ -46,28 +56,28 @@ class ViewController: UIViewController {
     /* Round Section Container */
     
     lazy var roundSectionTitle = RoundSection().roundSectionTitle
-    lazy var roundContainer: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor(named: "lightDark")
-        view.layer.cornerRadius = 8
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.isUserInteractionEnabled = true
-
-//        view.addSubview(roundWheePicker)
-        
-
-        return view
-    }()
-    
+    lazy var roundContainer = RoundSection().roundContainer
     lazy var roundWheePicker: UIPickerView = {
         let pickerView = UIPickerView()
         pickerView.dataSource = self
         pickerView.delegate = self
         pickerView.isUserInteractionEnabled = true
-        //        isUserInteractionEnabled
         pickerView.translatesAutoresizingMaskIntoConstraints = false
         
         return pickerView
+    }()
+    
+    /* Done Round Section*/
+    lazy var doneRoundSectionTitle = DoneRoundSection().doneRoundSectionTitle
+    lazy var doneRoundLabel = DoneRoundSection().doneRoundLabel
+    lazy var doneRoundContainer: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(named: "lightDark")
+        view.layer.cornerRadius = 8
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(doneRoundLabel)
+        
+        return view
     }()
     
 
@@ -81,12 +91,30 @@ class ViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         view.backgroundColor = UIColor(named: "dark")
         view.addSubview(contentView)
-
+    
         /* UI Component Setting Method*/
         setContentView()
-        setNaviation()
+        setNavigation()
         setDifficultySection()
         setRoundSection()
+        setDoneRoundSection()
+    }
+    
+    func setDoneRoundSection() {
+        /* Section Title */
+        doneRoundSectionTitle.topAnchor.constraint(equalTo: roundContainer.bottomAnchor, constant: 42).isActive = true
+        
+        /* Done Round Section Container */
+        doneRoundContainer.topAnchor.constraint(equalTo: doneRoundSectionTitle.bottomAnchor, constant: 14).isActive = true
+        doneRoundContainer.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 0).isActive = true
+        doneRoundContainer.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 0).isActive = true
+        doneRoundContainer.heightAnchor.constraint(equalToConstant: 84).isActive = true
+        
+        /* Done Label */
+        doneRoundLabel.topAnchor.constraint(equalTo: doneRoundContainer.topAnchor, constant: doneRoundContainer.frame.height / 2).isActive = true
+        doneRoundLabel.rightAnchor.constraint(equalTo: doneRoundContainer.rightAnchor,constant: 0).isActive = true
+        doneRoundLabel.leftAnchor.constraint(equalTo: doneRoundContainer.leftAnchor, constant: 0).isActive = true
+
     }
     
     
@@ -121,6 +149,9 @@ class ViewController: UIViewController {
         contentView.addSubview(difficultyContainer)
         contentView.addSubview(roundSectionTitle)
         contentView.addSubview(roundContainer)
+        contentView.addSubview(doneRoundSectionTitle)
+        contentView.addSubview(doneRoundContainer)
+
 
         view.addSubview(slider)
         view.addSubview(roundWheePicker)
@@ -159,7 +190,7 @@ class ViewController: UIViewController {
     }
     
     
-    func setNaviation() {
+    func setNavigation() {
         self.title = "설정"
         let attributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.titleTextAttributes = attributes // Title Color
