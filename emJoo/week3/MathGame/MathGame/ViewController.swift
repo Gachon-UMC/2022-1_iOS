@@ -2,7 +2,7 @@ import UIKit
 
 class ViewController: UIViewController {
    
-    var list = ["1", "2", "3", "4"]
+    let list = (1...20).map { "\($0)" }
     
     lazy var contentView: UIView = {
         let view = UIView()
@@ -195,6 +195,10 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
       func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
           print("select=\(row)")
       }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        return NSAttributedString(string: list[row], attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+    }
 }
 
 
