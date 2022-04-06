@@ -249,7 +249,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         let vc = GameViewController()
 //        vc.difficultyLevel = difficultyLevel
 //        vc.gameRound = gameRound
-        vc.vm = Math(totalRound: gameRound, level: difficultyLevel)
+        print(difficultyLevel)
+        vc.vm = Math(totalRound: gameRound + 1, level: difficultyLevel)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

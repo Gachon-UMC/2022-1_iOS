@@ -1,5 +1,4 @@
 //  수학 게임에서 사용되는 모델
-// "6 + 2", "12 + 7", "43 + 29", "3 X 21 + 46", "21 X 3 X 9"
 
 import Foundation
 
@@ -29,10 +28,10 @@ struct MathModel {
             mathGame = MathGame(firstN: twoDigitNum1, secondN: oneDigitNum1, thirdN: nil, answer: twoDigitNum1 + oneDigitNum1)
         case 2: // ex) 43 + 29
             mathGame = MathGame(firstN: twoDigitNum1, secondN: twoDigitNum2, thirdN: nil, answer: twoDigitNum1 + twoDigitNum2)
-        case 3: // ex) 3 X 21 + 46
-            mathGame = MathGame(firstN: oneDigitNum1, secondN: twoDigitNum1, thirdN: twoDigitNum2, answer: oneDigitNum1 * twoDigitNum1 + twoDigitNum2)
-        case 4: // ex) 21 X 3 X 9
-            mathGame = MathGame(firstN: twoDigitNum1, secondN: oneDigitNum1, thirdN: oneDigitNum2, answer: twoDigitNum1 * oneDigitNum1 * oneDigitNum2)
+        case 3: // ex) 3 + 21 + 46
+            mathGame = MathGame(firstN: oneDigitNum1, secondN: twoDigitNum1, thirdN: twoDigitNum2, answer: oneDigitNum1 + twoDigitNum1 + twoDigitNum2)
+        case 4: // ex) 21 X 3 + 9
+            mathGame = MathGame(firstN: twoDigitNum1, secondN: oneDigitNum1, thirdN: oneDigitNum2, answer: (twoDigitNum1 * oneDigitNum1) + oneDigitNum2)
             
         default:
             mathGame = MathGame(firstN: oneDigitNum1, secondN: oneDigitNum2, thirdN: nil, answer: oneDigitNum1 + oneDigitNum2)
@@ -55,9 +54,9 @@ struct MathModel {
         case 2: // ex) 43 + 29
             mathGame = MathGame(firstN: twoDigitNum1, secondN: twoDigitNum2, thirdN: nil, answer: twoDigitNum1 + twoDigitNum2)
         case 3: // ex) 3 X 21 + 46
-            mathGame = MathGame(firstN: oneDigitNum1, secondN: twoDigitNum1, thirdN: twoDigitNum2, answer: oneDigitNum1 * twoDigitNum1 + twoDigitNum2)
+            mathGame = MathGame(firstN: oneDigitNum1, secondN: twoDigitNum1, thirdN: twoDigitNum2, answer: oneDigitNum1 + twoDigitNum1 + twoDigitNum2)
         case 4: // ex) 21 X 3 X 9
-            mathGame = MathGame(firstN: twoDigitNum1, secondN: oneDigitNum1, thirdN: oneDigitNum2, answer: twoDigitNum1 * oneDigitNum1 * oneDigitNum2)
+            mathGame = MathGame(firstN: twoDigitNum1, secondN: oneDigitNum1, thirdN: oneDigitNum2, answer: (twoDigitNum1 * oneDigitNum1) + oneDigitNum2)
             
         default:
             mathGame = MathGame(firstN: oneDigitNum1, secondN: oneDigitNum2, thirdN: nil, answer: oneDigitNum1 + oneDigitNum2)

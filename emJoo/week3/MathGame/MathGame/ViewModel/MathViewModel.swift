@@ -40,7 +40,7 @@ class Math: ObservableObject {
     
     
     // 수학 문제 라벨 text값을 반환하는 메소드 (전달 받은 레벨에 따라)
-    func setMathProblemLabel() -> String {
+    func returnMathProblemLabel() -> String {
         switch level {
         case 3:
             return "\(math.firstN) + \(math.secondN) + \(math.thirdN!)"
@@ -50,6 +50,10 @@ class Math: ObservableObject {
         default:
             return "\(math.firstN) + \(math.secondN)"
         }
+    }
+    
+    func returnRoundLabel() -> String {
+        return "\(currentRound)/\(totalRound)"
     }
     
 }
