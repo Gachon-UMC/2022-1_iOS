@@ -314,6 +314,7 @@
                     </view>
                     <connections>
                         <outlet property="answerField" destination="JNB-Fa-wI7" id="Vlr-AX-NCs"/>
+                        <outlet property="answerView" destination="vHy-fV-z0o" id="BL1-EB-lpl"/>
                         <outlet property="backBtn" destination="RLF-2x-Fmm" id="Deb-Jd-CSv"/>
                         <outlet property="questionLabel" destination="Eje-lk-zNM" id="1qv-dJ-TRs"/>
                         <outlet property="questionNumIndicator" destination="thP-XL-AiZ" id="aEi-PK-1Ma"/>

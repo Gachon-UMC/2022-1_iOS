@@ -26,6 +26,7 @@ class GameVC: UIViewController{
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var questionNumIndicator: UILabel!
     @IBOutlet weak var answerField: UITextField!
+    @IBOutlet weak var answerView: UIView!
     
     @IBAction func backBtnTapped(_ sender: UIButton) {
         self.presentingViewController?.dismiss(animated: true)
@@ -79,7 +80,13 @@ class GameVC: UIViewController{
         
         self.answerField.delegate = self
         
-        questionNumIndicator.layer.cornerRadius = 8
+        answerView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        answerView.layer.shadowOpacity = 1
+        answerView.layer.shadowRadius = 4
+        answerView.layer.shadowOffset = CGSize(width: 0, height: 4)
+        answerView.layer.cornerRadius = 8
+        questionNumIndicator.clipsToBounds = true
+        questionNumIndicator.layer.cornerRadius = 15
         questionNumIndicator.text = String(currentQuestion) + "/" + String(questionNum)
         newQuestion()
     }
