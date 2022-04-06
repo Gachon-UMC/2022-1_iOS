@@ -16,6 +16,8 @@
 		6F6E7F8827FE095A00497AE0 /* DifficultySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6E7F8727FE095A00497AE0 /* DifficultySection.swift */; };
 		6F6E7F8A27FE09A400497AE0 /* RoundSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6E7F8927FE09A400497AE0 /* RoundSection.swift */; };
 		6F6E7F8C27FE1A2C00497AE0 /* DoneRoundSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6E7F8B27FE1A2C00497AE0 /* DoneRoundSection.swift */; };
+		6F6E7F8F27FE1DE500497AE0 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6E7F8E27FE1DE500497AE0 /* GameViewController.swift */; };
+		6F6E7F9327FE26AD00497AE0 /* GameInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6E7F9227FE26AD00497AE0 /* GameInfoModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		6F6E7F8727FE095A00497AE0 /* DifficultySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultySection.swift; sourceTree = "<group>"; };
 		6F6E7F8927FE09A400497AE0 /* RoundSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundSection.swift; sourceTree = "<group>"; };
 		6F6E7F8B27FE1A2C00497AE0 /* DoneRoundSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneRoundSection.swift; sourceTree = "<group>"; };
+		6F6E7F8E27FE1DE500497AE0 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		6F6E7F9227FE26AD00497AE0 /* GameInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfoModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 		6F6E7F7027FE08C300497AE0 /* MathGame */ = {
 			isa = PBXGroup;
 			children = (
+				6F6E7F8D27FE1DD400497AE0 /* ViewController */,
 				6F6E7F8527FE093400497AE0 /* SubViews */,
 				6F6E7F7127FE08C300497AE0 /* AppDelegate.swift */,
 				6F6E7F7327FE08C300497AE0 /* SceneDelegate.swift */,
@@ -70,6 +75,7 @@
 				6F6E7F7A27FE08C400497AE0 /* Assets.xcassets */,
 				6F6E7F7C27FE08C400497AE0 /* LaunchScreen.storyboard */,
 				6F6E7F7F27FE08C400497AE0 /* Info.plist */,
+				6F6E7F9227FE26AD00497AE0 /* GameInfoModel.swift */,
 			);
 			path = MathGame;
 			sourceTree = "<group>";
@@ -82,6 +88,14 @@
 				6F6E7F8B27FE1A2C00497AE0 /* DoneRoundSection.swift */,
 			);
 			path = SubViews;
+			sourceTree = "<group>";
+		};
+		6F6E7F8D27FE1DD400497AE0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6F6E7F8E27FE1DE500497AE0 /* GameViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,10 +169,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F6E7F8F27FE1DE500497AE0 /* GameViewController.swift in Sources */,
 				6F6E7F7627FE08C300497AE0 /* ViewController.swift in Sources */,
 				6F6E7F7227FE08C300497AE0 /* AppDelegate.swift in Sources */,
 				6F6E7F8827FE095A00497AE0 /* DifficultySection.swift in Sources */,
 				6F6E7F8A27FE09A400497AE0 /* RoundSection.swift in Sources */,
+				6F6E7F9327FE26AD00497AE0 /* GameInfoModel.swift in Sources */,
 				6F6E7F8C27FE1A2C00497AE0 /* DoneRoundSection.swift in Sources */,
 				6F6E7F7427FE08C300497AE0 /* SceneDelegate.swift in Sources */,
 			);

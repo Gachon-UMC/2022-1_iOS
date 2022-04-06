@@ -1,27 +1,29 @@
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIScrollViewDelegate {
    
+    var gameInfo = GameModel.Game(level: 3, round: 3)
+    var difficultyLevel: Int = 2
+    var gameRound: Int = 3
     let list = (1...20).map { "\($0)" }
     
     
-    lazy var contentScrollView: UIScrollView = {
-        let scrollView = UIScrollView()
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.backgroundColor = .white
-        scrollView.showsVerticalScrollIndicator = false
-            
-        return scrollView
+    lazy var scrollView: UIScrollView = {
+        let scroll = UIScrollView()
+        scroll.translatesAutoresizingMaskIntoConstraints = false
+        scroll.delegate = self
+        scroll.contentSize = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height * 2)
+        return scroll
     }()
     
-    lazy var contentView: UIView = {
-        let view = UIView()
-        view.layoutMargins = UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        
-        return view
-    }()
-    
+//    lazy var contentView: UIView = {
+//        let view = UIView()
+//        view.layoutMargins = UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
+//        view.translatesAutoresizingMaskIntoConstraints = false
+//
+//        return view
+//    }()
+//
     
     lazy var startButton: UIButton = {
         let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 52, height: 32))
@@ -50,7 +52,19 @@ class ViewController: UIViewController {
     let sectionTitle = DifficultySection().sectionTitle
     let emojiLabel = DifficultySection().emojiLabel
     let calculateExpressionLabel = DifficultySection().calculateExpressionLabel
-    let slider = DifficultySection().slider
+    lazy var slider: UISlider = {
+        let slider = UISlider()
+   
+        slider.minimumValue = 0
+        slider.maximumValue = 5
+        slider.minimumTrackTintColor = .white
+        slider.maximumTrackTintColor = .white
+        slider.isContinuous = false
+        slider.translatesAutoresizingMaskIntoConstraints = false
+        slider.addTarget(self, action: #selector(onChangeValueSlider(sender:)), for: UIControl.Event.valueChanged)
+
+        return slider
+    }()
     let diffitcultySideIndicator = DifficultySection().diffitcultySideIndicator
     
     /* Round Section Container */
@@ -80,9 +94,6 @@ class ViewController: UIViewController {
         return view
     }()
     
-
-    
-    
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,7 +101,13 @@ class ViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         view.backgroundColor = UIColor(named: "dark")
-        view.addSubview(contentView)
+     
+        view.addSubview(scrollView)
+        let layout = view.safeAreaLayoutGuide
+         scrollView.centerXAnchor.constraint(equalTo: layout.centerXAnchor).isActive = true
+         scrollView.centerYAnchor.constraint(equalTo: layout.centerYAnchor).isActive = true
+         scrollView.widthAnchor.constraint(equalTo: layout.widthAnchor).isActive = true
+         scrollView.heightAnchor.constraint(equalTo: layout.heightAnchor).isActive = true
     
         /* UI Component Setting Method*/
         setContentView()
@@ -106,12 +123,12 @@ class ViewController: UIViewController {
         
         /* Done Round Section Container */
         doneRoundContainer.topAnchor.constraint(equalTo: doneRoundSectionTitle.bottomAnchor, constant: 14).isActive = true
-        doneRoundContainer.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 0).isActive = true
-        doneRoundContainer.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 0).isActive = true
+        doneRoundContainer.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
+        doneRoundContainer.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
         doneRoundContainer.heightAnchor.constraint(equalToConstant: 84).isActive = true
         
         /* Done Label */
-        doneRoundLabel.topAnchor.constraint(equalTo: doneRoundContainer.topAnchor, constant: doneRoundContainer.frame.height / 2).isActive = true
+        doneRoundLabel.topAnchor.constraint(equalTo: doneRoundContainer.topAnchor, constant: 21).isActive = true
         doneRoundLabel.rightAnchor.constraint(equalTo: doneRoundContainer.rightAnchor,constant: 0).isActive = true
         doneRoundLabel.leftAnchor.constraint(equalTo: doneRoundContainer.leftAnchor, constant: 0).isActive = true
 
@@ -121,14 +138,14 @@ class ViewController: UIViewController {
     func setRoundSection() {
         /* Section Title*/
         roundSectionTitle.topAnchor.constraint(equalTo: difficultyContainer.bottomAnchor, constant: 30).isActive = true
-        roundSectionTitle.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 0).isActive = true
-        roundSectionTitle.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 0).isActive = true
+        roundSectionTitle.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
+        roundSectionTitle.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
  
         
         /* Round Section Container */
         roundContainer.topAnchor.constraint(equalTo: roundSectionTitle.bottomAnchor, constant: 20).isActive = true
-        roundContainer.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 0).isActive = true
-        roundContainer.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 0).isActive = true
+        roundContainer.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
+        roundContainer.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
         roundContainer.heightAnchor.constraint(equalToConstant: 218).isActive = true
         
         
@@ -137,24 +154,34 @@ class ViewController: UIViewController {
         roundWheePicker.leftAnchor.constraint(equalTo: roundContainer.leftAnchor, constant: 0).isActive = true
         roundWheePicker.rightAnchor.constraint(equalTo: roundContainer.rightAnchor, constant: 0).isActive = true
         roundWheePicker.bottomAnchor.constraint(equalTo: roundContainer.bottomAnchor, constant: 0).isActive = true
+        roundWheePicker.selectRow(gameRound, inComponent: 0, animated: false)
     }
     
 
     
     func setContentView() {
-        contentView.topAnchor.constraint(equalTo: (self.navigationController?.navigationBar.bottomAnchor)!, constant: 30).isActive = true
-        contentView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
-        contentView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
-        contentView.addSubview(sectionTitle)
-        contentView.addSubview(difficultyContainer)
-        contentView.addSubview(roundSectionTitle)
-        contentView.addSubview(roundContainer)
-        contentView.addSubview(doneRoundSectionTitle)
-        contentView.addSubview(doneRoundContainer)
+//        contentView.topAnchor.constraint(equalTo: (self.navigationController?.navigationBar.bottomAnchor)!, constant: 30).isActive = true
+//        contentView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+//        contentView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+//        contentView.addSubview(sectionTitle)
+//        contentView.addSubview(difficultyContainer)
+//        contentView.addSubview(roundSectionTitle)
+//        contentView.addSubview(roundContainer)
+//        contentView.addSubview(doneRoundSectionTitle)
+//        contentView.addSubview(doneRoundContainer)
+        
+        view.addSubview(sectionTitle)
+        view.addSubview(difficultyContainer)
+        view.addSubview(roundSectionTitle)
+        view.addSubview(roundContainer)
+        view.addSubview(doneRoundSectionTitle)
+        view.addSubview(doneRoundContainer)
 
 
         view.addSubview(slider)
         view.addSubview(roundWheePicker)
+        
+        
 
         
     }
@@ -162,9 +189,13 @@ class ViewController: UIViewController {
     
     func setDifficultySection() {
         /* Stack View Layout */
+
+        
+        sectionTitle.topAnchor.constraint(equalTo: (self.navigationController?.navigationBar.bottomAnchor)!, constant: 30).isActive = true
+        
         difficultyContainer.topAnchor.constraint(equalTo: sectionTitle.bottomAnchor, constant: 20).isActive = true
-        difficultyContainer.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 0).isActive = true
-        difficultyContainer.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 0).isActive = true
+        difficultyContainer.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
+        difficultyContainer.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
         difficultyContainer.heightAnchor.constraint(equalToConstant: 180).isActive = true
         
         /* Emoji Label */
@@ -181,6 +212,8 @@ class ViewController: UIViewController {
         slider.topAnchor.constraint(equalTo: emojiLabel.bottomAnchor, constant: 30).isActive = true
         slider.leftAnchor.constraint(equalTo: difficultyContainer.leftAnchor, constant: 20).isActive = true
         slider.rightAnchor.constraint(equalTo: difficultyContainer.rightAnchor, constant: -20).isActive = true
+        slider.setValue(Float(difficultyLevel), animated: true)
+
         
         /* Range Side Calculator */
         diffitcultySideIndicator.bottomAnchor.constraint(equalTo: difficultyContainer.bottomAnchor, constant: -10).isActive = true
@@ -198,14 +231,22 @@ class ViewController: UIViewController {
     }
     
     /* Intent */
-    
     @objc func onChangeValueSlider(sender: UISlider){
-        sender.setValue(sender.value.rounded(.down), animated: true)
+        let selectedValue = sender.value.rounded(.down)
+        sender.setValue(selectedValue, animated: true)
+        difficultyLevel = Int(selectedValue)
+
     }
     
     @objc func tapStartButton() {
         print("START BUTTON CLIKED")
+        let vc = GameViewController()
+        vc.difficultyLevel = difficultyLevel
+        vc.gameRound = gameRound
+        self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+  
     
     
 }
@@ -231,6 +272,5 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         return NSAttributedString(string: list[row], attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
     }
 }
-
 
 
