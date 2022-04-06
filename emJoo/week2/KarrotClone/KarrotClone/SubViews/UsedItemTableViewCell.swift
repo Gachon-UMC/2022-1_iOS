@@ -127,7 +127,9 @@ class UsedItemTableViewCell: UITableViewCell {
         thumnail.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
         thumnail.topAnchor.constraint(equalTo: topAnchor, constant: 16).isActive = true
         thumnail.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16).isActive = true
+        
         thumnail.widthAnchor.constraint(equalToConstant: contentView.frame.height - 32).isActive = true
+        
         heartIcon.rightAnchor.constraint(equalTo: stackView.rightAnchor, constant: 0).isActive = true
         heartIcon.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16 ).isActive = true
   
