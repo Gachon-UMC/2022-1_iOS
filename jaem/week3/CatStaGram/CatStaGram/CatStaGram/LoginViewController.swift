@@ -15,10 +15,16 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var loginBtn: UIButton!
     
+    @IBOutlet weak var orLine1: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        loginBtn.layer.shadowColor = UIColor.black.cgColor
+        loginBtn.layer.masksToBounds = false
+        loginBtn.layer.shadowOffset = CGSize(width: 0, height: 4)
+        loginBtn.layer.shadowRadius = 5
+        loginBtn.layer.shadowOpacity = 0.3
     }
     
 

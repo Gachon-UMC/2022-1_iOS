@@ -146,6 +146,7 @@
                     <navigationItem key="navigationItem" id="aUG-1Y-9Rf"/>
                     <connections>
                         <outlet property="loginBtn" destination="urc-0S-872" id="883-be-xWI"/>
+                        <outlet property="orLine1" destination="22P-s0-ebf" id="Zx3-Bj-K8A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
