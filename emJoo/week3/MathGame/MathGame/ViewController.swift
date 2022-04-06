@@ -247,8 +247,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     @objc func tapStartButton() {
         print("START BUTTON CLIKED")
         let vc = GameViewController()
-        vc.difficultyLevel = difficultyLevel
-        vc.gameRound = gameRound
+//        vc.difficultyLevel = difficultyLevel
+//        vc.gameRound = gameRound
+        vc.vm = Math(totalRound: gameRound, level: difficultyLevel)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
