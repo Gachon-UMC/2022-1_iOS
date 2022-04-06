@@ -4,6 +4,7 @@ class GameViewController: UIViewController {
     
     var difficultyLevel: Int = 0
     var gameRound: Int = 0
+
     
     lazy var backArrowButton: UIBarButtonItem = {
         let barBtnItem = UIBarButtonItem(image: UIImage(systemName: "arrow.left"), style: .done, target: self, action: #selector(routeBack))
@@ -26,12 +27,19 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavgationUISetting()
+    }
+    
+    
+    
+    
+    /* UI Initial Settings */
+    func setNavgationUISetting() {
         self.view.backgroundColor = UIColor(named: "dark")
         self.navigationItem.leftBarButtonItem = backArrowButton
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: roundIndicator)
         
-        print(difficultyLevel)
-        print(gameRound)
+        roundIndicator.setTitle("1/\(gameRound + 1)", for: .normal)
     }
     
     

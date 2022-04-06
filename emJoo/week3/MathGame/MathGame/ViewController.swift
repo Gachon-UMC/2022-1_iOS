@@ -2,10 +2,10 @@ import UIKit
 
 class ViewController: UIViewController, UIScrollViewDelegate {
    
-    var gameInfo = GameModel.Game(level: 3, round: 3)
     var difficultyLevel: Int = 2
     var gameRound: Int = 3
     let list = (1...20).map { "\($0)" }
+
     
     
     lazy var scrollView: UIScrollView = {
@@ -56,7 +56,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         let slider = UISlider()
    
         slider.minimumValue = 0
-        slider.maximumValue = 5
+        slider.maximumValue = 4
         slider.minimumTrackTintColor = .white
         slider.maximumTrackTintColor = .white
         slider.isContinuous = false
@@ -202,11 +202,13 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         emojiLabel.topAnchor.constraint(equalTo: difficultyContainer.topAnchor, constant: 34).isActive = true
         emojiLabel.leftAnchor.constraint(equalTo: difficultyContainer.leftAnchor, constant: 0).isActive = true
         emojiLabel.rightAnchor.constraint(equalTo: difficultyContainer.rightAnchor, constant: 0).isActive = true
+        emojiLabel.text = GameModel().levelIndicator[difficultyLevel].emoji
         
         /* MathExpression Label */
         calculateExpressionLabel.topAnchor.constraint(equalTo: emojiLabel.bottomAnchor, constant: 4).isActive = true
         calculateExpressionLabel.leftAnchor.constraint(equalTo: difficultyContainer.leftAnchor, constant: 0).isActive = true
         calculateExpressionLabel.rightAnchor.constraint(equalTo: difficultyContainer.rightAnchor, constant: 0).isActive = true
+        calculateExpressionLabel.text = GameModel().levelIndicator[difficultyLevel].example
         
         /* Slider */
         slider.topAnchor.constraint(equalTo: emojiLabel.bottomAnchor, constant: 30).isActive = true
@@ -233,8 +235,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     /* Intent */
     @objc func onChangeValueSlider(sender: UISlider){
         let selectedValue = sender.value.rounded(.down)
+        let levelIndicator = GameModel().levelIndicator[Int(selectedValue)]
         sender.setValue(selectedValue, animated: true)
         difficultyLevel = Int(selectedValue)
+        emojiLabel.text = levelIndicator.emoji
+        calculateExpressionLabel.text = levelIndicator.example
+
 
     }
     
@@ -266,6 +272,7 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
       
       func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
           print("select=\(row)")
+          gameRound = row
       }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
