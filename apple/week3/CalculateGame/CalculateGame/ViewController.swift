@@ -103,6 +103,26 @@ class ViewController: UIViewController {
     let step: Float = 1
     let roundedValue = round(sender.value/step) * step
     sender.value = roundedValue
+    
+    switch sender.value {
+    case 0:
+      levelLabel.text = "😋 매우 쉬움"
+      exampleLabel.text = "3 + 4 = ?"
+    case 1:
+      levelLabel.text = "😎 쉬움"
+      exampleLabel.text = "14 + 2 = ?"
+    case 2:
+      levelLabel.text = "🙂 보통"
+      exampleLabel.text = "23 + 17 = ?"
+    case 3:
+      levelLabel.text = "😕 어려움"
+      exampleLabel.text = "43 + 23 + 34 = ?"
+    case 4:
+      levelLabel.text = "😱 매우 어려움"
+      exampleLabel.text = "(72 X 6) + 32 = ?"
+    default:
+      return
+    }
   }
 }
 
