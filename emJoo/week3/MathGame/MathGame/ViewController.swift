@@ -98,6 +98,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ReceiveDataDelegat
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadCompletedRound()
     }
     
     override func viewDidLayoutSubviews() {
@@ -245,10 +246,20 @@ class ViewController: UIViewController, UIScrollViewDelegate, ReceiveDataDelegat
     func receiveChildData(_ child: UIViewController, data: Int) {
         completedRoundNum = data
         doneRoundLabel.text = String(data)
+        saveCompletedRound()
     }
     
+    // Local Database save & load Intents
+    func saveCompletedRound() {
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(completedRoundNum, forKey: "round")
+    }
     
-    
+    func loadCompletedRound() {
+        let userDefaults = UserDefaults.standard
+        guard let data = userDefaults.string(forKey: "round") else { return }
+        completedRoundNum = Int(data)!
+    }
 }
 
 extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
