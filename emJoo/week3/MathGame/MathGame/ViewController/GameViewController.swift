@@ -4,9 +4,9 @@ import SwiftUI
 class GameViewController: UIViewController, UITextFieldDelegate{
     
     var vm: Math = Math(totalRound: 0, level: 0)
- 
+    var delegate: ReceiveDataDelegate!
+    var compeletedRound:Int = 0
 
-    
     lazy var backArrowButton: UIBarButtonItem = {
         let barBtnItem = UIBarButtonItem(image: UIImage(systemName: "arrow.left"), style: .done, target: self, action: #selector(routeBack))
         barBtnItem.tintColor = .white
@@ -109,10 +109,7 @@ class GameViewController: UIViewController, UITextFieldDelegate{
         equalSignLabel.topAnchor.constraint(equalTo: answerContainer.topAnchor, constant: 0).isActive = true
         equalSignLabel.bottomAnchor.constraint(equalTo: answerContainer.bottomAnchor, constant: 0).isActive = true
         equalSignLabel.leftAnchor.constraint(equalTo: answerContainer.leftAnchor, constant:0).isActive = true
-        
-        
-
-        
+                
     }
     
     
@@ -124,6 +121,7 @@ class GameViewController: UIViewController, UITextFieldDelegate{
         
     }
     
+    // TextField 에서 'Rreturn을 클릭할 때'
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let text = textField.text else { return false }
         print("\(vm.level)")
@@ -147,9 +145,16 @@ class GameViewController: UIViewController, UITextFieldDelegate{
         let alert = UIAlertController(title: "성공", message: nil, preferredStyle: .alert)
         let confirm = UIAlertAction(title: "확인", style: .default) { _ in
             self.routeBack()
+            self.delegateACtion()
         }
         alert.addAction(confirm)
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func delegateACtion() {
+
+        delegate.receiveChildData(self, data: 2)
+        print("DOES DELEGATE WORKED?")
     }
 
 
@@ -158,4 +163,7 @@ class GameViewController: UIViewController, UITextFieldDelegate{
     }
     
 }
+
+
+
 

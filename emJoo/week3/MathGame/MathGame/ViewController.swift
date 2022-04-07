@@ -1,7 +1,8 @@
 import UIKit
 
-class ViewController: UIViewController, UIScrollViewDelegate {
-   
+class ViewController: UIViewController, UIScrollViewDelegate, ReceiveDataDelegate {
+
+    var completedRoundNum: Int = 0
     var difficultyLevel: Int = 2
     var gameRound: Int = 3
     let list = (1...20).map { "\($0)" }
@@ -131,6 +132,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         doneRoundLabel.topAnchor.constraint(equalTo: doneRoundContainer.topAnchor, constant: 21).isActive = true
         doneRoundLabel.rightAnchor.constraint(equalTo: doneRoundContainer.rightAnchor,constant: 0).isActive = true
         doneRoundLabel.leftAnchor.constraint(equalTo: doneRoundContainer.leftAnchor, constant: 0).isActive = true
+        doneRoundLabel.text = String(completedRoundNum)
 
     }
     
@@ -160,16 +162,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
     
     func setContentView() {
-//        contentView.topAnchor.constraint(equalTo: (self.navigationController?.navigationBar.bottomAnchor)!, constant: 30).isActive = true
-//        contentView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
-//        contentView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
-//        contentView.addSubview(sectionTitle)
-//        contentView.addSubview(difficultyContainer)
-//        contentView.addSubview(roundSectionTitle)
-//        contentView.addSubview(roundContainer)
-//        contentView.addSubview(doneRoundSectionTitle)
-//        contentView.addSubview(doneRoundContainer)
-        
         view.addSubview(sectionTitle)
         view.addSubview(difficultyContainer)
         view.addSubview(roundSectionTitle)
@@ -180,10 +172,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
         view.addSubview(slider)
         view.addSubview(roundWheePicker)
-        
-        
-
-        
     }
     
     
@@ -232,7 +220,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         self.navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: startButton)]
     }
     
-    /* Intent */
+    /* MARK: Intents */
     @objc func onChangeValueSlider(sender: UISlider){
         let selectedValue = sender.value.rounded(.down)
         let levelIndicator = GameModel().levelIndicator[Int(selectedValue)]
@@ -245,16 +233,19 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @objc func tapStartButton() {
-        print("START BUTTON CLIKED")
         let vc = GameViewController()
-//        vc.difficultyLevel = difficultyLevel
-//        vc.gameRound = gameRound
         print(difficultyLevel)
         vc.vm = Math(totalRound: gameRound + 1, level: difficultyLevel)
+        vc.compeletedRound = completedRoundNum
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-  
+    // 이전 ViewController에서 받은 값들을 Tableview에 업데이트
+    func receiveChildData(_ child: UIViewController, data: Int) {
+        completedRoundNum = data
+        doneRoundLabel.text = String(data)
+    }
+    
     
     
 }
@@ -283,3 +274,7 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 }
 
 
+
+protocol ReceiveDataDelegate: AnyObject {
+    func receiveChildData(_ child: UIViewController, data: Int)
+}
