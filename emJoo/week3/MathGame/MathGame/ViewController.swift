@@ -237,6 +237,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, ReceiveDataDelegat
         print(difficultyLevel)
         vc.vm = Math(totalRound: gameRound + 1, level: difficultyLevel)
         vc.compeletedRound = completedRoundNum
+        vc.delegate = self
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

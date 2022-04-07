@@ -145,15 +145,15 @@ class GameViewController: UIViewController, UITextFieldDelegate{
         let alert = UIAlertController(title: "성공", message: nil, preferredStyle: .alert)
         let confirm = UIAlertAction(title: "확인", style: .default) { _ in
             self.routeBack()
-            self.delegateACtion()
+            self.delegateAction()
         }
         alert.addAction(confirm)
         self.present(alert, animated: true, completion: nil)
     }
     
-    func delegateACtion() {
-
-        delegate.receiveChildData(self, data: 2)
+    func delegateAction() {
+        let willPassRound = compeletedRound + 1
+        delegate.receiveChildData(self, data: willPassRound)
         print("DOES DELEGATE WORKED?")
     }
 
