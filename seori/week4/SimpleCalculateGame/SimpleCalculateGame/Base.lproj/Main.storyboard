@@ -184,7 +184,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rsX-Cw-9Nc">
-                                <rect key="frame" x="110" y="312" width="194" height="100"/>
+                                <rect key="frame" x="107" y="312" width="200" height="100"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="정답" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="acc-SV-8CP">
                                         <rect key="frame" x="50" y="21" width="140" height="58"/>
@@ -208,6 +208,7 @@
                                 </subviews>
                                 <color key="backgroundColor" name="mainColor2"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="GSu-cL-MjN"/>
                                     <constraint firstItem="T5r-fR-KoO" firstAttribute="centerY" secondItem="rsX-Cw-9Nc" secondAttribute="centerY" id="J2Y-Ji-ICd"/>
                                     <constraint firstAttribute="height" constant="100" id="KKV-bR-fOr"/>
                                     <constraint firstItem="acc-SV-8CP" firstAttribute="leading" secondItem="rsX-Cw-9Nc" secondAttribute="leading" constant="50" id="LtW-mg-hlp"/>
@@ -230,7 +231,6 @@
                         <viewLayoutGuide key="safeArea" id="UHL-64-p1I"/>
                         <color key="backgroundColor" name="mainColor1"/>
                         <constraints>
-                            <constraint firstItem="rsX-Cw-9Nc" firstAttribute="width" secondItem="gsu-Ug-NMA" secondAttribute="width" multiplier="1.53968" id="5ei-eS-cKf"/>
                             <constraint firstItem="gsu-Ug-NMA" firstAttribute="top" secondItem="UHL-64-p1I" secondAttribute="top" constant="70" id="BQK-eK-sAY"/>
                             <constraint firstItem="rsX-Cw-9Nc" firstAttribute="centerX" secondItem="UHL-64-p1I" secondAttribute="centerX" id="TyI-h0-CAm"/>
                             <constraint firstItem="gsu-Ug-NMA" firstAttribute="centerX" secondItem="UHL-64-p1I" secondAttribute="centerX" id="Z65-bk-2th"/>
