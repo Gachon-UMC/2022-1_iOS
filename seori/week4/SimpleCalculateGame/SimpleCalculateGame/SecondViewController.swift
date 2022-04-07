@@ -28,6 +28,7 @@ class SecondViewController: UIViewController {
     
     // 게임 완료 횟수 (Int)
     var gameCompletedNum: Int = 0
+    var sendGameCompletedNum: ((_ gameCompletedNum: Int)-> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -156,6 +157,9 @@ class SecondViewController: UIViewController {
                 questionLabel.text = game.question[game.currentStage - 1]
                 
                 correctQuestionNum.text = String(game.currentStage) + "/" + String(game.questionNum)
+                
+                // 텍스트 필드 초기화.
+                answerField.text = ""
             }
         } else { answerField.text = "" }
     }
@@ -166,6 +170,12 @@ class SecondViewController: UIViewController {
         
         // alert 뜨고 확인 클릭했을 때 실행할 코드.
         let alertAction = UIAlertAction(title: "확인", style: .default) { [self] _ in
+            
+            // 게임 완료 횟수 업데이트 후 mainVC로 데이터 전송.
+            gameCompletedNum += 1
+            sendGameCompletedNum?(gameCompletedNum)
+            
+            // mainVC로 화면 전환.
             self.navigationController?.popViewController(animated: true)
         }
         

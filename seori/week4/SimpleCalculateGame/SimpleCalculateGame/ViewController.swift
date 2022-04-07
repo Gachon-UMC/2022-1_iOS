@@ -24,6 +24,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     // 게임 완료 횟수.
     @IBOutlet weak var gameCompletedNumLabel: UILabel!
+    var gameCompletedNum = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,6 +115,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         // 전달하고 화면 전환.
         gameVC.game = game
+        gameVC.gameCompletedNum = gameCompletedNum
+        
+        // mainVC로 다시 돌아올 때 데이터를 전달 받아서 업데이트 하기 위해.
+        gameVC.sendGameCompletedNum = { (gameCompletedNum: Int) in
+            self.gameCompletedNum = gameCompletedNum
+            self.gameCompletedNumLabel.text = String(self.gameCompletedNum)
+        }
+        
         self.navigationController?.pushViewController(gameVC, animated: true)
         
     }
