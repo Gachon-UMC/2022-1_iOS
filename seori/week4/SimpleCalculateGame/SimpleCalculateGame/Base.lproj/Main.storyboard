@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OsH-jI-ybW">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SimpleCalculateGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainVC" id="BYZ-38-t0r" customClass="ViewController" customModule="SimpleCalculateGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,27 +38,27 @@
                                 <rect key="frame" x="20" y="148.5" width="374" height="177"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🙂 보통" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoL-XZ-NVc">
-                                        <rect key="frame" x="158.5" y="30" width="57" height="18"/>
+                                        <rect key="frame" x="158.5" y="35.5" width="57" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23 + 17 = ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqB-Se-1kC">
-                                        <rect key="frame" x="158" y="58" width="58" height="11.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="lqB-Se-1kC" secondAttribute="height" multiplier="5:1" id="kfA-AN-bYG"/>
-                                        </constraints>
+                                        <rect key="frame" x="158" y="66" width="58" height="13.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <color key="textColor" name="mainColor3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="BMc-DB-Cb2">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2.5" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="BMc-DB-Cb2">
                                         <rect key="frame" x="18" y="99.5" width="338" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="BMc-DB-Cb2" secondAttribute="height" multiplier="167:15" id="cIr-IC-iZ5"/>
                                         </constraints>
                                         <color key="minimumTrackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="maximumTrackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="g81-PP-mWN"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🙂 매우 쉬움" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y4O-J7-dI2">
                                         <rect key="frame" x="15" y="148" width="65.5" height="14"/>
@@ -76,13 +76,12 @@
                                 <color key="backgroundColor" name="mainColor2"/>
                                 <constraints>
                                     <constraint firstItem="GpU-cJ-Yce" firstAttribute="top" secondItem="BMc-DB-Cb2" secondAttribute="bottom" constant="18.5" id="78W-cQ-UUk"/>
-                                    <constraint firstItem="lqB-Se-1kC" firstAttribute="top" secondItem="eoL-XZ-NVc" secondAttribute="bottom" constant="10" id="Abz-9V-Av9"/>
-                                    <constraint firstItem="BMc-DB-Cb2" firstAttribute="top" secondItem="lqB-Se-1kC" secondAttribute="bottom" constant="30" id="Ill-X2-Qlc"/>
-                                    <constraint firstItem="eoL-XZ-NVc" firstAttribute="top" secondItem="JEl-OJ-fVU" secondAttribute="top" constant="30" id="JZS-Fb-234"/>
+                                    <constraint firstItem="lqB-Se-1kC" firstAttribute="top" secondItem="eoL-XZ-NVc" secondAttribute="bottom" constant="10" id="OYa-1f-DUc"/>
                                     <constraint firstItem="lqB-Se-1kC" firstAttribute="centerX" secondItem="JEl-OJ-fVU" secondAttribute="centerX" id="Oga-rq-HoA"/>
                                     <constraint firstAttribute="bottom" secondItem="GpU-cJ-Yce" secondAttribute="bottom" constant="15" id="Vgv-Yc-6AP"/>
                                     <constraint firstAttribute="trailing" secondItem="GpU-cJ-Yce" secondAttribute="trailing" constant="15" id="Xf5-g2-Dan"/>
                                     <constraint firstItem="y4O-J7-dI2" firstAttribute="top" secondItem="BMc-DB-Cb2" secondAttribute="bottom" constant="18.5" id="Zow-Bg-pot"/>
+                                    <constraint firstItem="BMc-DB-Cb2" firstAttribute="top" secondItem="lqB-Se-1kC" secondAttribute="bottom" constant="20" id="a25-0Y-BRe"/>
                                     <constraint firstItem="BMc-DB-Cb2" firstAttribute="leading" secondItem="JEl-OJ-fVU" secondAttribute="leading" constant="20" id="aLJ-ul-DDf"/>
                                     <constraint firstAttribute="trailing" secondItem="BMc-DB-Cb2" secondAttribute="trailing" constant="20" id="edB-Tv-2fX"/>
                                     <constraint firstItem="y4O-J7-dI2" firstAttribute="leading" secondItem="JEl-OJ-fVU" secondAttribute="leading" constant="15" id="ehd-xs-2Bb"/>
@@ -113,7 +112,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O2A-d3-OJY">
                                 <rect key="frame" x="20" y="703.5" width="374" height="95"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0I-Pz-fSI">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0I-Pz-fSI">
                                         <rect key="frame" x="174" y="23.5" width="26" height="48"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -166,6 +165,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="fBm-If-ClL"/>
                     <connections>
+                        <outlet property="gameCompletedNumLabel" destination="m0I-Pz-fSI" id="ZKM-fG-Y1I"/>
+                        <outlet property="levelExample" destination="lqB-Se-1kC" id="jaA-fW-Lvf"/>
+                        <outlet property="levelName" destination="eoL-XZ-NVc" id="2Dt-E5-cbm"/>
                         <outlet property="numPicker" destination="uRo-oC-ZsV" id="PqC-3A-dRj"/>
                     </connections>
                 </viewController>
@@ -192,7 +194,7 @@
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5r-fR-KoO">
                                         <rect key="frame" x="20" y="29" width="30" height="42"/>
@@ -247,6 +249,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="answerField" destination="acc-SV-8CP" id="wqS-Kp-vWA"/>
+                        <outlet property="questionLabel" destination="gsu-Ug-NMA" id="4f5-SE-bfX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rxq-7H-y1f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
