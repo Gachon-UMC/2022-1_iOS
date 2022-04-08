@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ViewController: UIViewController {
 
     let titleLabel = UILabel()
     var startButton = UIButton()
@@ -30,10 +30,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         super.viewDidLoad()
         
         initNavi()
-        
     }
-
     
+    // 네비게이션 바 초기화
     func initNavi() {
         view.backgroundColor = UIColor(named: "mainColor1")
         
@@ -49,7 +48,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         startButton.setTitle("시작", for: .normal)
         startButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         
-        // startButton.translatesAutoresizingMaskIntoConstraints = false -> 안 써도 되는 건가???
         startButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
         startButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
@@ -80,29 +78,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         // 게임 난이도 설정.
         level = Int(ceil(sender.value))
-    }
-    
-    
-    // picker view 설정
-    // 한 row에 표시될 요소 갯수 설정.
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        1
-    }
-    
-    // row를 최대 몇 개까지 표시할 건지 설정.
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return maxQuestion
-    }
-    
-    // Picker view row마다 표시될 숫자 설정. + 흰색으로 표시되도록 attributedTitleForRow 형식으로 사용.
-    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        
-        return NSAttributedString(string: String(row + 1), attributes: [.foregroundColor: UIColor.white])
-    }
-    
-    // 선택된 row로 게임 문제 갯수 설정.
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        questionNum = row + 1
     }
     
     // 시작 버튼 누르면 문제 화면으로 넘어가도록.
@@ -144,5 +119,29 @@ extension UIView {
             layer.cornerRadius = newValue
             layer.masksToBounds = newValue > 0
         }
+    }
+}
+
+extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    // picker view 설정
+    // 한 row에 표시될 요소 갯수 설정.
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        1
+    }
+    
+    // row를 최대 몇 개까지 표시할 건지 설정.
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return maxQuestion
+    }
+    
+    // Picker view row마다 표시될 숫자 설정. + 흰색으로 표시되도록 attributedTitleForRow 형식으로 사용.
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        
+        return NSAttributedString(string: String(row + 1), attributes: [.foregroundColor: UIColor.white])
+    }
+    
+    // 선택된 row로 게임 문제 갯수 설정.
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        questionNum = row + 1
     }
 }
