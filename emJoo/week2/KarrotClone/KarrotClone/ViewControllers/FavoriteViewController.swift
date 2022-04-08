@@ -20,7 +20,7 @@ class FavoriteViewController: UIViewController {
     
     lazy var backArrowButton: UIBarButtonItem = {
         let barBtnItem = UIBarButtonItem(image: UIImage(systemName: "arrow.left"), style: .done, target: self, action: #selector(routeBack))
-        barBtnItem.tintColor = .black
+        barBtnItem.tintColor = .white
         return barBtnItem
     }()
     
