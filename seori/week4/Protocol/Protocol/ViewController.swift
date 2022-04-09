@@ -7,6 +7,29 @@
 
 import UIKit
 
+// MARK: - Protocol 실습
+// 프로토콜 생성.
+protocol Runnable {
+    func run()
+}
+
+protocol Flyable {
+    func fly()
+}
+
+// Person에게 Flyable과 Runnable이라는 능력을 부여.
+class Person: Flyable, Runnable {
+    // 기능 구현.
+    func run() {
+        print("달렸다.")
+    }
+    
+    func fly() {
+        print("날았다!")
+    }
+}
+
+// MARK: - Delegate 실습
 // 1. 프로토콜 생성.
 protocol ChangeLabelDelegate {
     func doChange()
@@ -19,9 +42,12 @@ class ViewController: UIViewController {
     // 2. 이곳에서는 프로토콜을 정의만 해준다.
     var delegate: ChangeLabelDelegate?
     
+    var person = Person()
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        person.fly()
+        person.run()
     }
     
     // 버튼을 누르면 다음 화면으로 넘어가도록.
