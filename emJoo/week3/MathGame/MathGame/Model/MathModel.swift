@@ -17,8 +17,8 @@ struct MathModel {
         // 각 자릿수 숫자를 초기화
         oneDigitNum1 = Int.random(in: 1..<10)
         oneDigitNum2 = Int.random(in: 1..<10)
-        twoDigitNum1 = Int.random(in: 10..<20)
-        twoDigitNum2 = Int.random(in: 10..<20)
+        twoDigitNum1 = Int.random(in: 10..<100)
+        twoDigitNum2 = Int.random(in: 10..<100)
         
         // 초기화된 각 자릿수 숫자 인자값으로 store data를 initialize 진행
         switch level {
