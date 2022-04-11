@@ -248,7 +248,7 @@ class ViewController: UIViewController, ReceiveDataDelegate {
     
     /* MARK: Intents */
     @objc func onChangeValueSlider(sender: UISlider){
-        let selectedValue = sender.value.rounded(.down)
+        let selectedValue = sender.value.rounded(.down) // 1 2 3 4
         let levelIndicator = GameModel().levelIndicator[Int(selectedValue)]
         sender.setValue(selectedValue, animated: true)
         difficultyLevel = Int(selectedValue)

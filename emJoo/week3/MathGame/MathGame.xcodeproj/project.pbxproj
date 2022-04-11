@@ -74,7 +74,6 @@
 				6F6E7F8527FE093400497AE0 /* SubViews */,
 				6F6E7F7127FE08C300497AE0 /* AppDelegate.swift */,
 				6F6E7F7327FE08C300497AE0 /* SceneDelegate.swift */,
-				6F6E7F7527FE08C300497AE0 /* ViewController.swift */,
 				6F6E7F7A27FE08C400497AE0 /* Assets.xcassets */,
 				6F6E7F7C27FE08C400497AE0 /* LaunchScreen.storyboard */,
 				6F6E7F7F27FE08C400497AE0 /* Info.plist */,
@@ -95,6 +94,7 @@
 		6F6E7F8D27FE1DD400497AE0 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				6F6E7F7527FE08C300497AE0 /* ViewController.swift */,
 				6F6E7F8E27FE1DE500497AE0 /* GameViewController.swift */,
 			);
 			path = ViewController;
