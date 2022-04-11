@@ -204,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="28.037383177570092" y="53.131749460043203"/>
+            <point key="canvasLocation" x="15" y="73"/>
         </scene>
         <!--GameVC-->
         <scene sceneID="41c-La-Lks">
@@ -269,7 +269,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vHy-fV-z0o">
                                 <rect key="frame" x="137.66666666666666" y="291" width="152.99999999999997" height="84"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="정답" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JNB-Fa-wI7">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="정답" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JNB-Fa-wI7">
                                         <rect key="frame" x="40" y="0.0" width="113" height="84"/>
                                         <color key="backgroundColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.2823529541" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
