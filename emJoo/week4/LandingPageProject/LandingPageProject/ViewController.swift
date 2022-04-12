@@ -8,36 +8,23 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let dataArr = ["2,5","5,1"]
-    
-    
-    let talentsOptionContentsList = ["💻 온라인 모임에도 활발하게 참여하고 분위기를 즐겁게 같이 만들어가실 분!", "💻 새로운 기술을 배우는 걸 좋아하고 남들과 공유하는 걸 즐기시는 분!", "🍎 iOS에 열정 넘치고 애플 아니면 안되는 사람! (aka. 앱등이)", "🔥 동아리에 확실한 목표를 가지고 적극적으로 활동하실 분!", "🍺 술은 못마셔도 남들과 어울리기 좋아하는 분!"]
-    
+
     lazy var scrollView = SubViews().scrollView
     lazy var contentView = SubViews().contentView
     lazy var appBarLogo = SubViews().appBarLogo
     lazy var introduceSectionTitle = SubViews().introduceSectionTitle
     lazy var introduceDescription = SubViews().introduceDescription
     lazy var talentSectionTitle = SubViews().talentSectionTitle
-    lazy var talentOtionList: UIStackView = {
-        let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.spacing = 30
-        stackView.axis = .vertical
+    lazy var talentOtionList = SubViews().talentOtionList
+    lazy var studySectionTitle = SubViews().studySectionTitle
+    lazy var studyOptionList = SubViews().studyOptionList
+
         
-        return stackView
-    }()
-    
-
-
-    
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    
     
     override func viewDidLayoutSubviews() {
         view.backgroundColor = .black
@@ -48,29 +35,52 @@ class ViewController: UIViewController {
         setContentLayout()
         setIntroduceSection()
         setTalentSectionLayout()
-        createVLabelList(talentsOptionContentsList)
-        
-
+        createVLabelList(talentsDescriptionList, talentOtionList)
+        setStudySectionLayout()
+        createVLabelList(studyDescriptionList, studyOptionList)
+    
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: appBarLogo)
     }
     
     
-    func createVLabelList(_ passedArray: [String]) {
+    // Create Vertical Label List (It creates Label Based on array of String)
+    func createVLabelList(_ passedArray: [String], _ aimStackView: UIStackView) {
           for i in 0..<passedArray.count {
+              /* Content Opiton Label */
               let optionLabel = UILabel()
-              let element = talentsOptionContentsList[i]
+              let element = passedArray[i]
               optionLabel.textColor = UIColor(named: "lightGrey")
               optionLabel.font = UIFont.systemFont(ofSize: 12)
               optionLabel.text = element
               optionLabel.numberOfLines = .max
-              optionLabel.sizeToFit()
-              talentOtionList.addArrangedSubview(optionLabel)
+              
+              /* Leading Dot */
+              let dot = UIImageView(image: UIImage(named: "dot"))
+              dot.contentMode = .scaleAspectFit
+              
+              /* Stack View */
+              let optionStackView = UIStackView()
+              optionStackView.addArrangedSubview(dot)
+              optionStackView.addArrangedSubview(optionLabel)
+              optionStackView.sizeToFit()
+              optionStackView.layoutIfNeeded()
+              optionStackView.distribution = .fillProportionally
+              optionStackView.alignment = .leading
 
+              aimStackView.addArrangedSubview(optionStackView)
           }
+    }
+    
+    
+    func setStudySectionLayout() {
+        /* Tilte */
+        studySectionTitle.topAnchor.constraint(equalTo: talentOtionList.bottomAnchor, constant: 56).isActive = true
+        studySectionTitle.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         
-        talentOtionList.topAnchor.constraint(equalTo: talentSectionTitle.bottomAnchor, constant: 12).isActive = true
-        talentOtionList.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20).isActive = true
-        talentOtionList.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 20).isActive = true
+        /* Label List Stack View */
+        studyOptionList.topAnchor.constraint(equalTo: studySectionTitle.bottomAnchor, constant: 12).isActive = true
+        studyOptionList.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20).isActive = true
+        studyOptionList.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 20).isActive = true
     }
     
     
@@ -79,12 +89,11 @@ class ViewController: UIViewController {
         talentSectionTitle.topAnchor.constraint(equalTo: introduceDescription.bottomAnchor, constant: 56).isActive = true
         talentSectionTitle.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         
-        /* TableView */
-
-        
-        
+        /* Label List Stack View */
+        talentOtionList.topAnchor.constraint(equalTo: talentSectionTitle.bottomAnchor, constant: 12).isActive = true
+        talentOtionList.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20).isActive = true
+        talentOtionList.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 20).isActive = true
     }
-    
     
     
     func setIntroduceSection() {
@@ -97,8 +106,8 @@ class ViewController: UIViewController {
         introduceDescription.widthAnchor.constraint(equalToConstant: view.frame.width - 40).isActive = true
         introduceDescription.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20).isActive = true
         introduceDescription.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 20).isActive = true
-        
     }
+    
     
     func setContentLayout() {
         /* ContentView Stretched Layout */
@@ -112,8 +121,8 @@ class ViewController: UIViewController {
         contentView.addSubview(introduceDescription)
         contentView.addSubview(talentSectionTitle)
         contentView.addSubview(talentOtionList)
-        
-        
+        contentView.addSubview(studySectionTitle)
+        contentView.addSubview(studyOptionList)
     }
     
     

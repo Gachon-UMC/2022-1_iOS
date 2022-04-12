@@ -74,4 +74,29 @@ class SubViews {
         return sectionLabel
     }()
     
+    lazy var talentOtionList: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.spacing = 14
+        stackView.axis = .vertical
+        
+        return stackView
+    }()
+    
+    lazy var studySectionTitle: UILabel = {
+        let label = sectionTitle
+        label.text = "스터디"
+        label.translatesAutoresizingMaskIntoConstraints = false 
+        
+        return label
+    }()
+    
+    lazy var studyOptionList: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.spacing = 14
+        stackView.axis = .vertical
+        
+        return stackView
+    }()
 }
