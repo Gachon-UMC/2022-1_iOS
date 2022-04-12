@@ -13,6 +13,8 @@
 		6FA722FB2803E27D00518DAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FA722FA2803E27D00518DAC /* Assets.xcassets */; };
 		6FA722FE2803E27D00518DAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FA722FC2803E27D00518DAC /* LaunchScreen.storyboard */; };
 		6FEBB684280413E50081AC61 /* SubViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBB683280413E50081AC61 /* SubViews.swift */; };
+		6FEBB686280418060081AC61 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBB685280418060081AC61 /* DummyData.swift */; };
+		6FEBB68928041E9F0081AC61 /* TalentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBB68828041E9F0081AC61 /* TalentTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		6FA722FD2803E27D00518DAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6FA722FF2803E27D00518DAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6FEBB683280413E50081AC61 /* SubViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubViews.swift; sourceTree = "<group>"; };
+		6FEBB685280418060081AC61 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
+		6FEBB68828041E9F0081AC61 /* TalentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalentTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,25 @@
 		6FA722F02803E27C00518DAC /* LandingPageProject */ = {
 			isa = PBXGroup;
 			children = (
+				6FEBB68728041E720081AC61 /* SubViews */,
 				6FA722F12803E27C00518DAC /* AppDelegate.swift */,
 				6FA722F32803E27C00518DAC /* SceneDelegate.swift */,
 				6FA722F52803E27C00518DAC /* ViewController.swift */,
 				6FA722FA2803E27D00518DAC /* Assets.xcassets */,
 				6FA722FC2803E27D00518DAC /* LaunchScreen.storyboard */,
 				6FA722FF2803E27D00518DAC /* Info.plist */,
-				6FEBB683280413E50081AC61 /* SubViews.swift */,
+				6FEBB685280418060081AC61 /* DummyData.swift */,
 			);
 			path = LandingPageProject;
+			sourceTree = "<group>";
+		};
+		6FEBB68728041E720081AC61 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				6FEBB683280413E50081AC61 /* SubViews.swift */,
+				6FEBB68828041E9F0081AC61 /* TalentTableViewCell.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +154,9 @@
 				6FA722F62803E27C00518DAC /* ViewController.swift in Sources */,
 				6FEBB684280413E50081AC61 /* SubViews.swift in Sources */,
 				6FA722F22803E27C00518DAC /* AppDelegate.swift in Sources */,
+				6FEBB686280418060081AC61 /* DummyData.swift in Sources */,
 				6FA722F42803E27C00518DAC /* SceneDelegate.swift in Sources */,
+				6FEBB68928041E9F0081AC61 /* TalentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

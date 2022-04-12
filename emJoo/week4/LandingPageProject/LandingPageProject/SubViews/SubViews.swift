@@ -24,6 +24,8 @@ class SubViews {
         return img
     }()
     
+    /* Introduce Section */
+    
     lazy var sectionTitle: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(named: "lightGrey")
@@ -35,7 +37,7 @@ class SubViews {
     
     lazy var introduceSectionTitle: UILabel = {
         let sectionLabel = sectionTitle
-        sectionTitle.text = "UMC IOS TEAM"
+        sectionLabel.text = "UMC IOS TEAM"
         sectionLabel.translatesAutoresizingMaskIntoConstraints = false
 
         return sectionLabel
@@ -50,6 +52,26 @@ class SubViews {
         label.text = descriptionText
         
         return label
+    }()
+        
+    lazy var teamSectionTitle: UILabel = {
+        let sectionLabel = sectionTitle
+        sectionLabel.text = "팀 소개"
+        sectionLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        return sectionLabel
+    }()
+    
+    
+    /* Talent Section */
+    
+    
+    lazy var talentSectionTitle: UILabel = {
+        let sectionLabel = sectionTitle
+        sectionLabel.text = "인재상"
+        sectionLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        return sectionLabel
     }()
     
 }
