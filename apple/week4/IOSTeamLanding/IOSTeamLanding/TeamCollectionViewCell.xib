@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TeamCollectionViewCell" id="gTV-IL-0wX" customClass="TeamCollectionViewCell" customModule="IOSTeamLanding" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jt5-5v-UrP">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="LSp-Kf-zUn">
+                                <rect key="frame" x="20" y="6.5" width="60" height="57"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="1C8-sU-f6w"/>
+                                    <constraint firstAttribute="width" constant="60" id="DTG-m0-2uR"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="애플" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHV-B4-cjl">
+                                <rect key="frame" x="39.5" y="72" width="21" height="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LSp-Kf-zUn" firstAttribute="centerX" secondItem="Jt5-5v-UrP" secondAttribute="centerX" id="RYN-su-rjl"/>
+                            <constraint firstAttribute="width" constant="100" id="TXf-gB-Mgi"/>
+                            <constraint firstAttribute="height" constant="100" id="X8P-w1-SfM"/>
+                            <constraint firstItem="LSp-Kf-zUn" firstAttribute="centerY" secondItem="Jt5-5v-UrP" secondAttribute="centerY" constant="-15" id="jFj-PW-yOR"/>
+                            <constraint firstItem="oHV-B4-cjl" firstAttribute="centerX" secondItem="Jt5-5v-UrP" secondAttribute="centerX" id="k0K-5X-U6x"/>
+                            <constraint firstItem="oHV-B4-cjl" firstAttribute="top" secondItem="LSp-Kf-zUn" secondAttribute="bottom" constant="7" id="yO5-Le-spk"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="Jt5-5v-UrP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="O8f-1z-SlQ"/>
+                <constraint firstItem="Jt5-5v-UrP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="cYL-GY-r0B"/>
+                <constraint firstAttribute="trailing" secondItem="Jt5-5v-UrP" secondAttribute="trailing" id="r4Y-sC-XGk"/>
+                <constraint firstAttribute="bottom" secondItem="Jt5-5v-UrP" secondAttribute="bottom" id="xka-Y5-fg0"/>
+            </constraints>
+            <size key="customSize" width="100" height="100"/>
+            <connections>
+                <outlet property="characterView" destination="Jt5-5v-UrP" id="NQy-qQ-lTf"/>
+                <outlet property="imageView" destination="LSp-Kf-zUn" id="2T7-sn-8vg"/>
+                <outlet property="nameLabel" destination="oHV-B4-cjl" id="UMC-cP-4YR"/>
+            </connections>
+            <point key="canvasLocation" x="173.91304347826087" y="94.419642857142847"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+    </resources>
+</document>
