@@ -22,6 +22,8 @@ class ViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        createVLabelList(talentsDescriptionList, talentOtionList)
+        createVLabelList(studyDescriptionList, studyOptionList)
     }
     
     
@@ -35,9 +37,8 @@ class ViewController: UIViewController {
         setContentLayout()
         setIntroduceSection()
         setTalentSectionLayout()
-        createVLabelList(talentsDescriptionList, talentOtionList)
         setStudySectionLayout()
-        createVLabelList(studyDescriptionList, studyOptionList)
+
     
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: appBarLogo)
     }
