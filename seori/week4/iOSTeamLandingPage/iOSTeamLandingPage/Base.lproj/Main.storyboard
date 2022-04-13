@@ -47,6 +47,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nIb-7J-rOM"/>
+                    <connections>
+                        <outlet property="contentView" destination="W7E-Mv-2u2" id="Ik7-nb-mrv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
