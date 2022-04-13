@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // MARK: - Variables & Constants
+    
     // scroll view 안에 있는 내부 뷰.
     @IBOutlet weak var contentView: UIView!
     
@@ -78,6 +80,13 @@ class ViewController: UIViewController {
         return stackView
     }()
     
+    // Collection View 설정.
+    @IBOutlet weak var collectionView: UICollectionView!
+    // 팀 멤버들의 정보를 받아온다.
+    var membersInfo = TeamMembers.getMembersInfo()
+    
+    // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -85,11 +94,18 @@ class ViewController: UIViewController {
         
         // navigation bar 세팅.
         setNavigationBar()
-        
         // labels 세팅.
         setLabels()
+        
+        // collection view의 dataSource 설정.
+        collectionView.backgroundColor = .clear
+        collectionView.dataSource = self
+        
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
     }
 
+    // MARK: - Functions
+    
     // navigation bar 세팅.
     func setNavigationBar() {
         // leftBarButtonItem을 umcImage로 설정.
@@ -192,3 +208,31 @@ class ViewController: UIViewController {
     }
 }
 
+// MARK: - UICollectionDataSource
+
+// carousel을 사용하기 위한 설정.
+extension ViewController: UICollectionViewDataSource {
+    
+    // section 갯수 설정.
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    // section 하나당 들어갈 item 갯수 설정.
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return membersInfo.count
+    }
+    
+    // item 설정.
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CarouselCell", for: indexPath) as! CarouselCell
+        
+        cell.teamMembers = membersInfo[indexPath.item]
+        
+        cell.translatesAutoresizingMaskIntoConstraints = false
+        cell.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        cell.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        
+        return cell
+    }
+}

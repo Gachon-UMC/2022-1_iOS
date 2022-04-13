@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A2A2052F2806CBF4006F36C3 /* TeamMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A2052E2806CBF4006F36C3 /* TeamMembers.swift */; };
+		A2A205312806CF59006F36C3 /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A205302806CF59006F36C3 /* CarouselCell.swift */; };
 		A2CF720D2805D052009B7344 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CF720C2805D052009B7344 /* AppDelegate.swift */; };
 		A2CF720F2805D052009B7344 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CF720E2805D052009B7344 /* SceneDelegate.swift */; };
 		A2CF72112805D052009B7344 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CF72102805D052009B7344 /* ViewController.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A2A2052E2806CBF4006F36C3 /* TeamMembers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMembers.swift; sourceTree = "<group>"; };
+		A2A205302806CF59006F36C3 /* CarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
 		A2CF72092805D052009B7344 /* iOSTeamLandingPage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTeamLandingPage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2CF720C2805D052009B7344 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2CF720E2805D052009B7344 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 				A2CF720C2805D052009B7344 /* AppDelegate.swift */,
 				A2CF720E2805D052009B7344 /* SceneDelegate.swift */,
 				A2CF72102805D052009B7344 /* ViewController.swift */,
+				A2A205302806CF59006F36C3 /* CarouselCell.swift */,
+				A2A2052E2806CBF4006F36C3 /* TeamMembers.swift */,
 				A2CF72122805D052009B7344 /* Main.storyboard */,
 				A2CF72152805D053009B7344 /* Assets.xcassets */,
 				A2CF72172805D053009B7344 /* LaunchScreen.storyboard */,
@@ -260,7 +266,9 @@
 			files = (
 				A2CF72112805D052009B7344 /* ViewController.swift in Sources */,
 				A2CF720D2805D052009B7344 /* AppDelegate.swift in Sources */,
+				A2A2052F2806CBF4006F36C3 /* TeamMembers.swift in Sources */,
 				A2CF720F2805D052009B7344 /* SceneDelegate.swift in Sources */,
+				A2A205312806CF59006F36C3 /* CarouselCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
