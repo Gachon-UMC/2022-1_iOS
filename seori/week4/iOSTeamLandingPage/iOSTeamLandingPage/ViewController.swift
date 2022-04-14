@@ -85,6 +85,24 @@ class ViewController: UIViewController {
     // 팀 멤버들의 정보를 받아온다.
     var membersInfo = TeamMembers.getMembersInfo()
     
+    // hits view 설정.
+    var hitsView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(named: "highlighting")
+        view.layer.cornerRadius = 5
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    // hits label 설정.
+    var hitsLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.font = UIFont.systemFont(ofSize: 12)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -102,6 +120,9 @@ class ViewController: UIViewController {
         collectionView.dataSource = self
         
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        
+        // Hits View 세팅.
+        setHitsView()
     }
 
     // MARK: - Functions
@@ -206,6 +227,42 @@ class ViewController: UIViewController {
         studyStackView.rightAnchor.constraint(equalTo: contentView.rightAnchor,constant: -14).isActive = true
         studyStackView.heightAnchor.constraint(equalToConstant: 85).isActive = true
     }
+    
+    // Hits View 세팅.
+    func setHitsView() {
+        // hitsView 추가.
+        contentView.addSubview(hitsView)
+        
+        // 레이아웃 설정.
+        hitsView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10).isActive = true
+        hitsView.topAnchor.constraint(equalTo: studyStackView.bottomAnchor, constant: 43).isActive = true
+        hitsView.widthAnchor.constraint(equalToConstant: 52).isActive = true
+        hitsView.heightAnchor.constraint(equalToConstant: 26).isActive = true
+        
+        // hits 데이터 불러오면서 업데이트 하기.
+        getHitsNum()
+        
+        // hitsLabel 추가.
+        hitsView.addSubview(hitsLabel)
+        
+        // 레이아웃 설정.
+        hitsLabel.centerXAnchor.constraint(equalTo: hitsView.centerXAnchor, constant: 0).isActive = true
+        hitsLabel.centerYAnchor.constraint(equalTo: hitsView.centerYAnchor, constant: 0).isActive = true
+    }
+    
+    // 저장되어 있는 hitsNum을 불러온다. (& hits 1 증가)
+    func getHitsNum() {
+        DispatchQueue.main.async {
+            // key 값을 통해 값을 불러옴.
+            var hitsNum = UserDefaults.standard.integer(forKey: "hitsNum")
+            // 현재 값에 1 증가.
+            hitsNum += 1
+            // 증가된 값으로 값 재설정.
+            UserDefaults.standard.setValue(hitsNum, forKey: "hitsNum")
+            // label의 text를 새로 설정.
+            self.hitsLabel.text = "hits : " + String(hitsNum)
+        }
+    }
 }
 
 // MARK: - UICollectionDataSource
@@ -236,3 +293,4 @@ extension ViewController: UICollectionViewDataSource {
         return cell
     }
 }
+
