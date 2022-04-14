@@ -18,7 +18,7 @@ struct TeamMembers {
             TeamMembers(imagePath: "memoji_1", nickName: "임주"),
             TeamMembers(imagePath: "memoji_1", nickName: "애플"),
             TeamMembers(imagePath: "memoji_2", nickName: "잼"),
-            TeamMembers(imagePath: "memoji_2", nickName: "서리")
+            TeamMembers(imagePath: "memoji_3", nickName: "서리")
         ]
     }
 }
