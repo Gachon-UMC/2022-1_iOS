@@ -18,6 +18,7 @@
 		A28A094827F9A5920081B64B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28A094727F9A5920081B64B /* UIViewController+Extension.swift */; };
 		A291ED8627F7C4F700469D52 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A291ED8527F7C4F700469D52 /* Color+Extension.swift */; };
 		A2C642F327F8335D00F68B0D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C642F227F8335D00F68B0D /* UIView+Extension.swift */; };
+		A2E48D6B280891FE00C68622 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E48D6A280891FE00C68622 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		A28A094727F9A5920081B64B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		A291ED8527F7C4F700469D52 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		A2C642F227F8335D00F68B0D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		A2E48D6A280891FE00C68622 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		A261216027F60D4700A562D9 /* Catstagram */ = {
 			isa = PBXGroup;
 			children = (
+				A2E48D69280891E400C68622 /* Home */,
 				A261216127F60D4700A562D9 /* AppDelegate.swift */,
 				A261216327F60D4700A562D9 /* SceneDelegate.swift */,
 				A261216727F60D4700A562D9 /* Main.storyboard */,
@@ -80,6 +83,14 @@
 				A261216F27F60D4700A562D9 /* Info.plist */,
 			);
 			path = Catstagram;
+			sourceTree = "<group>";
+		};
+		A2E48D69280891E400C68622 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A2E48D6A280891FE00C68622 /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +169,7 @@
 				A261216227F60D4700A562D9 /* AppDelegate.swift in Sources */,
 				A261216427F60D4700A562D9 /* SceneDelegate.swift in Sources */,
 				A23E931D27F9D4E6006A746D /* UserInfo.swift in Sources */,
+				A2E48D6B280891FE00C68622 /* HomeViewController.swift in Sources */,
 				A28A094827F9A5920081B64B /* UIViewController+Extension.swift in Sources */,
 				A22F89FA27F6C924000BAC02 /* RegisterViewController.swift in Sources */,
 				A291ED8627F7C4F700469D52 /* Color+Extension.swift in Sources */,
