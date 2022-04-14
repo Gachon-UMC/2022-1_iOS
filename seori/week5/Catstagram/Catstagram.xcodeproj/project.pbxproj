@@ -19,6 +19,8 @@
 		A291ED8627F7C4F700469D52 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A291ED8527F7C4F700469D52 /* Color+Extension.swift */; };
 		A2C642F327F8335D00F68B0D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C642F227F8335D00F68B0D /* UIView+Extension.swift */; };
 		A2E48D6B280891FE00C68622 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E48D6A280891FE00C68622 /* HomeViewController.swift */; };
+		A2E48D6F280894CE00C68622 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E48D6D280894CE00C68622 /* FeedTableViewCell.swift */; };
+		A2E48D70280894CE00C68622 /* FeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2E48D6E280894CE00C68622 /* FeedTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		A291ED8527F7C4F700469D52 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		A2C642F227F8335D00F68B0D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		A2E48D6A280891FE00C68622 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A2E48D6D280894CE00C68622 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		A2E48D6E280894CE00C68622 /* FeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,9 +92,19 @@
 		A2E48D69280891E400C68622 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				A2E48D6C280894AA00C68622 /* Cell */,
 				A2E48D6A280891FE00C68622 /* HomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		A2E48D6C280894AA00C68622 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A2E48D6D280894CE00C68622 /* FeedTableViewCell.swift */,
+				A2E48D6E280894CE00C68622 /* FeedTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A261216E27F60D4700A562D9 /* LaunchScreen.storyboard in Resources */,
+				A2E48D70280894CE00C68622 /* FeedTableViewCell.xib in Resources */,
 				A261216B27F60D4700A562D9 /* Assets.xcassets in Resources */,
 				A261216927F60D4700A562D9 /* Main.storyboard in Resources */,
 			);
@@ -173,6 +188,7 @@
 				A28A094827F9A5920081B64B /* UIViewController+Extension.swift in Sources */,
 				A22F89FA27F6C924000BAC02 /* RegisterViewController.swift in Sources */,
 				A291ED8627F7C4F700469D52 /* Color+Extension.swift in Sources */,
+				A2E48D6F280894CE00C68622 /* FeedTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
