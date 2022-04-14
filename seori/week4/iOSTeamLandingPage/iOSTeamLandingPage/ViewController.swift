@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     // team described label 설정.
     var describedLabel: UILabel = {
         let label = UILabel()
-        label.text = "UMC GACHON iOS 팀은 자유롭고 활기찬 분위기 속에\n서 정보와 지식을 공유하며 성장하는 네트워크를 형성하는 \n것이 목표입니다. 팀원 모두 서로에게 좋은 자극이 되는 건\n강한 관계를 유지하고 있습니다. 함께 성장하기에 거리낌 \n없이 참여할 수 있는 열정 가득한 iOS 개발자를 기다리고 \n있습니다. 우리 iOS 팀은 여러분들의 많은 지원과 관심을 \n기다리고 있습니다!"
+        label.text = "UMC GACHON iOS 팀은 자유롭고 활기찬 분위기 속에서 정보와 지식을 공유하며 성장하는 네트워크를 형성하는 것이 목표입니다. 팀원 모두 서로에게 좋은 자극이 되는 건강한 관계를 유지하고 있습니다. 함께 성장하기에 거리낌 없이 참여할 수 있는 열정 가득한 iOS 개발자를 기다리고 있습니다. 우리 iOS 팀은 여러분들의 많은 지원과 관심을 기다리고 있습니다!"
         label.numberOfLines = 0
         label.textColor = .gray
         label.font = UIFont.systemFont(ofSize: 16)
@@ -177,8 +177,8 @@ class ViewController: UIViewController {
         talentLabel = mainLabelAttr("인재상")
         studyLabel = mainLabelAttr("스터디")
         
-        talentElement1 = subLabelAttr("• 💻 온라인 모임에도 활발하게 참여하고 분위기를 즐겁게 같이 만\n들어가실 분!")
-        talentElement2 = subLabelAttr("• 💻 새로운 기술을 배우는 걸 좋아하고 남들과 공유하는 걸 즐기시\n는 분!")
+        talentElement1 = subLabelAttr("• 💻 온라인 모임에도 활발하게 참여하고 분위기를 즐겁게 같이 만들어가실 분!")
+        talentElement2 = subLabelAttr("• 💻 새로운 기술을 배우는 걸 좋아하고 남들과 공유하는 걸 즐기시는 분!")
         talentElement2.attributedText = highlighting(label: talentElement2, text: "남들과 공유")
         
         talentElement3 = subLabelAttr("• 🍎 iOS에 열정 넘치고 애플 아니면 안되는 사람! (aka. 앱등이)")
@@ -186,7 +186,7 @@ class ViewController: UIViewController {
         talentElement5 = subLabelAttr("• 🍺 술은 못마셔도 남들과 어울리기 좋아하는 분!")
         
         studyElement1 = subLabelAttr("• ✨ 유데미 강의를 들으며 워크북을 작성!")
-        studyElement2 = subLabelAttr("• 🔥 저희는 Challenged Based Learning 학습을 해요. 매주 실습 \n과제로 단순 이론 보다는 직접 부딪치며 야생학습(?)을 합니다!")
+        studyElement2 = subLabelAttr("• 🔥 저희는 Challenged Based Learning 학습을 해요. 매주 실습 과제로 단순 이론 보다는 직접 부딪치며 야생학습(?)을 합니다!")
         studyElement2.attributedText = highlighting(label: studyElement2, text: "Challenged Based Learning")
         studyElement3 = subLabelAttr("• 💻 매주 서로의 코드를 리뷰하는 문화를 가지고 있습니다!")
         
@@ -207,6 +207,7 @@ class ViewController: UIViewController {
         
         describedLabel.topAnchor.constraint(equalTo: teamLabel.bottomAnchor, constant: 13).isActive = true
         describedLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 14).isActive = true
+        describedLabel.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.width / 1.08).isActive = true
         
         teamIntroLabel.topAnchor.constraint(equalTo: describedLabel.bottomAnchor, constant: 40).isActive = true
         teamIntroLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 14).isActive = true
