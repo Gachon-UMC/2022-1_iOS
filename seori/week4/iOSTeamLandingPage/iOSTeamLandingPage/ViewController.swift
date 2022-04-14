@@ -119,7 +119,7 @@ class ViewController: UIViewController {
         collectionView.backgroundColor = .clear
         collectionView.dataSource = self
         
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        collectionView.contentInset = UIEdgeInsets(top: 20, left: 14, bottom: 0, right: 14)
         
         // Hits View 세팅.
         setHitsView()
@@ -211,6 +211,7 @@ class ViewController: UIViewController {
         
         teamIntroLabel.topAnchor.constraint(equalTo: describedLabel.bottomAnchor, constant: 40).isActive = true
         teamIntroLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 14).isActive = true
+        teamIntroLabel.bottomAnchor.constraint(equalTo: collectionView.topAnchor, constant: 10).isActive = true
     
         talentLabel.topAnchor.constraint(equalTo: teamIntroLabel.bottomAnchor, constant: 215).isActive = true
         talentLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 14).isActive = true
@@ -285,11 +286,7 @@ extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CarouselCell", for: indexPath) as! CarouselCell
         
-        cell.teamMembers = membersInfo[indexPath.item]
-        
-        cell.translatesAutoresizingMaskIntoConstraints = false
-        cell.heightAnchor.constraint(equalToConstant: 150).isActive = true
-        cell.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        cell.teamMembers = membersInfo[indexPath.row]
         
         return cell
     }

@@ -12,11 +12,6 @@ struct TeamMembers {
     let imagePath: String
     let nickName: String
     
-    init(imagePath: String, nickName: String) {
-        self.imagePath = imagePath
-        self.nickName = nickName
-    }
-
     // 팀 멤버들의 정보를 배열로 가져온다.
     static func getMembersInfo() -> [TeamMembers] {
         return [

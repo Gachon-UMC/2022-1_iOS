@@ -23,14 +23,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W7E-Mv-2u2">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="965"/>
                                         <subviews>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zk1-bI-7BB">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zk1-bI-7BB" customClass="View">
                                                 <rect key="frame" x="0.0" y="270" width="414" height="150"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="Oo1-7I-Ru8"/>
+                                                    <constraint firstAttribute="height" constant="180" id="Oo1-7I-Ru8"/>
                                                 </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sCU-x9-vVk">
-                                                    <size key="itemSize" width="128" height="128"/>
+                                                    <size key="itemSize" width="150" height="150"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -46,14 +46,10 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tfw-5a-U9u">
                                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageView:KtG-IO-eL7:image" translatesAutoresizingMaskIntoConstraints="NO" id="KtG-IO-eL7">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageView:KtG-IO-eL7:image" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KtG-IO-eL7">
                                                                             <rect key="frame" x="38.5" y="10" width="73" height="84"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="width" constant="73" id="ESR-Ac-Glp"/>
-                                                                                <constraint firstAttribute="height" constant="84" id="zBc-4J-thi"/>
-                                                                            </constraints>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="애플" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSf-Kc-2Pq">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="애플" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSf-Kc-2Pq">
                                                                             <rect key="frame" x="61" y="109" width="28" height="20"/>
                                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -62,9 +58,12 @@
                                                                     </subviews>
                                                                     <color key="backgroundColor" red="0.11372549830000001" green="0.11372549830000001" blue="0.13333332540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <constraints>
+                                                                        <constraint firstAttribute="width" constant="150" id="MsD-xa-thV"/>
+                                                                        <constraint firstAttribute="height" constant="150" id="W1h-mH-RYu"/>
                                                                         <constraint firstItem="CSf-Kc-2Pq" firstAttribute="centerX" secondItem="tfw-5a-U9u" secondAttribute="centerX" id="XYB-VH-3HV"/>
-                                                                        <constraint firstItem="CSf-Kc-2Pq" firstAttribute="top" secondItem="KtG-IO-eL7" secondAttribute="bottom" constant="15" id="Z67-jO-eeh"/>
+                                                                        <constraint firstItem="CSf-Kc-2Pq" firstAttribute="top" secondItem="KtG-IO-eL7" secondAttribute="bottom" constant="15" id="aSM-zx-EKI"/>
                                                                         <constraint firstItem="KtG-IO-eL7" firstAttribute="top" secondItem="tfw-5a-U9u" secondAttribute="top" constant="10" id="aUd-fp-6um"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="CSf-Kc-2Pq" secondAttribute="bottom" constant="21" id="qB1-jN-mKr"/>
                                                                         <constraint firstItem="KtG-IO-eL7" firstAttribute="centerX" secondItem="tfw-5a-U9u" secondAttribute="centerX" id="usU-DZ-cNU"/>
                                                                     </constraints>
                                                                 </view>
@@ -90,7 +89,6 @@
                                             <constraint firstItem="Zk1-bI-7BB" firstAttribute="leading" secondItem="W7E-Mv-2u2" secondAttribute="leading" id="LqM-1I-EmO"/>
                                             <constraint firstAttribute="trailing" secondItem="Zk1-bI-7BB" secondAttribute="trailing" id="RK8-rq-5Dg"/>
                                             <constraint firstAttribute="height" constant="965" id="ZGx-aj-HaU"/>
-                                            <constraint firstItem="Zk1-bI-7BB" firstAttribute="top" secondItem="W7E-Mv-2u2" secondAttribute="top" constant="270" id="v7k-WN-d43"/>
                                         </constraints>
                                     </view>
                                 </subviews>

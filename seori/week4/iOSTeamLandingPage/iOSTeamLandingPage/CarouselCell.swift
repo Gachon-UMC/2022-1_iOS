@@ -28,7 +28,6 @@ class CarouselCell: UICollectionViewCell {
             memberNickName.text = nil
         }
         
-        backgroundColorView.backgroundColor = .darkGray
         backgroundColorView.layer.cornerRadius = 10
         backgroundColorView.layer.masksToBounds = true
         memberImage.layer.cornerRadius = 10
