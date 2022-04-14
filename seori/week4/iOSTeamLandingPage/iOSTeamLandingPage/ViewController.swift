@@ -63,7 +63,7 @@ class ViewController: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 5
-        stackView.distribution = .fillEqually
+        stackView.distribution = .equalSpacing
 
         return stackView
     }()
@@ -75,7 +75,7 @@ class ViewController: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 5
-        stackView.distribution = .fillEqually
+        stackView.distribution = .equalSpacing
 
         return stackView
     }()
@@ -152,8 +152,8 @@ class ViewController: UIViewController {
     
     func subLabelAttr(_ text: String) -> UILabel {
         let label = UILabel()
-        label.numberOfLines = 0
         label.text = text
+        label.numberOfLines = 0
         label.textColor = .gray
         label.font = UIFont.systemFont(ofSize: 14)
         label.translatesAutoresizingMaskIntoConstraints = false
