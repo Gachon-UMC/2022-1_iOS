@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="479" id="KGk-i7-Jjw" customClass="FeedTableViewCell" customModule="Catstagram" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedTableViewCell" rowHeight="479" id="KGk-i7-Jjw" customClass="FeedTableViewCell" customModule="Catstagram" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="479"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -56,6 +56,9 @@
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal" image="ic_home_heart"/>
                         <state key="selected" image="ic_home_heart_full"/>
+                        <connections>
+                            <action selector="actionIsHeart:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="VY5-8h-AJz"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rd7-fW-ZOt">
                         <rect key="frame" x="42" y="373.5" width="20" height="20"/>
@@ -84,6 +87,9 @@
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal" image="ic_bookmark_white"/>
                         <state key="selected" image="ic_bookmark_black"/>
+                        <connections>
+                            <action selector="actionIsBookMark:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="5f0-iQ-lNH"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="좋아요 4개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kcn-ez-G0b">
                         <rect key="frame" x="10" y="403.5" width="53" height="14.5"/>
@@ -113,6 +119,7 @@
                     </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="zEm-HP-m8w" firstAttribute="height" secondItem="8yj-5h-a4F" secondAttribute="height" multiplier="0.74" id="2pz-9Z-lgy"/>
                     <constraint firstItem="9EE-NL-rkH" firstAttribute="centerY" secondItem="rd7-fW-ZOt" secondAttribute="centerY" id="3GM-W6-aaU"/>
                     <constraint firstItem="9EE-NL-rkH" firstAttribute="leading" secondItem="rd7-fW-ZOt" secondAttribute="trailing" constant="15" id="5wT-Sy-tLM"/>
                     <constraint firstItem="cN9-Vw-OWn" firstAttribute="leading" secondItem="PIU-LU-uOI" secondAttribute="trailing" constant="10" id="809-4n-amC"/>
@@ -143,6 +150,16 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="buttonIsBookMark" destination="pmT-sh-4Cg" id="8up-9c-UT2"/>
+                <outlet property="buttonIsHeart" destination="SJ0-Mv-mNV" id="aDg-YO-Fls"/>
+                <outlet property="imageViewFeed" destination="NfD-bz-8Wh" id="qFf-TZ-zor"/>
+                <outlet property="imageViewMyProfile" destination="8yj-5h-a4F" id="hdq-7b-C4Q"/>
+                <outlet property="imageViewUserProfile" destination="PIU-LU-uOI" id="Zsg-E6-5LC"/>
+                <outlet property="labelFeed" destination="AD2-7h-vp5" id="aub-xj-3H9"/>
+                <outlet property="labelHowManyLike" destination="Kcn-ez-G0b" id="69f-Q8-YeK"/>
+                <outlet property="labelUserName" destination="cN9-Vw-OWn" id="RM9-CG-Boz"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="259.48660714285711"/>
         </tableViewCell>
     </objects>
