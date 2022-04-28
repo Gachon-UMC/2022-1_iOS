@@ -32,6 +32,10 @@ class ProfileCollectionViewCell: UICollectionViewCell {
         profileImageView.cornerRadius = profileImageView.frame.width / 2
         profilePlusImageView.cornerRadius =  profilePlusImageView.frame.width / 2
         
+        // profile 이미지에 테두리 생성.
+        profileImageView.layer.borderColor = UIColor.lightGray.cgColor
+        profileImageView.layer.borderWidth = 2
+        
         // button 모서리를 둥글게.
         editButton.cornerRadius = 5
         editButton.layer.borderColor = UIColor.lightGray.cgColor

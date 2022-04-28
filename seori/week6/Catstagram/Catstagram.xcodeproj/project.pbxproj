@@ -12,6 +12,8 @@
 		A21886E7280AB07000C787B5 /* StoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A21886E5280AB07000C787B5 /* StoryCollectionViewCell.xib */; };
 		A22A73B5281A440800CCAB43 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22A73B3281A440800CCAB43 /* ProfileCollectionViewCell.swift */; };
 		A22A73B6281A440800CCAB43 /* ProfileCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A22A73B4281A440800CCAB43 /* ProfileCollectionViewCell.xib */; };
+		A22A73BB281A649B00CCAB43 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22A73B9281A649B00CCAB43 /* PostCollectionViewCell.swift */; };
+		A22A73BC281A649B00CCAB43 /* PostCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A22A73BA281A649B00CCAB43 /* PostCollectionViewCell.xib */; };
 		A22F89FA27F6C924000BAC02 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22F89F927F6C924000BAC02 /* RegisterViewController.swift */; };
 		A23E931D27F9D4E6006A746D /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23E931C27F9D4E6006A746D /* UserInfo.swift */; };
 		A261216227F60D4700A562D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A261216127F60D4700A562D9 /* AppDelegate.swift */; };
@@ -36,6 +38,8 @@
 		A21886E5280AB07000C787B5 /* StoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		A22A73B3281A440800CCAB43 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		A22A73B4281A440800CCAB43 /* ProfileCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCollectionViewCell.xib; sourceTree = "<group>"; };
+		A22A73B9281A649B00CCAB43 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
+		A22A73BA281A649B00CCAB43 /* PostCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCollectionViewCell.xib; sourceTree = "<group>"; };
 		A22F89F927F6C924000BAC02 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A23E931C27F9D4E6006A746D /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		A261215E27F60D4700A562D9 /* Catstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Catstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,10 +83,28 @@
 		A22A73B2281A43B400CCAB43 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				A22A73B8281A647F00CCAB43 /* PostCell */,
+				A22A73B7281A646E00CCAB43 /* ProfileCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		A22A73B7281A646E00CCAB43 /* ProfileCell */ = {
+			isa = PBXGroup;
+			children = (
 				A22A73B3281A440800CCAB43 /* ProfileCollectionViewCell.swift */,
 				A22A73B4281A440800CCAB43 /* ProfileCollectionViewCell.xib */,
 			);
-			path = Cell;
+			path = ProfileCell;
+			sourceTree = "<group>";
+		};
+		A22A73B8281A647F00CCAB43 /* PostCell */ = {
+			isa = PBXGroup;
+			children = (
+				A22A73B9281A649B00CCAB43 /* PostCollectionViewCell.swift */,
+				A22A73BA281A649B00CCAB43 /* PostCollectionViewCell.xib */,
+			);
+			path = PostCell;
 			sourceTree = "<group>";
 		};
 		A261215527F60D4700A562D9 = {
@@ -202,6 +224,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A22A73BC281A649B00CCAB43 /* PostCollectionViewCell.xib in Resources */,
 				A261216E27F60D4700A562D9 /* LaunchScreen.storyboard in Resources */,
 				A2E48D70280894CE00C68622 /* FeedTableViewCell.xib in Resources */,
 				A261216B27F60D4700A562D9 /* Assets.xcassets in Resources */,
@@ -224,6 +247,7 @@
 				A261216227F60D4700A562D9 /* AppDelegate.swift in Sources */,
 				A2DB87AB2809F61B002D56EB /* StoryTableViewCell.swift in Sources */,
 				A21886E6280AB07000C787B5 /* StoryCollectionViewCell.swift in Sources */,
+				A22A73BB281A649B00CCAB43 /* PostCollectionViewCell.swift in Sources */,
 				A261216427F60D4700A562D9 /* SceneDelegate.swift in Sources */,
 				A23E931D27F9D4E6006A746D /* UserInfo.swift in Sources */,
 				A2E48D6B280891FE00C68622 /* HomeViewController.swift in Sources */,
