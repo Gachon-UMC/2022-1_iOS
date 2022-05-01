@@ -17,7 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
-        window?.rootViewController = ViewController()
+        
+        // 네비게이션 컨트롤러를 생성해서 rootVC로 설정.
+        let navController = UINavigationController()
+        window?.rootViewController = navController
+        
+        // 현재 네비게이션 스택에 ViewController를 추가함.
+        // viewControllers = The view controllers currently on the navigation stack.
+        navController.viewControllers = [ViewController()]
         
         return true
     }
