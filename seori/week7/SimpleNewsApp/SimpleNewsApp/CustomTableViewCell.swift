@@ -13,6 +13,7 @@ class CustomTableViewCell: UITableViewCell {
     
     // 버튼의 상태를 저장하는 변수 생성.
     lazy var isLiked : Bool = false
+    var articleToDisplay:Article?
     
     // MARK: - Subviews
     
@@ -40,6 +41,39 @@ class CustomTableViewCell: UITableViewCell {
     
     // MARK: - Functions
     
+    // cell의 내용을 기사의 제목, 내용, 사진으로 구성해 주는 함수. -> cellForRowAt에서 호출됨.
+    func displayArticle(article: Article){
+        articleToDisplay = article
+        
+        titleLabel.text = articleToDisplay!.title
+        contentLabel.text = articleToDisplay?.content
+        
+        // 이미지 url이 없는 기사가 있을 수 있다. image url이 없다면 여기서 함수를 종료시킨다.
+        guard articleToDisplay!.urlToImage != nil else {
+            return
+        }
+        
+        let urlString = articleToDisplay!.urlToImage!
+        let url = URL(string: urlString)
+        
+        guard url != nil else {
+            print("Couldn't create url object")
+            return
+        }
+        
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: url!) { (data, response, error) in
+            if(error == nil && data != nil){
+                // image를 변경하는 작업은 UI를 변경시키는 작업이므로 main thread에서 돌려주어야 한다.
+                DispatchQueue.main.async {
+                    self.articleImage.image = UIImage(data: data!)
+                }
+            }
+        }
+        
+        dataTask.resume()
+    }
+
     // cell의 서브뷰들의 레이아웃 설정.
     func configureCell() {
         contentView.addSubview(titleLabel)

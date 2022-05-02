@@ -11,7 +11,8 @@ class ViewController: UIViewController {
     
     // MARK: - Properties
     
-    let articles = ArticleModel.articles
+    var model = ArticleModel()
+    var articles = [Article]()
     
     // MARK: - Subviews
     
@@ -33,6 +34,10 @@ class ViewController: UIViewController {
         
         // table view 설정.
         setupTableView()
+    
+        // article 설정.
+        model.delegate = self
+        model.getArticles()
     }
     
     // MARK: - Functions
@@ -72,6 +77,19 @@ class ViewController: UIViewController {
     }
 }
 
+// MARK: - ArticleModelProtocol
+
+extension ViewController: ArticleModelProtocol {
+    
+    func articlesRetrieved(articles: [Article]) {
+        print("Get returned articles data from ArticleModel")
+        self.articles = articles    // 받아온 데이터를 ViewController에 저장.
+        
+        // articles 데이터를 받아온 이후에 테이블뷰를 다시 업데이트 해야 한다.
+        tableView.reloadData()
+    }
+}
+
 // MARK: - UITableViewDelegate, UITableViewDataSource
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -87,9 +105,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             preconditionFailure("테이블 뷰 가져오기 실패")
         }
         
-        cell.titleLabel.text = articles[indexPath.row].title
-        cell.contentLabel.text = articles[indexPath.row].content
-        cell.articleImage.image = UIImage(named: articles[indexPath.row].image)
+        // articles 배열에 든 구조체 article의 데이터를 행마다 하나씩 보여준다.
+        cell.displayArticle(article: articles[indexPath.row])
         
         return cell
     }

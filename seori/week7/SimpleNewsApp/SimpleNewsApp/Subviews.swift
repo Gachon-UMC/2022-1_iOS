@@ -42,7 +42,9 @@ class Subviews {
     
     lazy var articleImage: UIImageView = {
         let imageView = UIImageView()
-        // - 이미지가 흰 바탕이어서 테두리를 보이게 하려고 디자인과는 다르게 border를 추가함.
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        // - 이미지가 흰 바탕일 때 테두리를 보이게 하려고 디자인과는 다르게 border를 추가함.
         imageView.layer.borderColor = UIColor.gray.cgColor
         imageView.layer.borderWidth = 0.5
         imageView.layer.cornerRadius = 6
