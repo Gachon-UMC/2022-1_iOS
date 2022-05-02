@@ -115,4 +115,22 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 170
     }
+    
+    // 셀이 선택됐을 때 실행되는 함수.
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // 선택된 셀 생성.
+        let selectedRow = tableView.indexPathForSelectedRow //optional, to get from any UIButton for example
+        let currentCell = tableView.cellForRow(at: selectedRow!) as! CustomTableViewCell
+        
+        // detailVC에 들어갈 데이터 설정.
+        let detailVC = DetailViewController()
+        detailVC.articleTitle.text = currentCell.titleLabel.text
+        detailVC.articleImage.image = currentCell.articleImage.image ?? nil
+        detailVC.articleContent.text = currentCell.contentLabel.text
+        
+        // currentCell의 isLiked 값을 detailVC의 isLiked로 넘겨줌.
+        detailVC.isLiked = currentCell.isLiked
+        // detailVC로 화면 전환.
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
 }

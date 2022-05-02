@@ -12,8 +12,8 @@ class CustomTableViewCell: UITableViewCell {
     // MARK: - Properties
     
     // 버튼의 상태를 저장하는 변수 생성.
-    lazy var isLiked : Bool = false
-    var articleToDisplay:Article?
+    lazy var isLiked = false
+    var articleToDisplay: Article?
     
     // MARK: - Subviews
     
@@ -31,6 +31,8 @@ class CustomTableViewCell: UITableViewCell {
         // cell의 서브뷰들의 레이아웃 설정.
         configureCell()
         
+        // isLiked 상태에 따라 버튼 이미지 초기화.
+        (isLiked) ? likedButton.setImage(UIImage(systemName: "heart.fill"), for: .normal) : likedButton.setImage(UIImage(systemName: "heart"), for: .normal)
         // 버튼에 액션 연결.
         likedButton.addTarget(self, action: #selector(tappedLikedButton), for: .touchUpInside)
     }

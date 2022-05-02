@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import WebKit
 
 class Subviews {
     
@@ -44,9 +45,6 @@ class Subviews {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        // - 이미지가 흰 바탕일 때 테두리를 보이게 하려고 디자인과는 다르게 border를 추가함.
-        imageView.layer.borderColor = UIColor.gray.cgColor
-        imageView.layer.borderWidth = 0.5
         imageView.layer.cornerRadius = 6
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -54,8 +52,23 @@ class Subviews {
     
     lazy var likedButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(systemName: "heart"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
+    }()
+
+    lazy var articleTitle: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    lazy var articleContent: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
 }
