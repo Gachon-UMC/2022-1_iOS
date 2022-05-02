@@ -48,7 +48,7 @@ class CustomTableViewCell: UITableViewCell {
         articleToDisplay = article
         
         titleLabel.text = articleToDisplay!.title
-        contentLabel.text = articleToDisplay?.content
+        contentLabel.text = articleToDisplay?.description
         
         // 이미지 url이 없는 기사가 있을 수 있다. image url이 없다면 여기서 함수를 종료시킨다.
         guard articleToDisplay!.urlToImage != nil else {

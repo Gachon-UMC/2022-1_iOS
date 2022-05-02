@@ -44,9 +44,12 @@ class ViewController: UIViewController {
     
     // navigation bar 설정.
     func setupNav() {
+        // ellipsisButton 레이아웃 설정.
         view.addSubview(ellipsisButton)
         ellipsisButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
         ellipsisButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        // ellipsisButton에 액션 연결.
+        ellipsisButton.addTarget(self, action: #selector(tappedEllipsisButton), for: .touchUpInside)
         
         // large title 설정.
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -74,6 +77,41 @@ class ViewController: UIViewController {
         // separator의 좌우 간격 설정.
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
 
+    }
+    
+    // ellipsisButton을 눌렀을 때 실행될 액션.
+    @objc func tappedEllipsisButton() {
+        // AlertController 생성.
+        let alert = UIAlertController(title: nil, message: "Change News Source or Route", preferredStyle: .actionSheet)
+        
+        // alert에 들어갈 Actions 생성!
+        // us의 기사를 가져온다.
+        let americaAction = UIAlertAction(title: "America", style: .default, handler: {_ in self.model.getArticles(country: "us")
+        })
+        // china의 기사를 가져온다.
+        let chinaAction = UIAlertAction(title: "China", style: .default, handler: {_ in self.model.getArticles(country: "ch")
+        })
+        // korea의 기사를 가져온다.
+        let koreaAction = UIAlertAction(title: "Korea", style: .default, handler: {_ in self.model.getArticles(country: "kr")
+        })
+        let favoriteAction = UIAlertAction(title: "Route to Favorite Screen", style: .default, handler: {_ in
+            // favoriteVC로 화면 전환.
+            self.navigationController?.pushViewController(FavoriteViewController(), animated: true)
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        // favoriteAction의 타이틀 색을 orange 색으로 설정. (forKey의 값이 titleTextColor일 때에만 적용된다. 마음대로 변경 불가.)
+        favoriteAction.setValue(UIColor.orange, forKey: "titleTextColor")
+        
+        // 컨트롤러에 액션 추가.
+        alert.addAction(americaAction)
+        alert.addAction(chinaAction)
+        alert.addAction(koreaAction)
+        alert.addAction(favoriteAction)
+        alert.addAction(cancelAction)
+        
+        // alert를 띄운다.
+        present(alert, animated: true, completion: nil)
     }
 }
 

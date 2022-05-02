@@ -18,12 +18,12 @@ class ArticleModel {
     
     // 신문 기사 정보를 요청하는 함수.
     // 받은 JSON 데이터를 article 인스턴스로 파싱한 뒤, protocol과 delegate pattern을 이용해서 데이터를 ViewController로 전달한다.
-    func getArticles() {
+    func getArticles(country: String = "us") {
         // Request articles
         // Parse the returned JSON into article instances and pass it back to the view controller with the protocol and delegate pattern
         
         // 1. 요청할 url를 string으로 담아둔다.
-        let urlString = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=8653c0d64a9a450cbfb4cdad3350e779"
+        let urlString = "https://newsapi.org/v2/top-headlines?country=\(country)&category=business&apiKey=8653c0d64a9a450cbfb4cdad3350e779"
         // 2. 해당 스트링으로 URL 인스턴스를 생성.
         let url = URL(string: urlString)
         // 3. 해당 url이 만약에 nil 값이라면 이곳에서 중지.

@@ -12,6 +12,6 @@ import Foundation
 struct Article: Codable {
     // 해당 API가 주는 정보들 중에 SimpleNewsApp에서 받아서 사용할 것들만 구조체로 정의한다.
     var title: String?
-    var content: String?
+    var description: String?
     var urlToImage: String?
 }

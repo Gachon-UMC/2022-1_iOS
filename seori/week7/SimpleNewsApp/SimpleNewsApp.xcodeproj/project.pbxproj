@@ -17,6 +17,7 @@
 		A227D7E9281D3D18009BDE1C /* Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A227D7E8281D3D18009BDE1C /* Subviews.swift */; };
 		A253C56E281EA8F50025C827 /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A253C56D281EA8F50025C827 /* ArticleModel.swift */; };
 		A253C570281EB4930025C827 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A253C56F281EB4930025C827 /* CustomTableViewCell.swift */; };
+		A2F8310C28203F8C00B2A14A /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F8310B28203F8C00B2A14A /* FavoriteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		A227D7E8281D3D18009BDE1C /* Subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subviews.swift; sourceTree = "<group>"; };
 		A253C56D281EA8F50025C827 /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
 		A253C56F281EB4930025C827 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		A2F8310B28203F8C00B2A14A /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 			children = (
 				A227D7D8281D2804009BDE1C /* ViewController.swift */,
 				A21C7FDA281FBF3C0063D4D2 /* DetailViewController.swift */,
+				A2F8310B28203F8C00B2A14A /* FavoriteViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				A253C570281EB4930025C827 /* CustomTableViewCell.swift in Sources */,
 				A21C7FD7281FA2280063D4D2 /* Article.swift in Sources */,
 				A21C7FD9281FA23C0063D4D2 /* ArticleService.swift in Sources */,
+				A2F8310C28203F8C00B2A14A /* FavoriteViewController.swift in Sources */,
 				A227D7D9281D2804009BDE1C /* ViewController.swift in Sources */,
 				A253C56E281EA8F50025C827 /* ArticleModel.swift in Sources */,
 				A227D7D5281D2804009BDE1C /* AppDelegate.swift in Sources */,
