@@ -62,7 +62,6 @@ class FavoriteViewController: UIViewController {
     @objc func routeBack() {
         delegate.receiveChildData(self, data: originItems) // 이전 ViewController로 값 전달
         _ = navigationController?.popToRootViewController(animated: true) // 이전 View Controller로 이동
-
     }
     
     // usedItems 리스트 중 isLiked 값이 false인 값만 필터링

@@ -11,10 +11,8 @@ import UIKit
 
 class UsedItemTableViewCell: UITableViewCell {
 
-  
     static let cellId = "usedItemCell"
     
-
     /* Cell Subvies */
     let thumnail: UIImageView = {
         let img = UIImageView(image: UIImage(named: "image1"))
@@ -57,7 +55,6 @@ class UsedItemTableViewCell: UITableViewCell {
         label.numberOfLines = 2
         label.font = label.font.withSize(17)
         label.sizeToFit()
-
         
         return label
     }()
@@ -127,8 +124,8 @@ class UsedItemTableViewCell: UITableViewCell {
         thumnail.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
         thumnail.topAnchor.constraint(equalTo: topAnchor, constant: 16).isActive = true
         thumnail.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16).isActive = true
-        
         thumnail.widthAnchor.constraint(equalToConstant: contentView.frame.height - 32).isActive = true
+        print(contentView.frame.height)
         
         heartIcon.rightAnchor.constraint(equalTo: stackView.rightAnchor, constant: 0).isActive = true
         heartIcon.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16 ).isActive = true
