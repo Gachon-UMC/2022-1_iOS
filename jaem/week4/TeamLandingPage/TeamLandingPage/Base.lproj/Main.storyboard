@@ -83,7 +83,7 @@
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemberCollectionViewCell" id="Nxs-YR-hrL" customClass="MemberCollectionViewCell" customModule="TeamLandingPage" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyK-2D-Ca7">
+                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyK-2D-Ca7">
                                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gSz-YT-15u">
@@ -109,12 +109,6 @@
                                                                 <constraint firstAttribute="height" constant="150" id="yX0-cH-Lhe"/>
                                                             </constraints>
                                                         </collectionViewCellContentView>
-                                                        <constraints>
-                                                            <constraint firstAttribute="bottomMargin" secondItem="wyK-2D-Ca7" secondAttribute="bottom" constant="-8" id="C2m-mH-gIQ"/>
-                                                            <constraint firstAttribute="trailingMargin" secondItem="wyK-2D-Ca7" secondAttribute="trailing" constant="-8" id="GNt-Sw-187"/>
-                                                            <constraint firstItem="wyK-2D-Ca7" firstAttribute="top" secondItem="Nxs-YR-hrL" secondAttribute="topMargin" constant="-8" id="kdE-2n-6YN"/>
-                                                            <constraint firstItem="wyK-2D-Ca7" firstAttribute="leading" secondItem="Nxs-YR-hrL" secondAttribute="leadingMargin" constant="-8" id="za5-Lj-a7a"/>
-                                                        </constraints>
                                                         <connections>
                                                             <outlet property="backgroundColorView" destination="wyK-2D-Ca7" id="Mdr-DA-WHG"/>
                                                             <outlet property="memberImageView" destination="gSz-YT-15u" id="lLP-Ty-TH4"/>
@@ -216,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="95.758928571428569"/>
+            <point key="canvasLocation" x="177" y="70"/>
         </scene>
     </scenes>
     <resources>
