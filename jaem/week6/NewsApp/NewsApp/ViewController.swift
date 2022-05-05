@@ -81,7 +81,8 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource{
             }
         }
         
-        showDetailViewController(newsDetail, sender: nil)
+        //showDetailViewController(newsDetail, sender: nil)
+        self.navigationController?.pushViewController(newsDetail, animated: true)
     }
      
     
