@@ -6,35 +6,44 @@
 //
 
 import UIKit
+import SnapKit
 
 class CustomTableViewCell: UITableViewCell {
 
     // MARK: - Properties
     
     // 버튼의 상태를 저장하는 변수 생성.
-    lazy var isLiked = false
+    lazy var isLiked = false {
+        // 값 바뀔 때마다 버튼 이미지 체크.
+        didSet {
+            (isLiked) ? likedButton.setImage(UIImage(systemName: "heart.fill"), for: .normal) : likedButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        }
+    }
     var articleToDisplay: Article?
+    
+    // Closure를 통해 버튼 눌렀을 때의 액션을 구현하기 위함.
+    var updateLikedButton: ((Bool, UIButton)->()) = { _,_  in }
     
     // MARK: - Subviews
     
     // cell에 들어갈 서브뷰들 생성.
-    lazy var titleLabel = Subviews().titleLabel
-    lazy var contentLabel = Subviews().contentLabel
-    lazy var articleImage = Subviews().articleImage
-    lazy var likedButton = Subviews().likedButton
+    let titleLabel = UILabel()
+    let contentLabel = UILabel()
+    // TODO: 근데 Subviews 안 쓰고 이렇게 하니까 코드 재사용이 불가한데...?
+    let articleImage = UIImageView()
+    let likedButton = UIButton()
     
     // MARK: - Initialization
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        // 속성 설정.
+        setupAttributes()
         // cell의 서브뷰들의 레이아웃 설정.
-        configureCell()
-        
-        // isLiked 상태에 따라 버튼 이미지 초기화.
-        (isLiked) ? likedButton.setImage(UIImage(systemName: "heart.fill"), for: .normal) : likedButton.setImage(UIImage(systemName: "heart"), for: .normal)
-        // 버튼에 액션 연결.
-        likedButton.addTarget(self, action: #selector(tappedLikedButton), for: .touchUpInside)
+        setupLayout()
+        // target 설정.
+        setupTargets()
     }
     
     required init?(coder: NSCoder) {
@@ -76,35 +85,74 @@ class CustomTableViewCell: UITableViewCell {
         dataTask.resume()
     }
 
-    // cell의 서브뷰들의 레이아웃 설정.
-    func configureCell() {
-        contentView.addSubview(titleLabel)
-        contentView.addSubview(contentLabel)
-        contentView.addSubview(articleImage)
-        contentView.addSubview(likedButton)
+    // 속성 설정.
+    func setupAttributes() {
+        /* titleLabel attr */
+        titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        titleLabel.numberOfLines = 2
         
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 26),
-            titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20),
-            titleLabel.rightAnchor.constraint(equalTo: articleImage.leftAnchor, constant: -20),
-            
-            contentLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
-            contentLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20),
-            contentLabel.rightAnchor.constraint(equalTo: articleImage.leftAnchor, constant: -20),
-            
-            articleImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 26),
-            articleImage.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -20),
-            articleImage.widthAnchor.constraint(equalToConstant: 120),
-            articleImage.heightAnchor.constraint(equalToConstant: 120),
-            
-            likedButton.bottomAnchor.constraint(equalTo: articleImage.bottomAnchor, constant: -11),
-            likedButton.rightAnchor.constraint(equalTo: articleImage.rightAnchor, constant: -11)
-        ])
+        /* articleImage attr */
+        articleImage.contentMode = .scaleAspectFill
+        articleImage.clipsToBounds = true
+        articleImage.layer.cornerRadius = 6
+        
+        /* contentLabel attr */
+        contentLabel.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        contentLabel.textColor = .darkGray
+        contentLabel.numberOfLines = 3
+        
+        /* likedButton attr */
+        // isLiked 상태에 따라 버튼 이미지 초기화.
+        (isLiked) ? likedButton.setImage(UIImage(systemName: "heart.fill"), for: .normal) : likedButton.setImage(UIImage(systemName: "heart"), for: .normal)
+    }
+    
+    // cell의 서브뷰들의 레이아웃 설정.
+    func setupLayout() {
+        [
+            titleLabel,
+            contentLabel,
+            articleImage,
+            likedButton
+        ].forEach { contentView.addSubview($0) }
+        
+        /* titleLabel */
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(26)
+            make.left.equalToSuperview().inset(20)
+            make.right.equalTo(articleImage.snp.left).offset(-20)
+        }
+        
+        /* contentLabel */
+        contentLabel.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(8)
+            make.left.equalToSuperview().inset(20)
+            make.right.equalTo(articleImage.snp.left).offset(-20)
+        }
+        
+        /* articleImage */
+        articleImage.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(26)
+            make.right.equalToSuperview().inset(20)
+            make.width.equalTo(120)
+            make.height.equalTo(120)
+        }
+        
+        /* likedButton */
+        likedButton.snp.makeConstraints { make in
+            make.right.equalTo(articleImage.snp.right).offset(-11)
+            make.bottom.equalTo(articleImage.snp.bottom).offset(-11)
+        }
+    }
+    
+    // target 설정.
+    func setupTargets() {
+        // 버튼에 액션 연결.
+        likedButton.addTarget(self, action: #selector(tappedLikedButton), for: .touchUpInside)
     }
     
     // 버튼이 눌릴 때마다 이미지를 변경.
-    @objc func tappedLikedButton() {
+    @objc func tappedLikedButton(_ sender: UIButton) {
         isLiked = !isLiked
-        (isLiked) ? likedButton.setImage(UIImage(systemName: "heart.fill"), for: .normal) : likedButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        updateLikedButton(isLiked, sender)
     }
 }

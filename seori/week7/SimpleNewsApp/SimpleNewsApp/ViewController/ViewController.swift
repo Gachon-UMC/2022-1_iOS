@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class ViewController: UIViewController {
     
@@ -14,25 +15,31 @@ class ViewController: UIViewController {
     var model = ArticleModel()
     var articles = [Article]()
     
+    // article의 isLiked 값을 저장할 배열 생성.
+    var isLikedArray: [Bool] = []
+    
+    // Closure를 통해 버튼 눌렀을 때의 액션을 구현.
+    var updateLikedButton: ((Bool, UIButton) -> ()) = { isLiked, likedButton in
+        (isLiked) ? likedButton.setImage(UIImage(systemName: "heart.fill"), for: .normal) : likedButton.setImage(UIImage(systemName: "heart"), for: .normal)
+    }
+    
     // MARK: - Subviews
     
-    let ellipsisButton = Subviews().ellipsisButton
-    let tableView = Subviews().tableView
+    let ellipsisButton = UIButton()
+    let tableView = UITableView()
     
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // navigation bar 설정.
-        setupNav()
-        
-        // tableView의 delegate 설정.
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "cell")
-        
-        // table view 설정.
+        // 속성 설정.
+        setupAttributes()
+        // 레이아웃 설정.
+        setupLayout()
+        // target 설정.
+        setupTargets()
+        // tableView 설정.
         setupTableView()
     
         // article 설정.
@@ -42,41 +49,50 @@ class ViewController: UIViewController {
     
     // MARK: - Functions
     
-    // navigation bar 설정.
-    func setupNav() {
-        // ellipsisButton 레이아웃 설정.
-        view.addSubview(ellipsisButton)
-        ellipsisButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        ellipsisButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        // ellipsisButton에 액션 연결.
-        ellipsisButton.addTarget(self, action: #selector(tappedEllipsisButton), for: .touchUpInside)
+    // 속성 설정.
+    private func setupAttributes() {
+        /* Nav Right Bar Button Item attr */
+        ellipsisButton.setImage(UIImage(systemName: "ellipsis"), for: .normal)
         
-        // large title 설정.
+        /* Nav large title attr */
         self.navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "News"
         self.navigationController?.navigationBar.largeTitleTextAttributes = [.font: UIFont.systemFont(ofSize: 34, weight: .semibold)]
         
         // right bar button item을 커스텀한 버튼으로 지정.
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: ellipsisButton)
-    }
-    
-    // table view 설정.
-    func setupTableView() {
-        // table view 레이아웃 설정.
-        view.addSubview(tableView)
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
-            tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
         
+        /* tableView attr */
         // 첫번째 cell의 top separator를 제거.
         tableView.tableHeaderView = UIView()
         
         // separator의 좌우 간격 설정.
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-
+    }
+    
+    // 레이아웃 설정.
+    private func setupLayout() {
+        [
+            tableView
+        ].forEach { view.addSubview($0) }
+        
+        /* tableView */
+        tableView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
+    
+    // target 설정.
+    func setupTargets() {
+        // ellipsisButton에 액션 연결.
+        ellipsisButton.addTarget(self, action: #selector(tappedEllipsisButton), for: .touchUpInside)
+    }
+    
+    // table view 설정.
+    func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
     // ellipsisButton을 눌렀을 때 실행될 액션.
@@ -125,6 +141,10 @@ extension ViewController: ArticleModelProtocol {
         
         // articles 데이터를 받아온 이후에 테이블뷰를 다시 업데이트 해야 한다.
         tableView.reloadData()
+        
+        // array size 설정.
+        isLikedArray = Array(repeating: false, count: articles.count)
+        print(articles.count)
     }
 }
 
@@ -145,6 +165,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         // articles 배열에 든 구조체 article의 데이터를 행마다 하나씩 보여준다.
         cell.displayArticle(article: articles[indexPath.row])
+        // 여기서 구현한 Closure의 내용을 셀에 할당.
+        cell.updateLikedButton = updateLikedButton
         
         return cell
     }
@@ -166,9 +188,39 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         detailVC.articleImage.image = currentCell.articleImage.image ?? nil
         detailVC.articleContent.text = currentCell.contentLabel.text
         
+        // 몇 번째 셀의 신문인지를 detailVC에 전달.
+        detailVC.articleIndex = indexPath.row
         // currentCell의 isLiked 값을 detailVC의 isLiked로 넘겨줌.
         detailVC.isLiked = currentCell.isLiked
+        
+        // 여기서 구현한 Closure의 내용을 detailVC에 할당.
+        detailVC.updateLikedButton = updateLikedButton
+        detailVC.cell = currentCell
+        
         // detailVC로 화면 전환.
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }
+
+// UI Preview 보여주는 코드 스니핏 추가.
+#if canImport(SwiftUI) && (DEBUG)
+    import SwiftUI
+
+    struct ViewControllerRepresentable: UIViewControllerRepresentable {
+        
+        let viewController: UIViewController
+        
+        func makeUIViewController(context: Context) -> UIViewController {
+            return viewController
+        }
+        
+        func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
+    }
+
+    struct ViewController_Preview: PreviewProvider {
+        
+        static var previews: some View {
+            ViewControllerRepresentable(viewController: UINavigationController(rootViewController: ViewController()))
+        }
+    }
+#endif
