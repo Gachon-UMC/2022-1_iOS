@@ -27,9 +27,9 @@ class DetailViewController: UIViewController {
     
     // MARK: - Subviews
     
-    let articleTitle = UILabel()
-    let articleImage = UIImageView()
-    let articleContent = UILabel()
+    let articleTitleLabel = UILabel()
+    let articleImageView = UIImageView()
+    let articleContentLabel = UILabel()
     let likedButton = UIButton()
     
     // MARK: - Life Cycle
@@ -51,18 +51,18 @@ class DetailViewController: UIViewController {
     
     // 속성 설정.
     func setupAttributes() {
-        /* articleTitle attr */
-        articleTitle.font = UIFont.systemFont(ofSize: 22, weight: .bold)
-        articleTitle.numberOfLines = 0
+        /* articleTitleLabel attr */
+        articleTitleLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+        articleTitleLabel.numberOfLines = 0
         
-        /* articleImage attr */
-        articleImage.contentMode = .scaleAspectFill
-        articleImage.clipsToBounds = true
-        articleImage.layer.cornerRadius = 6
+        /* articleImageView attr */
+        articleImageView.contentMode = .scaleAspectFill
+        articleImageView.clipsToBounds = true
+        articleImageView.layer.cornerRadius = 6
         
-        /* articleContent attr */
-        articleContent.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        articleContent.numberOfLines = 0
+        /* articleContentLabel attr */
+        articleContentLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        articleContentLabel.numberOfLines = 0
         
         /* Nav attr */
         self.navigationController?.navigationBar.prefersLargeTitles = false
@@ -73,26 +73,26 @@ class DetailViewController: UIViewController {
     // 레이아웃 설정.
     func setupLayout() {
         [
-            articleTitle,
-            articleImage,
-            articleContent
+            articleTitleLabel,
+            articleImageView,
+            articleContentLabel
         ].forEach { view.addSubview($0) }
         
-        /* articleTitle */
-        articleTitle.snp.makeConstraints { make in
+        /* articleTitleLabel */
+        articleTitleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(90)
             make.left.right.equalToSuperview().inset(16)        }
         
-        /* articleImage */
-        articleImage.snp.makeConstraints { make in
-            make.top.equalTo(articleTitle.snp.bottom).offset(15)
+        /* articleImageView */
+        articleImageView.snp.makeConstraints { make in
+            make.top.equalTo(articleTitleLabel.snp.bottom).offset(15)
             make.left.right.equalToSuperview().inset(16)
             make.height.equalTo(UIScreen.main.bounds.height / 4.5)
         }
         
-        /* articleContent */
-        articleContent.snp.makeConstraints { make in
-            make.top.equalTo(articleImage.snp.bottom).offset(25)
+        /* articleContentLabel */
+        articleContentLabel.snp.makeConstraints { make in
+            make.top.equalTo(articleImageView.snp.bottom).offset(25)
             make.left.right.equalToSuperview().inset(16)
         }
     }

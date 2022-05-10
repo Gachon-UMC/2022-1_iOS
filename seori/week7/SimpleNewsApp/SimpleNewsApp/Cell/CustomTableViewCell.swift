@@ -27,10 +27,9 @@ class CustomTableViewCell: UITableViewCell {
     // MARK: - Subviews
     
     // cell에 들어갈 서브뷰들 생성.
-    let titleLabel = UILabel()
-    let contentLabel = UILabel()
-    // TODO: 근데 Subviews 안 쓰고 이렇게 하니까 코드 재사용이 불가한데...?
-    let articleImage = UIImageView()
+    let articleTitleLabel = UILabel()
+    let articleContentLabel = UILabel()
+    let articleImageView = UIImageView()
     let likedButton = UIButton()
     
     // MARK: - Initialization
@@ -56,8 +55,8 @@ class CustomTableViewCell: UITableViewCell {
     func displayArticle(article: Article){
         articleToDisplay = article
         
-        titleLabel.text = articleToDisplay!.title
-        contentLabel.text = articleToDisplay?.description
+        articleTitleLabel.text = articleToDisplay!.title
+        articleContentLabel.text = articleToDisplay?.description
         
         // 이미지 url이 없는 기사가 있을 수 있다. image url이 없다면 여기서 함수를 종료시킨다.
         guard articleToDisplay!.urlToImage != nil else {
@@ -77,7 +76,7 @@ class CustomTableViewCell: UITableViewCell {
             if(error == nil && data != nil){
                 // image를 변경하는 작업은 UI를 변경시키는 작업이므로 main thread에서 돌려주어야 한다.
                 DispatchQueue.main.async {
-                    self.articleImage.image = UIImage(data: data!)
+                    self.articleImageView.image = UIImage(data: data!)
                 }
             }
         }
@@ -87,19 +86,19 @@ class CustomTableViewCell: UITableViewCell {
 
     // 속성 설정.
     func setupAttributes() {
-        /* titleLabel attr */
-        titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
-        titleLabel.numberOfLines = 2
+        /* articleTitleLabel attr */
+        articleTitleLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        articleTitleLabel.numberOfLines = 2
         
-        /* articleImage attr */
-        articleImage.contentMode = .scaleAspectFill
-        articleImage.clipsToBounds = true
-        articleImage.layer.cornerRadius = 6
+        /* articleImageView attr */
+        articleImageView.contentMode = .scaleAspectFill
+        articleImageView.clipsToBounds = true
+        articleImageView.layer.cornerRadius = 6
         
-        /* contentLabel attr */
-        contentLabel.font = UIFont.systemFont(ofSize: 12, weight: .regular)
-        contentLabel.textColor = .darkGray
-        contentLabel.numberOfLines = 3
+        /* articleContentLabel attr */
+        articleContentLabel.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        articleContentLabel.textColor = .darkGray
+        articleContentLabel.numberOfLines = 3
         
         /* likedButton attr */
         // isLiked 상태에 따라 버튼 이미지 초기화.
@@ -109,28 +108,28 @@ class CustomTableViewCell: UITableViewCell {
     // cell의 서브뷰들의 레이아웃 설정.
     func setupLayout() {
         [
-            titleLabel,
-            contentLabel,
-            articleImage,
+            articleTitleLabel,
+            articleContentLabel,
+            articleImageView,
             likedButton
         ].forEach { contentView.addSubview($0) }
         
-        /* titleLabel */
-        titleLabel.snp.makeConstraints { make in
+        /* articleTitleLabel */
+        articleTitleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(26)
             make.left.equalToSuperview().inset(20)
-            make.right.equalTo(articleImage.snp.left).offset(-20)
+            make.right.equalTo(articleImageView.snp.left).offset(-20)
         }
         
-        /* contentLabel */
-        contentLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(8)
+        /* articleContentLabel */
+        articleContentLabel.snp.makeConstraints { make in
+            make.top.equalTo(articleTitleLabel.snp.bottom).offset(8)
             make.left.equalToSuperview().inset(20)
-            make.right.equalTo(articleImage.snp.left).offset(-20)
+            make.right.equalTo(articleImageView.snp.left).offset(-20)
         }
         
-        /* articleImage */
-        articleImage.snp.makeConstraints { make in
+        /* articleImageView */
+        articleImageView.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(26)
             make.right.equalToSuperview().inset(20)
             make.width.equalTo(120)
@@ -139,8 +138,8 @@ class CustomTableViewCell: UITableViewCell {
         
         /* likedButton */
         likedButton.snp.makeConstraints { make in
-            make.right.equalTo(articleImage.snp.right).offset(-11)
-            make.bottom.equalTo(articleImage.snp.bottom).offset(-11)
+            make.right.equalTo(articleImageView.snp.right).offset(-11)
+            make.bottom.equalTo(articleImageView.snp.bottom).offset(-11)
         }
     }
     

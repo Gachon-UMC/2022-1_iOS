@@ -136,7 +136,7 @@ class ViewController: UIViewController {
 extension ViewController: ArticleModelProtocol {
     
     func articlesRetrieved(articles: [Article]) {
-        print("Get returned articles data from ArticleModel")
+        print("VC : Get returned articles data from ArticleModel")
         self.articles = articles    // 받아온 데이터를 ViewController에 저장.
         
         // articles 데이터를 받아온 이후에 테이블뷰를 다시 업데이트 해야 한다.
@@ -167,6 +167,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.displayArticle(article: articles[indexPath.row])
         // 여기서 구현한 Closure의 내용을 셀에 할당.
         cell.updateLikedButton = updateLikedButton
+        cell.likedButton.tag = indexPath.row
         
         return cell
     }
@@ -184,9 +185,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         // detailVC에 들어갈 데이터 설정.
         let detailVC = DetailViewController()
-        detailVC.articleTitle.text = currentCell.titleLabel.text
-        detailVC.articleImage.image = currentCell.articleImage.image ?? nil
-        detailVC.articleContent.text = currentCell.contentLabel.text
+        detailVC.articleTitleLabel.text = currentCell.articleTitleLabel.text
+        detailVC.articleImageView.image = currentCell.articleImageView.image ?? nil
+        detailVC.articleContentLabel.text = currentCell.articleContentLabel.text
         
         // 몇 번째 셀의 신문인지를 detailVC에 전달.
         detailVC.articleIndex = indexPath.row
