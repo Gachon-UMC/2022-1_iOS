@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vhE-so-Dkp">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--정복한 산-->
+        <scene sceneID="ofA-mM-XNh">
+            <objects>
+                <viewController id="IWL-PD-qGf" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w5y-Kr-s5P">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mountains" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXN-jL-a2X">
+                                <rect key="frame" x="117" y="424" width="180" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" name="pointColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="l6k-eF-y7C"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hXN-jL-a2X" firstAttribute="centerY" secondItem="w5y-Kr-s5P" secondAttribute="centerY" id="gTj-7A-QtJ"/>
+                            <constraint firstItem="hXN-jL-a2X" firstAttribute="centerX" secondItem="w5y-Kr-s5P" secondAttribute="centerX" id="uRE-n3-RVO"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="정복한 산" image="triangle.fill" catalog="system" id="hYl-1j-cWX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8mr-FF-Dtj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1317" y="1663"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="LAY-iq-y4d">
+            <objects>
+                <viewController id="Gj5-WR-3vP" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8T8-tz-4SC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flags" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OrU-jp-FKF">
+                                <rect key="frame" x="161" y="424" width="92" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" name="pointColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cNl-Iz-eEM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OrU-jp-FKF" firstAttribute="centerX" secondItem="8T8-tz-4SC" secondAttribute="centerX" id="Wda-Yp-R9L"/>
+                            <constraint firstItem="OrU-jp-FKF" firstAttribute="centerY" secondItem="8T8-tz-4SC" secondAttribute="centerY" id="zu9-Sb-qIs"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="flag.and.flag.filled.crossed" catalog="system" id="Dwa-zE-45E"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sET-7y-dl1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-557" y="1663"/>
+        </scene>
+        <!--홈-->
+        <scene sceneID="PFI-gh-uvf">
+            <objects>
+                <viewController id="7sW-g5-7aS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QjH-h1-145">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eew-wg-xJA">
+                                <rect key="frame" x="165" y="424" width="84" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" name="pointColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="EIH-lA-LPI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Eew-wg-xJA" firstAttribute="centerY" secondItem="QjH-h1-145" secondAttribute="centerY" id="ABH-gy-LCf"/>
+                            <constraint firstItem="Eew-wg-xJA" firstAttribute="centerX" secondItem="QjH-h1-145" secondAttribute="centerX" id="KEd-0x-zo5"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="홈" image="house.fill" catalog="system" id="XZH-54-Emg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jQN-ee-Tbf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2112" y="1663"/>
+        </scene>
+        <!--Custom Tab Bar Controller-->
+        <scene sceneID="9t8-vh-jh8">
+            <objects>
+                <tabBarController id="vhE-so-Dkp" customClass="CustomTabBarController" customModule="CustomTabBar" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zHm-ds-dKG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="selectedImageTintColor" name="pointColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="7sW-g5-7aS" kind="relationship" relationship="viewControllers" id="Yxg-3e-S3L"/>
+                        <segue destination="IWL-PD-qGf" kind="relationship" relationship="viewControllers" id="lci-oa-5iQ"/>
+                        <segue destination="Gj5-WR-3vP" kind="relationship" relationship="viewControllers" id="flg-x5-9mx"/>
+                        <segue destination="Pz7-kG-QcD" kind="relationship" relationship="viewControllers" id="eGD-az-MNR"/>
+                        <segue destination="yQ0-1H-yVP" kind="relationship" relationship="viewControllers" id="Xin-Hy-xdr"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="El4-tG-pbC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-741" y="741"/>
+        </scene>
+        <!--찜한 산-->
+        <scene sceneID="ImI-bg-3pG">
+            <objects>
+                <viewController id="Pz7-kG-QcD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Y8S-Oi-0ee">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Liked" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEr-Oh-PpK">
+                                <rect key="frame" x="160.5" y="424" width="93" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" name="pointColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fQF-Xz-X1Q"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mEr-Oh-PpK" firstAttribute="centerY" secondItem="Y8S-Oi-0ee" secondAttribute="centerY" id="sh2-h9-93O"/>
+                            <constraint firstItem="mEr-Oh-PpK" firstAttribute="centerX" secondItem="Y8S-Oi-0ee" secondAttribute="centerX" id="zeK-w0-Iqh"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="찜한 산" image="heart.fill" catalog="system" id="vne-1a-Ghy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A36-Zk-A8Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="220" y="1663"/>
+        </scene>
+        <!--프로필-->
+        <scene sceneID="hoj-yS-ITa">
+            <objects>
+                <viewController id="yQ0-1H-yVP" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6u6-Fm-iV0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAX-iE-2Lr">
+                                <rect key="frame" x="153" y="424" width="108" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" name="pointColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="t1G-lB-Wst"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jAX-iE-2Lr" firstAttribute="centerX" secondItem="6u6-Fm-iV0" secondAttribute="centerX" id="6oY-by-LH6"/>
+                            <constraint firstItem="jAX-iE-2Lr" firstAttribute="centerY" secondItem="6u6-Fm-iV0" secondAttribute="centerY" id="pCm-Qp-3Lw"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="프로필" image="person.fill" catalog="system" id="D5C-6B-QVS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ISp-rg-quf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000" y="1663"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="flag.and.flag.filled.crossed" catalog="system" width="128" height="73"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="triangle.fill" catalog="system" width="128" height="112"/>
+        <namedColor name="pointColor">
+            <color red="0.39215686274509803" green="0.69411764705882351" blue="0.66274509803921566" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
