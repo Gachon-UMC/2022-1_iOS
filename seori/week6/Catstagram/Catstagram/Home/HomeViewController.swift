@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
     // MARK: - Properties
     
     var catDataArray : [FeedModel] = []
+    var imagePickerViewController = UIImagePickerController()   // 업로드할 사진을 앨범에서 고르기 위해.
     
     // MARK: - Life Cycle
     
@@ -38,8 +39,19 @@ class HomeViewController: UIViewController {
         // Week 8 : API 연동.
         let input = FeedAPIInput(limit: 10, page: 0)
         FeedDataManager.feedDataManager(input, self)
+        
+        // image picker delegate 설정.
+        imagePickerViewController.delegate = self
     }
-
+    
+    // MARK: - Actions
+    
+    // 업로드할 사진을 고르기 위해 버튼을 누르면 앨범으로 보내준다.
+    @IBAction func buttonGoAlbum(_ sender: UIButton) {
+        imagePickerViewController.sourceType = .photoLibrary
+        self.present(imagePickerViewController, animated: true, completion: nil)
+    }
+    
 }
 
 // MARK: - Extension about tableView
@@ -130,5 +142,23 @@ extension HomeViewController {
         catDataArray = result
         // 테이블뷰의 데이터가 바뀌었으니 reload.
         tableView.reloadData()
+    }
+}
+
+extension HomeViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    // 사진을 골랐을 때 실행되는 함수.
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            // Request 생성.
+            let imageString = "gs://catstagram-d7fbf.appspot.com/Cat1"
+            let input = FeedUploadInput(content: "저희 상이입니다. 귀엽지 않나요?", postImgsUrl: [imageString])
+            
+            // 서버로 Request를 보냄.
+            FeedUploadDataManager.posts(self, input)
+            
+            // 사진 선택 화면 없애기.
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }
