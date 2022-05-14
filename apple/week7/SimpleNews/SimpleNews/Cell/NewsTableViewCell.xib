@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsTableViewCell" rowHeight="150" id="KGk-i7-Jjw" customClass="NewsTableViewCell" customModule="SimpleNews" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="389" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="389" height="150"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADy-Ok-xsu">
+                        <rect key="frame" x="0.0" y="25" width="260" height="20.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="260" id="uFE-rq-6WR"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ix0-KN-UmI">
+                        <rect key="frame" x="289" y="25" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="LDc-kH-Umj"/>
+                            <constraint firstAttribute="height" constant="100" id="ZKA-1F-62g"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="content" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQV-5E-FTZ">
+                        <rect key="frame" x="0.0" y="50.5" width="260" height="14.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="260" id="6fk-hr-3lz"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9OJ-c8-PuE">
+                        <rect key="frame" x="364" y="100" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="KNp-Yv-HFS"/>
+                            <constraint firstAttribute="width" constant="20" id="wWr-N9-QzR"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Ix0-KN-UmI" firstAttribute="trailing" secondItem="9OJ-c8-PuE" secondAttribute="trailing" constant="5" id="95i-nM-ikT"/>
+                    <constraint firstItem="Ix0-KN-UmI" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="9cr-Bd-MI4"/>
+                    <constraint firstItem="dQV-5E-FTZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="DcH-L0-RZI"/>
+                    <constraint firstItem="Ix0-KN-UmI" firstAttribute="bottom" secondItem="9OJ-c8-PuE" secondAttribute="bottom" constant="5" id="KQS-qR-GQc"/>
+                    <constraint firstItem="dQV-5E-FTZ" firstAttribute="top" secondItem="ADy-Ok-xsu" secondAttribute="bottom" constant="5" id="Ke0-BW-oEY"/>
+                    <constraint firstItem="ADy-Ok-xsu" firstAttribute="top" secondItem="Ix0-KN-UmI" secondAttribute="top" id="Uqg-Ji-jsZ"/>
+                    <constraint firstItem="ADy-Ok-xsu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ccj-QM-XSJ"/>
+                    <constraint firstAttribute="trailing" secondItem="Ix0-KN-UmI" secondAttribute="trailing" id="u1N-wW-guS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="contentLabel" destination="dQV-5E-FTZ" id="C95-X3-Nc8"/>
+                <outlet property="heartButton" destination="9OJ-c8-PuE" id="Sut-qR-UAe"/>
+                <outlet property="newsImage" destination="Ix0-KN-UmI" id="uga-MG-tu3"/>
+                <outlet property="titleLabel" destination="ADy-Ok-xsu" id="cPj-gq-eQ4"/>
+            </connections>
+            <point key="canvasLocation" x="187.68115942028987" y="128.57142857142856"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
+    </resources>
+</document>
