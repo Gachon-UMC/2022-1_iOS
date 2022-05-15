@@ -15,10 +15,10 @@ class FeedUploadDataManager {
             .responseDecodable(of: FeedUploadModel.self) { response in
                 switch response.result {
                 case .success(let result):
-                    if result.isSuccess {
+                    if result.isSuccess! {
                         print("성공")
                     } else {
-                        print(result.message)
+                        print(result.message!)
                     }
                 case .failure(let error):
                     print(error.localizedDescription)

@@ -8,10 +8,17 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-
-    // MARK: - Properties
     
+    // MARK: - Subviews
     @IBOutlet weak var profileCollectionView: UICollectionView!
+    
+    // MARK: - Properties
+    var userPosts: [GetUserPosts]? {
+        // userPosts의 값이 변경될 때마다 컬렉션뷰를 리로드한다!!
+        didSet {
+            self.profileCollectionView.reloadData()
+        }
+    }
     
     // MARK: - Life Cycle
     
@@ -19,6 +26,8 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         // collection view 설정.
         setUpCollectionView()
+        // 데이터 세팅.
+        setupData()
     }
     
     // MARK: - Actions
@@ -41,6 +50,11 @@ class ProfileViewController: UIViewController {
             forCellWithReuseIdentifier: PostCollectionViewCell.identifier)
     }
 
+    // 데이터 세팅.
+    private func setupData() {
+        // API 통신을 통해 데이터를 가져온다.
+        UserFeedDataManager.getUserFeed(self)
+    }
 }
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
@@ -58,7 +72,7 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
         case 0:
             return 1    // 프로필 셀은 1개만!
         default:
-            return 24
+            return userPosts?.count ?? 0
         }
     }
     
@@ -78,6 +92,14 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PostCollectionViewCell.identifier, for: indexPath) as? PostCollectionViewCell else {
                 fatalError("셀 타입 캐스팅 실패...")
             }
+            
+            let itemIndex = indexPath.item
+            
+            if let cellData = self.userPosts {
+                // 데이터가 있는 경우, cell에 데이터 전달.
+                cell.setUpData(cellData[itemIndex].postImgUrl)
+            }
+            
             return cell
         }
     }
@@ -121,5 +143,13 @@ extension ProfileViewController: UICollectionViewDelegateFlowLayout {
         default:
             return 1
         }
+    }
+}
+
+// MARK: - API 통신 메소드
+extension ProfileViewController {
+    func successAPI(_ result: UserFeedModel) {
+        // 받아온 데이터를 이곳의 프로퍼티에 저장.
+        self.userPosts = result.result?.getUserPosts
     }
 }

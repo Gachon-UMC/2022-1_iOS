@@ -29,6 +29,9 @@
                 <constraint firstItem="mWA-Iy-G6O" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="pN8-s1-VcC"/>
                 <constraint firstAttribute="bottom" secondItem="mWA-Iy-G6O" secondAttribute="bottom" id="qvl-fN-X4B"/>
             </constraints>
+            <connections>
+                <outlet property="postImageView" destination="mWA-Iy-G6O" id="MJc-Bx-59X"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="113.83928571428571"/>
         </collectionViewCell>
     </objects>
