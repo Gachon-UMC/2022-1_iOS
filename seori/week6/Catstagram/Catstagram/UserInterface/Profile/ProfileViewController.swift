@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: - Subviews
     @IBOutlet weak var profileCollectionView: UICollectionView!
@@ -20,23 +20,53 @@ class ProfileViewController: UIViewController {
         }
     }
     
+    var deletedIndex: Int?  // 삭제된 게시물의 인덱스를 저장할 변수 선언.
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // collection view 설정.
-        setUpCollectionView()
+        setupCollectionView()
+        // 제스처 설정.
+        setupGesture()
+        
         // 데이터 세팅.
         setupData()
     }
     
     // MARK: - Actions
     
+    // 셀을 오래 누르는 제스쳐가 감지됐을 때 실행되는 메서드.
+    @objc
+    func didLongPressCell(gestureRecognizer: UILongPressGestureRecognizer) {
+        // 방어 코드 (버그 방지)
+        if gestureRecognizer.state != .began { return }
+        
+        let position = gestureRecognizer.location(in: profileCollectionView)
+        
+        if let indexPath = profileCollectionView.indexPathForItem(at: position) {
+            print("DEBUG: ", indexPath.item)
+            
+            
+            guard let userPosts = self.userPosts else { return }    // Optional 해제.
+            let cellData = userPosts[indexPath.item]
+            
+            if let postIdx = cellData.postIdx {     // postIdx 값이 있을 때만 호출되도록.
+                deletedIndex = indexPath.item   // 인덱스 저장.
+                
+                // 삭제 API를 호출.
+                UserFeedDataManager.deleteUserFeed(self, postIdx)
+            }
+
+            // 실제로 서버에서 데이터를 삭제.
+        }
+    }
     
     // MARK: - Helpers
     
     // collection view 설정.
-    private func setUpCollectionView() {
+    private func setupCollectionView() {
         // delegate 설정.
         profileCollectionView.delegate = self
         profileCollectionView.dataSource = self
@@ -50,6 +80,21 @@ class ProfileViewController: UIViewController {
             forCellWithReuseIdentifier: PostCollectionViewCell.identifier)
     }
 
+    // 제스처 설정.
+    private func setupGesture() {
+        let gesture = UILongPressGestureRecognizer(target: self, action: #selector(didLongPressCell(gestureRecognizer:)))
+        
+        // delegate 설정.
+        gesture.delegate = self
+        // 최소 0.66초 이상 누르고 있어야 적용된다는 뜻.
+        gesture.minimumPressDuration = 0.66
+        // 누르자마자 동작하게 하기 싫어서 조금 딜레이 시키는 것.
+        gesture.delaysTouchesBegan = true
+        
+        // 구성한 제스쳐를 추가한다.
+        profileCollectionView.addGestureRecognizer(gesture)
+    }
+    
     // 데이터 세팅.
     private func setupData() {
         // API 통신을 통해 데이터를 가져온다.
@@ -151,5 +196,14 @@ extension ProfileViewController {
     func successAPI(_ result: UserFeedModel) {
         // 받아온 데이터를 이곳의 프로퍼티에 저장.
         self.userPosts = result.result?.getUserPosts
+    }
+    
+    func successDeletePostAPI(_ isSuccess: Bool) {
+        guard isSuccess else { return }
+        
+        if let deletedIndex = self.deletedIndex {
+            // 서버에서 삭제되면 로컬에서도 바로 게시물을 직접 삭제한다.
+            self.userPosts?.remove(at: deletedIndex)
+        }
     }
 }
