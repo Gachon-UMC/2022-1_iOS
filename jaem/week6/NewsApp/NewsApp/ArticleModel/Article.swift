@@ -9,6 +9,8 @@ import Foundation
 
 struct Article:Codable{
     let title: String?
-    let content: String?
-    let imgUrl: String?
+    let description: String?
+    let urlToImage: String?
+    let author: String?
+    let publishedAt: String?
 }

@@ -36,14 +36,25 @@
                         <color key="textColor" systemColor="systemGrayColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0Y-Ak-dWh">
+                        <rect key="frame" x="274" y="117" width="17" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="OSs-tF-yCb"/>
+                            <constraint firstAttribute="width" constant="17" id="owC-A0-9kP"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="xZY-iZ-ptK" secondAttribute="trailing" constant="30" id="Asn-Fq-LIG"/>
                     <constraint firstItem="lLK-eD-nXt" firstAttribute="top" secondItem="nsF-A9-4Zd" secondAttribute="bottom" constant="10" id="AuK-8m-Okk"/>
                     <constraint firstItem="xZY-iZ-ptK" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="H1Q-hd-U26"/>
+                    <constraint firstAttribute="trailing" secondItem="N0Y-Ak-dWh" secondAttribute="trailing" constant="30" id="RkP-hK-W5m"/>
                     <constraint firstItem="xZY-iZ-ptK" firstAttribute="leading" secondItem="lLK-eD-nXt" secondAttribute="trailing" constant="20" id="Xlc-iY-bo3"/>
                     <constraint firstItem="nsF-A9-4Zd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="26.5" id="aam-et-VvH"/>
                     <constraint firstItem="nsF-A9-4Zd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="bm3-BG-bUZ"/>
+                    <constraint firstItem="N0Y-Ak-dWh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="117" id="lWg-Dh-Xh5"/>
                     <constraint firstItem="lLK-eD-nXt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="p3s-p0-D9w"/>
                     <constraint firstItem="xZY-iZ-ptK" firstAttribute="leading" secondItem="nsF-A9-4Zd" secondAttribute="trailing" constant="20" id="wJl-Zb-G9G"/>
                 </constraints>
@@ -51,6 +62,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="contentLbl" destination="lLK-eD-nXt" id="ZGR-Le-xZJ"/>
+                <outlet property="heartBtn" destination="N0Y-Ak-dWh" id="ile-fk-Z51"/>
                 <outlet property="newsImg" destination="xZY-iZ-ptK" id="CbS-rg-lE6"/>
                 <outlet property="titleLbl" destination="nsF-A9-4Zd" id="RND-pl-LXU"/>
             </connections>
@@ -58,6 +70,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
