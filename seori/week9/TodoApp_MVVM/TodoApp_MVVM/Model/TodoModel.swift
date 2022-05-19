@@ -36,7 +36,7 @@ struct TodoModel {
         todoList.remove(at: index)
     }
     
-    /// 할 일 끝냈을 때 체크 표시 토글 로직
+    /// 할 일 끝냈을 때 체크 표시 토글
     mutating func toggleFinished(_ selectedId: UUID) {
         guard var selectedTodo = todoList.first(where: {$0.id == selectedId}) else { return }
         

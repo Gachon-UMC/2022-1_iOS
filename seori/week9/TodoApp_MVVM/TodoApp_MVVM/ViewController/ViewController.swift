@@ -94,7 +94,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             preconditionFailure("테이블뷰 불러오기 실패")
         }
         
-        cell.todoLabel.text = todoVM.getTodoList()[indexPath.row].content
+        let todo = todoVM.getTodoList()[indexPath.row]
+        cell.checkImageView.image = (todo.isFinished) ? UIImage(systemName: "checkmark") : .none
+        cell.todoLabel.text = todo.content
         
         return cell
     }
@@ -114,8 +116,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         // 선택된 할 일 데이터 가져오기.
         let selectedTodo = todoVM.getTodoList()[selectedRow!.row]
-        // Finish 값 토글 & 그에 따라 체크 이미지 변경.
+        // Finish 값 토글.
         todoVM.toggleFinished(selectedTodo.id, selectedCell.checkImageView)
+        // 값이 변경됐으니 테이블뷰 리로드.
+        tableView.reloadData()
     }
     
     // 셀 swipe 시 실행할 동작.
