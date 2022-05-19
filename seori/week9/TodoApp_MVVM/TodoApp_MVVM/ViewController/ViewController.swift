@@ -69,9 +69,9 @@ class ViewController: UIViewController {
         // Cancel 버튼 액션 생성.
         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
         
-        // 컨트롤러에 액션을 추가.
-        alert.addAction(confirmAction)
+        // 컨트롤러에 액션을 추가. -> addAction하는 순서대로 UI가 왼쪽부터 추가된다.
         alert.addAction(cancelAction)
+        alert.addAction(confirmAction)
         
         // 구성한 컨트롤러 present.
         present(alert, animated: true, completion: nil)
@@ -116,5 +116,22 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let selectedTodo = todoVM.getTodoList()[selectedRow!.row]
         // Finish 값 토글 & 그에 따라 체크 이미지 변경.
         todoVM.toggleFinished(selectedTodo.id, selectedCell.checkImageView)
+    }
+    
+    // 셀 swipe 시 실행할 동작.
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .normal, title: "Delete", handler: { [self](action, view, completionHandler) in
+            print("Swiped & Clicked!") // test
+            print("indexPath.row: ", indexPath.row) //test
+            
+            // swipe 후 delete가 눌린 투두.
+            let swipedTodo = todoVM.getTodoList()[indexPath.row]
+            // 해당 투두 삭제.
+            todoVM.deleteTodo(swipedTodo.id)
+            // 값이 변경됐으니 테이블뷰 리로드.
+            tableView.reloadData()
+        })
+        action.backgroundColor = .red
+        return UISwipeActionsConfiguration(actions: [action])
     }
 }
