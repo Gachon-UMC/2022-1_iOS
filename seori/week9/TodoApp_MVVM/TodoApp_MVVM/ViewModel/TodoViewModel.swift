@@ -32,4 +32,8 @@ class TodoViewModel: ObservableObject {
         model.deleteTodo(selectedId)
     }
     
+    /// 할 일(todo) 중간에 추가 -> 셀 위치 바꿀 때!
+    func insertTodo(todo: Todo, index: Int) {
+        model.insertTodo(todo: todo, index: index)
+    }
 }

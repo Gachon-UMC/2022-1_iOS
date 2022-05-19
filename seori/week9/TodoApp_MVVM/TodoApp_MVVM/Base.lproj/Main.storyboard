@@ -66,7 +66,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Todo" id="KYi-cG-hjR">
-                        <barButtonItem key="leftBarButtonItem" title="Edit" id="Rdo-vT-yud"/>
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="Rdo-vT-yud">
+                            <connections>
+                                <action selector="editTable:" destination="J2o-L1-eKs" id="kQS-k7-Efg"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="MfC-Lm-Dxd">
                             <connections>
                                 <action selector="tappedPlusButton:" destination="J2o-L1-eKs" id="SIu-de-8rT"/>
@@ -74,6 +78,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="editBarButton" destination="Rdo-vT-yud" id="acY-0d-LtC"/>
                         <outlet property="tableView" destination="Q7Z-yj-qNc" id="jbc-X8-Xsi"/>
                     </connections>
                 </viewController>

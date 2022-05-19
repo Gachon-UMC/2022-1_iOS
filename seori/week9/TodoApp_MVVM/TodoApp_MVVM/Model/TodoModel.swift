@@ -49,4 +49,9 @@ struct TodoModel {
         
         todoList[index] = selectedTodo
     }
+    
+    /// 할 일(todo) 중간에 추가 -> 셀 위치 바꿀 때!
+    mutating func insertTodo(todo: Todo, index: Int) {
+        todoList.insert(todo, at: index)
+    }
 }

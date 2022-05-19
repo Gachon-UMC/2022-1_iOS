@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     
     // MARK: - Outlets
     
+    @IBOutlet weak var editBarButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Life Cycle
@@ -75,6 +76,18 @@ class ViewController: UIViewController {
         
         // 구성한 컨트롤러 present.
         present(alert, animated: true, completion: nil)
+    }
+    
+    // edit 버튼을 눌렀을 때 실행할 액션.
+    @IBAction func editTable(_ sender: Any) {
+        if tableView.isEditing {
+            // edit 버튼을 누르면 테이블뷰를 수정하는 액션 실행.
+            self.editBarButton.title = "Edit"
+            tableView.setEditing(false, animated: true)
+        } else {
+            self.editBarButton.title = "Done"
+            tableView.setEditing(true, animated: true)
+        }
     }
 }
 
@@ -137,5 +150,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         })
         action.backgroundColor = .red
         return UISwipeActionsConfiguration(actions: [action])
+    }
+    
+    // 오른쪽 reorder control 이 나오면서 셀을 이동할 수 있게 됨.
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let reorderedTodo = todoVM.getTodoList()[sourceIndexPath.row]
+        
+        todoVM.deleteTodo(reorderedTodo.id)
+        todoVM.insertTodo(todo: reorderedTodo, index: destinationIndexPath.row)
     }
 }
