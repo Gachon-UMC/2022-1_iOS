@@ -58,6 +58,7 @@ class ReelsCell: UICollectionViewCell {
         /* reelsLabel */
         reelsLabel.text = "릴스"
         reelsLabel.textColor = .white
+        reelsLabel.textAlignment = .left
         reelsLabel.font = .boldSystemFont(ofSize: 25)
         
         [

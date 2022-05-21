@@ -12,6 +12,7 @@ class ReelsViewController: UIViewController {
     // MARK: - Properties
 
     @IBOutlet weak var collectionView: UICollectionView!
+    private var nowPage = 0     // 현재 릴스 페이지 번호.
     
     private var videoURLStrArr = ["DummyVideo01", "DummyVideo02", "DummyVideo03"]
     
@@ -21,6 +22,7 @@ class ReelsViewController: UIViewController {
         super.viewDidLoad()
         
         setupCollectionView()
+        startLoop()     // 컬렉션뷰 세팅 다 되고 나면 실행.
     }
     
     // MARK: - Actions
@@ -30,7 +32,35 @@ class ReelsViewController: UIViewController {
     private func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.decelerationRate = .fast     // 스크롤이 빨리 되도록 설정.
         collectionView.register(ReelsCell.self, forCellWithReuseIdentifier: ReelsCell.identifier)
+    }
+    
+    // 타이머 설정. -> 3초마다 다음 페이지로 이동되도록.
+    private func startLoop() {
+        let _ = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { _ in
+            self.moveNextPage()     // 3초가 지날 때마다 이 클로져의 내용이 실행된다.
+        }
+    }
+    
+    // 다음 페이지로 넘어가게 하는 메서드.
+    private func moveNextPage() {
+        // 섹션 0의 아이템 갯수.
+        let itemCount = collectionView.numberOfItems(inSection: 0)
+        
+        // 다음 릴스로 이동.
+        nowPage += 1
+        
+        if (nowPage >= itemCount) {
+            // 마지막 페이지 일 때 -> 처음 페이지로 돌아갈 수 있도록 설정.
+            nowPage = 0
+        }
+        
+        // 특정 indexPath의 item으로 collection view를 스크롤시킨다.
+        collectionView.scrollToItem(
+            at: IndexPath(item: nowPage, section: 0),   // 다음 페이지로 이동.
+            at: .centeredVertically,    // 수직으로 스크롤.
+            animated: true)
     }
 }
 
@@ -39,7 +69,7 @@ extension ReelsViewController: UICollectionViewDelegate, UICollectionViewDataSou
     
     // item 갯수 설정.
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        12
+        videoURLStrArr.count
     }
     
     // item 내용 설정.
@@ -49,6 +79,13 @@ extension ReelsViewController: UICollectionViewDelegate, UICollectionViewDataSou
         cell.setupURL(videoURLStrArr.randomElement()!)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        // item이(= 영상이) Displaying이 끝나면 메모리를 해제해 준다.
+        if let cell = collectionView.cellForItem(at: indexPath) as? ReelsCell { // 해당 셀에 접근 성공했다면 { } 안을 실행.
+            cell.videoView?.cleanup()
+        }
     }
 }
 

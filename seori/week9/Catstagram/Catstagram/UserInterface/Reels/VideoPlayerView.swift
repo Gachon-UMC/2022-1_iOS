@@ -8,6 +8,7 @@
 import UIKit
 import AVKit
 
+// 셀 안에 들어갈 뷰. 비디오를 보여준다.
 class VideoPlayerView: UIView {
     
     // 비디오(Reels)에 관련된 객체를 생성.
