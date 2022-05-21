@@ -5,7 +5,6 @@
 //  Created by 서은수 on 2022/05/21.
 //
 
-import Foundation
 import UIKit
 
 class ReelsViewController: UIViewController {
@@ -13,6 +12,8 @@ class ReelsViewController: UIViewController {
     // MARK: - Properties
 
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    private var videoURLStrArr = ["DummyVideo01", "DummyVideo02", "DummyVideo03"]
     
     // MARK: - Life Cycle
     
@@ -44,6 +45,8 @@ extension ReelsViewController: UICollectionViewDelegate, UICollectionViewDataSou
     // item 내용 설정.
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReelsCell.identifier, for: indexPath) as? ReelsCell else { fatalError() }
+        
+        cell.setupURL(videoURLStrArr.randomElement()!)
         
         return cell
     }
