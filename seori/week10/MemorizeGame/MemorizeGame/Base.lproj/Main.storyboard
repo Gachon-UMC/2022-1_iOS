@@ -19,10 +19,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Rank" image="flag.filled.and.flag.crossed" catalog="system" id="ZjG-DY-0Tg"/>
+                    <navigationItem key="navigationItem" id="Ifu-xy-V05">
+                        <barButtonItem key="rightBarButtonItem" title="Delete All" id="iJB-8h-7wT"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZAN-yg-aGu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1480" y="903"/>
+            <point key="canvasLocation" x="1322" y="945"/>
         </scene>
         <!--Home-->
         <scene sceneID="MH4-O9-4Ih">
@@ -35,10 +38,30 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="akN-dI-Wt6"/>
+                    <navigationItem key="navigationItem" id="4x3-9Y-bam">
+                        <barButtonItem key="rightBarButtonItem" title="Start Game" id="gjL-cu-4Io"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wTX-W7-EPd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="475" y="903"/>
+            <point key="canvasLocation" x="516" y="945"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="3Xd-BS-hnQ">
+            <objects>
+                <navigationController id="MuJ-Ak-hxN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="heU-DL-faU"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="t1Y-2w-wO4">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="6tQ-Gq-QP2" kind="relationship" relationship="rootViewController" id="fq9-Px-h3s"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ALK-Oc-yQd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="516" y="250"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Ril-2g-Yyu">
@@ -47,16 +70,33 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YiY-ax-6nc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.96078431610000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                     </tabBar>
                     <connections>
-                        <segue destination="6tQ-Gq-QP2" kind="relationship" relationship="viewControllers" id="hQS-uQ-grr"/>
-                        <segue destination="EKp-kb-YM6" kind="relationship" relationship="viewControllers" id="mJA-bj-5f7"/>
+                        <segue destination="MuJ-Ak-hxN" kind="relationship" relationship="viewControllers" id="whA-eP-YLX"/>
+                        <segue destination="cGy-8o-o4y" kind="relationship" relationship="viewControllers" id="sgN-ec-UHh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1IY-Ca-PBl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="974" y="97"/>
+            <point key="canvasLocation" x="893" y="-505"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="G8n-Ml-AVT">
+            <objects>
+                <navigationController id="cGy-8o-o4y" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="RPH-PG-II7"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q25-MH-7N9">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="EKp-kb-YM6" kind="relationship" relationship="rootViewController" id="Cys-4h-FZL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rrt-bn-T0x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1322" y="250"/>
         </scene>
     </scenes>
     <resources>
@@ -64,6 +104,9 @@
         <image name="house" catalog="system" width="128" height="106"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
