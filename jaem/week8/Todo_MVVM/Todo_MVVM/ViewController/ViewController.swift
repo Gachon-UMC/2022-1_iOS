@@ -95,6 +95,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
     /*Row 이동*/
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let targetItem: String = self.todoList[sourceIndexPath.row].todo
+        
         self.todoVM.deleteTodo(todoList[sourceIndexPath.row].id)
         self.todoVM.insertTodo(todo: TodoModel.Todo(id: UUID(), todo: targetItem, isFinished: false), index: destinationIndexPath.row)
         
@@ -107,6 +108,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
         
         self.todoList = self.todoVM.todoList()
         self.todoTableView.reloadData()
+
     }
 }
 

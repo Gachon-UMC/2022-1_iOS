@@ -21,6 +21,11 @@
 		BC0DC51727F895650045EFD2 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0DC51627F895650045EFD2 /* UIViewExtension.swift */; };
 		BC0DC51B27F896580045EFD2 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0DC51A27F896580045EFD2 /* UIViewController+Extension.swift */; };
 		BC0DC51D27F89A000045EFD2 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0DC51C27F89A000045EFD2 /* UserInfo.swift */; };
+		BC2E13732838AF950009B7CF /* ReelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2E13722838AF950009B7CF /* ReelsViewController.swift */; };
+		BC2E137B2838BCB90009B7CF /* ReelsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2E137A2838BCB90009B7CF /* ReelsCell.swift */; };
+		BC2E137D2838BF4E0009B7CF /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2E137C2838BF4E0009B7CF /* VideoPlayerView.swift */; };
+		BC2E137E2838C20C0009B7CF /* video1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = BC2E13782838BAA20009B7CF /* video1.mp4 */; };
+		BC2E137F2838C20E0009B7CF /* video2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = BC2E13792838BAA20009B7CF /* video2.mp4 */; };
 		BC46D8FC281D8AF0000B2BF5 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC46D8FA281D8AF0000B2BF5 /* PostCollectionViewCell.swift */; };
 		BC46D8FD281D8AF0000B2BF5 /* PostCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC46D8FB281D8AF0000B2BF5 /* PostCollectionViewCell.xib */; };
 		BC984672281D70050092270E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC984671281D70050092270E /* ProfileViewController.swift */; };
@@ -82,6 +87,11 @@
 		BC0DC51627F895650045EFD2 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		BC0DC51A27F896580045EFD2 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		BC0DC51C27F89A000045EFD2 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		BC2E13722838AF950009B7CF /* ReelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelsViewController.swift; sourceTree = "<group>"; };
+		BC2E13782838BAA20009B7CF /* video1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = video1.mp4; path = ../../../../../../../Downloads/video1.mp4; sourceTree = "<group>"; };
+		BC2E13792838BAA20009B7CF /* video2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = video2.mp4; path = ../../../../../../../Downloads/video2.mp4; sourceTree = "<group>"; };
+		BC2E137A2838BCB90009B7CF /* ReelsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelsCell.swift; sourceTree = "<group>"; };
+		BC2E137C2838BF4E0009B7CF /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
 		BC46D8FA281D8AF0000B2BF5 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
 		BC46D8FB281D8AF0000B2BF5 /* PostCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCollectionViewCell.xib; sourceTree = "<group>"; };
 		BC984671281D70050092270E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +175,11 @@
 				BC0DC51627F895650045EFD2 /* UIViewExtension.swift */,
 				BC0DC51A27F896580045EFD2 /* UIViewController+Extension.swift */,
 				BC0DC51C27F89A000045EFD2 /* UserInfo.swift */,
+				BC2E13722838AF950009B7CF /* ReelsViewController.swift */,
+				BC2E13782838BAA20009B7CF /* video1.mp4 */,
+				BC2E13792838BAA20009B7CF /* video2.mp4 */,
+				BC2E137A2838BCB90009B7CF /* ReelsCell.swift */,
+				BC2E137C2838BF4E0009B7CF /* VideoPlayerView.swift */,
 			);
 			path = CatStaGram;
 			sourceTree = "<group>";
@@ -444,6 +459,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC2E137E2838C20C0009B7CF /* video1.mp4 in Resources */,
 				BC46D8FD281D8AF0000B2BF5 /* PostCollectionViewCell.xib in Resources */,
 				BC0DC4EF27F84A030045EFD2 /* LaunchScreen.storyboard in Resources */,
 				BCE2ACAA280AE8A7007ABF95 /* FeedTableViewCell.xib in Resources */,
@@ -451,6 +467,7 @@
 				BC984677281D74110092270E /* ProfileCollectionViewCell.xib in Resources */,
 				BCE2ACAE280B013B007ABF95 /* StoryTableViewCell.xib in Resources */,
 				BCE2ACB2280B044C007ABF95 /* StoryCollectionViewCell.xib in Resources */,
+				BC2E137F2838C20E0009B7CF /* video2.mp4 in Resources */,
 				BC0DC4EA27F84A030045EFD2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,6 +535,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC2E137B2838BCB90009B7CF /* ReelsCell.swift in Sources */,
 				BC0DC51B27F896580045EFD2 /* UIViewController+Extension.swift in Sources */,
 				BC0DC51727F895650045EFD2 /* UIViewExtension.swift in Sources */,
 				BCCC9172282F8E3D00914BD5 /* FeedAPIInput.swift in Sources */,
@@ -528,6 +546,7 @@
 				BCE2ACA5280AE197007ABF95 /* HomeViewController.swift in Sources */,
 				BC0DC4E327F84A030045EFD2 /* AppDelegate.swift in Sources */,
 				BCCC91852830C80100914BD5 /* UserFeedDataManager.swift in Sources */,
+				BC2E137D2838BF4E0009B7CF /* VideoPlayerView.swift in Sources */,
 				BC984672281D70050092270E /* ProfileViewController.swift in Sources */,
 				BC0DC4E527F84A030045EFD2 /* SceneDelegate.swift in Sources */,
 				BC984676281D74110092270E /* ProfileCollectionViewCell.swift in Sources */,
@@ -540,6 +559,7 @@
 				BC46D8FC281D8AF0000B2BF5 /* PostCollectionViewCell.swift in Sources */,
 				BCCC91832830C39C00914BD5 /* UserFeedModel.swift in Sources */,
 				BCE2ACAD280B013B007ABF95 /* StoryTableViewCell.swift in Sources */,
+				BC2E13732838AF950009B7CF /* ReelsViewController.swift in Sources */,
 				BCCC9174282F914F00914BD5 /* FeedModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

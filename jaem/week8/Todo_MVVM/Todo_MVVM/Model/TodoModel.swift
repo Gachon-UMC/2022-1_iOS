@@ -9,7 +9,7 @@ import Foundation
 
 struct TodoModel{
     
-    var todoList: [Todo] = [Todo(id: UUID(), todo: "example", isFinished: false)]
+    var todoList: [Todo] = [Todo(id: UUID(), todo: "example", isFinished: false), Todo(id: UUID(), todo: "example2", isFinished: false)]
 
     /*mutating 키워드를 붙이면 self 프로퍼티에 새로운 인스턴스 할당 가능*/
     //투두리스트 추가

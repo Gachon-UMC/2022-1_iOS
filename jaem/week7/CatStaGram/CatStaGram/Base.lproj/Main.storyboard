@@ -303,6 +303,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="3Ow-M1-JeW" kind="relationship" relationship="viewControllers" id="DTn-EK-uMM"/>
+                        <segue destination="AzA-SK-lQo" kind="relationship" relationship="viewControllers" id="1O9-Ig-lEH"/>
                         <segue destination="OAE-l9-cYc" kind="relationship" relationship="viewControllers" id="m6W-Yt-hIL"/>
                     </connections>
                 </tabBarController>
@@ -493,6 +494,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIT-Cj-7Gr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="44.927536231884062" y="67.633928571428569"/>
+        </scene>
+        <!--릴스-->
+        <scene sceneID="2Gf-aY-wW5">
+            <objects>
+                <viewController storyboardIdentifier="ReelsViewController" id="AzA-SK-lQo" customClass="ReelsViewController" customModule="CatStaGram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CTQ-Iu-rYE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OjR-5g-OHA">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oPf-dO-iIo">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="63J-nY-7v0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OjR-5g-OHA" firstAttribute="top" secondItem="63J-nY-7v0" secondAttribute="top" id="Iji-ac-dO6"/>
+                            <constraint firstItem="63J-nY-7v0" firstAttribute="bottom" secondItem="OjR-5g-OHA" secondAttribute="bottom" id="SvB-Gq-jKx"/>
+                            <constraint firstItem="63J-nY-7v0" firstAttribute="trailing" secondItem="OjR-5g-OHA" secondAttribute="trailing" id="qOF-U7-RWX"/>
+                            <constraint firstItem="OjR-5g-OHA" firstAttribute="leading" secondItem="63J-nY-7v0" secondAttribute="leading" id="ylo-nY-UF2"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="릴스" id="byn-so-pKR"/>
+                    <connections>
+                        <outlet property="collectionView" destination="OjR-5g-OHA" id="9Dq-3W-yNo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="39h-kX-6R6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="955" y="1533"/>
         </scene>
         <!--Profile-->
         <scene sceneID="Kmx-nq-w40">
