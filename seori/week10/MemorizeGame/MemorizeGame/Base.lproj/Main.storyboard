@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -43,7 +44,7 @@
         <!--Memorize-->
         <scene sceneID="MH4-O9-4Ih">
             <objects>
-                <viewController id="6tQ-Gq-QP2" customClass="HomeViewController" customModule="MemorizeGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeVC" id="6tQ-Gq-QP2" customClass="HomeViewController" customModule="MemorizeGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="16l-RZ-thZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -92,6 +93,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Start Game" id="gjL-cu-4Io"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="startGameButton" destination="gjL-cu-4Io" id="b6n-wr-cEW"/>
                         <outlet property="tableView" destination="bqM-Fr-hum" id="Nag-Va-zHX"/>
                     </connections>
                 </viewController>
@@ -102,7 +104,7 @@
         <!--Game View Controller-->
         <scene sceneID="CVK-DX-cSM">
             <objects>
-                <viewController id="pWr-EC-sce" customClass="GameViewController" customModule="MemorizeGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gameVC" modalPresentationStyle="fullScreen" id="pWr-EC-sce" customClass="GameViewController" customModule="MemorizeGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bk4-W3-yaj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -119,22 +121,80 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="175" id="0vj-lw-hbu"/>
                                     <constraint firstAttribute="height" constant="45" id="YZd-XL-c3C"/>
                                 </constraints>
-                                <color key="tintColor" systemColor="systemGreenColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Quit" cornerStyle="capsule">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="22"/>
+                                    <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
                                 </buttonConfiguration>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BT3-Nh-PZl">
+                                <rect key="frame" x="15" y="124" width="384" height="632"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g1p-N1-P1L">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GameCell" id="P3R-65-1k9" customClass="GameCollectionViewCell" customModule="MemorizeGame" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="x1c-bJ-7MT">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🍇" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RD0-ee-Mr6">
+                                                    <rect key="frame" x="35" y="32" width="58" height="64.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="54"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="RD0-ee-Mr6" firstAttribute="centerY" secondItem="x1c-bJ-7MT" secondAttribute="centerY" id="KAp-FC-d2B"/>
+                                                <constraint firstItem="RD0-ee-Mr6" firstAttribute="centerX" secondItem="x1c-bJ-7MT" secondAttribute="centerX" id="YKN-x1-ebN"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <connections>
+                                            <outlet property="dataLabel" destination="RD0-ee-Mr6" id="fkf-et-B3N"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilV-E8-I5h">
+                                <rect key="frame" x="329" y="55" width="65" height="24"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="ZhS-wf-i7Q"/>
+                                    <constraint firstAttribute="width" constant="65" id="yCt-PN-4vB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iqs-jO-tjt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="iqs-jO-tjt" firstAttribute="trailing" secondItem="ilV-E8-I5h" secondAttribute="trailing" constant="20" id="9Qm-cM-PoU"/>
+                            <constraint firstItem="BT3-Nh-PZl" firstAttribute="top" secondItem="bk4-W3-yaj" secondAttribute="top" constant="124" id="GBS-T5-NmL"/>
                             <constraint firstItem="hq0-kh-8Wd" firstAttribute="top" secondItem="bk4-W3-yaj" secondAttribute="top" constant="70" id="Grx-2P-JWj"/>
+                            <constraint firstItem="BT3-Nh-PZl" firstAttribute="leading" secondItem="iqs-jO-tjt" secondAttribute="leading" constant="15" id="JvE-1c-mFf"/>
                             <constraint firstAttribute="bottom" secondItem="Ebb-Jd-nWf" secondAttribute="bottom" constant="50" id="Nad-gN-xyU"/>
                             <constraint firstItem="hq0-kh-8Wd" firstAttribute="centerX" secondItem="iqs-jO-tjt" secondAttribute="centerX" id="VsO-SG-3Gw"/>
                             <constraint firstItem="Ebb-Jd-nWf" firstAttribute="centerX" secondItem="iqs-jO-tjt" secondAttribute="centerX" id="edv-rh-xDo"/>
+                            <constraint firstItem="iqs-jO-tjt" firstAttribute="trailing" secondItem="BT3-Nh-PZl" secondAttribute="trailing" constant="15" id="ess-Ac-JPG"/>
+                            <constraint firstItem="BT3-Nh-PZl" firstAttribute="top" secondItem="ilV-E8-I5h" secondAttribute="bottom" constant="45" id="wOk-p0-xVa"/>
+                            <constraint firstAttribute="bottom" secondItem="BT3-Nh-PZl" secondAttribute="bottom" constant="140" id="wtJ-Tl-kG4"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="BT3-Nh-PZl" id="3LJ-dF-1Y6"/>
+                        <outlet property="quitButton" destination="Ebb-Jd-nWf" id="ouk-Rr-Cev"/>
+                        <outlet property="timeLabel" destination="ilV-E8-I5h" id="Gg9-Gf-twg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K5q-7p-RzK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -201,6 +261,9 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

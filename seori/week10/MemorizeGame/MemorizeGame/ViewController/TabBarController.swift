@@ -12,6 +12,7 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /* tabBar top border 설정 */
         // First, remove the default top line and background
         UITabBar.appearance().shadowImage = UIImage()
         UITabBar.appearance().backgroundImage = UIImage()
@@ -24,7 +25,7 @@ class TabBarController: UITabBarController {
     }
     
     override func viewDidLayoutSubviews() {
-        // tabBar 높이 설정.
+        /* tabBar 높이 설정 */
         tabBar.bounds.size.height = 90
     }
 }
