@@ -18,9 +18,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NW3-St-qfx">
-                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <inset key="separatorInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RankCell" id="9VP-BB-PGi" customClass="RankTableViewCell" customModule="MemorizeGame" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9VP-BB-PGi" id="3PB-QR-38q">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnT-Af-fqr">
+                                                    <rect key="frame" x="20" y="11.5" width="9" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" systemColor="systemOrangeColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seori / 2022.05.27 / 00:01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvs-C5-jKx">
+                                                    <rect key="frame" x="36" y="11.5" width="195.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hnT-Af-fqr" firstAttribute="leading" secondItem="3PB-QR-38q" secondAttribute="leadingMargin" id="8B1-Tl-zeg"/>
+                                                <constraint firstItem="hnT-Af-fqr" firstAttribute="centerY" secondItem="3PB-QR-38q" secondAttribute="centerY" id="LH1-cB-Fnf"/>
+                                                <constraint firstItem="zvs-C5-jKx" firstAttribute="leading" secondItem="hnT-Af-fqr" secondAttribute="trailing" constant="7" id="UtG-QU-Cie"/>
+                                                <constraint firstItem="zvs-C5-jKx" firstAttribute="centerY" secondItem="3PB-QR-38q" secondAttribute="centerY" id="xYL-Wd-64z"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="rankLabel" destination="hnT-Af-fqr" id="c1X-RM-u3J"/>
+                                            <outlet property="recordLabel" destination="zvs-C5-jKx" id="31E-AL-pCg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TGH-A9-Bfm"/>
@@ -36,6 +70,10 @@
                     <navigationItem key="navigationItem" title="Rank" id="Ifu-xy-V05">
                         <barButtonItem key="rightBarButtonItem" title="Delete All" id="iJB-8h-7wT"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="deleteAllButton" destination="iJB-8h-7wT" id="7Do-AU-rap"/>
+                        <outlet property="tableView" destination="NW3-St-qfx" id="tLe-HI-A7q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZAN-yg-aGu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
