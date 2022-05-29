@@ -7,6 +7,12 @@
 
 import Foundation
 
+/// - GameVC 코드 위에서 게임을 끝내기 위해 만든 프로토콜.
+/// - 즉, finishGame 함수의 구현을 GameVC에서 한다.
+protocol GameSuccessProtocol {
+    func finishGame()
+}
+
 class GameViewModel {
     
     // MARK: - Properties
@@ -15,6 +21,9 @@ class GameViewModel {
     @Published private var gameModel = GameModel()
     // 새로운 타입을 정의.
     typealias Card = GameModel.Card
+    
+    // 프로토콜을 위한 delegate 변수 정의.
+    var delegate: GameSuccessProtocol?
     
     // 선택된(클릭된) 셀(= 카드)들의 인덱스.
     public var selectedIndices = [Int]() {
@@ -29,9 +38,19 @@ class GameViewModel {
                 for i in 0...1 {
                     gameModel.setRightCard(selectedIndices[i])
                 }
+                
                 // 인덱스 리스트 초기화.
                 selectedIndices.removeAll()
                 print("Remove All") // test
+                
+                // 카드의 모든 쌍을 다 맞췄는지 확인 -> 즉, 성공 여부를 확인하는 것.
+                if isSuccess() {
+                    print("Success!")   // test
+                    
+                    // protocol을 사용하여 GameVC에서 구현된 finishGame 함수를 실행한다.
+                    // finishGame => 게임을 마무리. (= 시간 측정 종료, Alert 띄우기 실행)
+                    delegate?.finishGame()
+                }
             }
         }
     }
@@ -101,5 +120,18 @@ class GameViewModel {
     /// - 두 카드의 데이터(String)를 넣고 값이 같은지 비교.
     private func isSameData(_ firstCardData: String, _ secondCardData: String) -> Bool {
         firstCardData == secondCardData
+    }
+    
+    /// - 게임이 끝났는지(= 모든 카드가 쌍을 찾았는지) 확인해주는 함수.
+    private func isSuccess() -> Bool {
+        for i in 0...11 {
+            // 하나의 카드라도 쌍을 찾지 못했으면 아직 성공 전인 것. -> false를 리턴.
+            if !gameModel.getCard(i).isRight {
+                return false
+            }
+        }
+        
+        // 모든 카드의 isRight 값이 true면 게임 성공! -> true를 리턴.
+        return true
     }
 }

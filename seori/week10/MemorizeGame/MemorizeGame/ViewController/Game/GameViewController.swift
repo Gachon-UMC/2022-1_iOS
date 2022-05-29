@@ -15,6 +15,11 @@ class GameViewController: UIViewController {
     private var gameVM = GameViewModel()
     public var categoryIndex = -1
     
+    // 게임 플레이 시간 측정 시작 시간.
+    let startTime = CFAbsoluteTimeGetCurrent()
+    // 게임 플레이 시간 측정 종료 시간.
+    var finishTime = 0.0
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var quitButton: UIButton!
@@ -27,6 +32,9 @@ class GameViewController: UIViewController {
         setupCollectionView()
         setupAttributes()
         addTargets()
+        
+        // 프로토콜 구현을 위한 delegate 설정.
+        gameVM.delegate = self
     }
     
     // MARK: - Functions
@@ -51,6 +59,9 @@ class GameViewController: UIViewController {
     @objc
     private func tappedQuitButton() {
         dismiss(animated: true, completion: nil)
+        // 1. 시간 측정 끝.
+        finishTime = CFAbsoluteTimeGetCurrent() - startTime
+        print(finishTime)
     }
 }
 
@@ -117,5 +128,19 @@ extension GameViewController: UICollectionViewDelegateFlowLayout {
     // 아이템 간의 최소 간격 설정.
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         CGFloat(12)
+    }
+}
+
+// MARK: - GameSuccessProtocol
+
+extension GameViewController: GameSuccessProtocol {
+    
+    // gameVM에서 호출되는 함수로서, 게임을 마무리 해준다.
+    // 즉, 시간 측정을 종료하고 Alert를 띄워준다.
+    func finishGame() {
+        
+        // TODO: Succeed 알림창 띄우기
+        finishTime = CFAbsoluteTimeGetCurrent() - startTime
+        print(finishTime)   // test
     }
 }
