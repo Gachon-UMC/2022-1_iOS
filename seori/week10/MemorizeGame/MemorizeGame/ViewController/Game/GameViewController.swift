@@ -18,7 +18,7 @@ class GameViewController: UIViewController {
     // 게임 플레이 시간 측정 시작 시간.
     let startTime = CFAbsoluteTimeGetCurrent()
     // 게임 플레이 시간 측정 종료 시간.
-    var finishTime = 0.0
+    var gamePlayTime = 0.0
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var timeLabel: UILabel!
@@ -45,6 +45,7 @@ class GameViewController: UIViewController {
     }
     
     private func setupAttributes() {
+        /* timeLabel attr */
         timeLabel.clipsToBounds = true
         timeLabel.layer.cornerRadius = 12
         timeLabel.font = .systemFont(ofSize: 15, weight: .semibold)
@@ -60,8 +61,8 @@ class GameViewController: UIViewController {
     private func tappedQuitButton() {
         dismiss(animated: true, completion: nil)
         // 1. 시간 측정 끝.
-        finishTime = CFAbsoluteTimeGetCurrent() - startTime
-        print(finishTime)
+        gamePlayTime = CFAbsoluteTimeGetCurrent() - startTime
+        print(gamePlayTime)
     }
 }
 
@@ -136,11 +137,24 @@ extension GameViewController: UICollectionViewDelegateFlowLayout {
 extension GameViewController: GameSuccessProtocol {
     
     // gameVM에서 호출되는 함수로서, 게임을 마무리 해준다.
-    // 즉, 시간 측정을 종료하고 Alert를 띄워준다.
+    // 즉, 시간 측정을 종료하고 succeedVC를 띄워준다.
     func finishGame() {
+        // 시간 측정 완료.
+        gamePlayTime = CFAbsoluteTimeGetCurrent() - startTime
         
-        // TODO: Succeed 알림창 띄우기
-        finishTime = CFAbsoluteTimeGetCurrent() - startTime
-        print(finishTime)   // test
+        // 시간 formatting...
+        let digit: Double = pow(10, 2) // 10의 2제곱.
+        // 3번째 자리에서 반올림한 수로 업데이트.
+        gamePlayTime = round(gamePlayTime * digit) / digit
+        print(gamePlayTime)   // test
+        
+        // succeedVC로 화면 전환.
+        guard let succeedVC = storyboard?.instantiateViewController(withIdentifier: "succeedVC") as? SucceedViewController else { return }
+        
+        succeedVC.modalPresentationStyle = .overFullScreen
+        succeedVC.modalTransitionStyle = .crossDissolve
+        
+        succeedVC.gamePlayTime = self.gamePlayTime
+        self.present(succeedVC, animated: true, completion: nil)
     }
 }
