@@ -10,6 +10,8 @@ import Foundation
 /// - GameVC 코드 위에서 게임을 끝내기 위해 만든 프로토콜.
 /// - 즉, finishGame 함수의 구현을 GameVC에서 한다.
 protocol GameSuccessProtocol {
+    /// - gameVC에서 구현, gameVM에서 호출되는 함수.
+    /// - 시간 측정을 종료하고, succeedVC를 띄워준다.
     func finishGame()
 }
 

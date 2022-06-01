@@ -12,7 +12,7 @@
         <!--Rank-->
         <scene sceneID="XzS-AO-5Ne">
             <objects>
-                <viewController id="EKp-kb-YM6" customClass="RankViewController" customModule="MemorizeGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="rankVC" id="EKp-kb-YM6" customClass="RankViewController" customModule="MemorizeGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fsO-Ab-1gK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -175,14 +175,14 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GameCell" id="P3R-65-1k9" customClass="GameCollectionViewCell" customModule="MemorizeGame" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" reuseIdentifier="GameCell" id="P3R-65-1k9" customClass="GameCollectionViewCell" customModule="MemorizeGame" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="x1c-bJ-7MT">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🍇" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RD0-ee-Mr6">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🍇" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RD0-ee-Mr6">
                                                     <rect key="frame" x="35" y="32" width="58" height="64.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="54"/>
                                                     <nil key="textColor"/>
@@ -194,14 +194,13 @@
                                                 <constraint firstItem="RD0-ee-Mr6" firstAttribute="centerX" secondItem="x1c-bJ-7MT" secondAttribute="centerX" id="YKN-x1-ebN"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                         <connections>
                                             <outlet property="dataLabel" destination="RD0-ee-Mr6" id="fkf-et-B3N"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilV-E8-I5h">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilV-E8-I5h">
                                 <rect key="frame" x="329" y="55" width="65" height="24"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
@@ -231,6 +230,7 @@
                     <connections>
                         <outlet property="collectionView" destination="BT3-Nh-PZl" id="3LJ-dF-1Y6"/>
                         <outlet property="confirmButton" destination="1yU-sI-4pE" id="66C-VM-Ubg"/>
+                        <outlet property="countThreeLabel" destination="hq0-kh-8Wd" id="Ziq-Qy-P8e"/>
                         <outlet property="gamePlayTimeLabel" destination="42N-pG-RPa" id="W3s-Qm-avp"/>
                         <outlet property="quitButton" destination="Ebb-Jd-nWf" id="ouk-Rr-Cev"/>
                         <outlet property="succeedView" destination="8qb-jZ-8br" id="Wgq-St-zZt"/>
@@ -311,7 +311,7 @@
                     </view>
                     <connections>
                         <outlet property="confirmButton" destination="1yU-sI-4pE" id="yOW-4W-uAg"/>
-                        <outlet property="gamePlayTimeLabel" destination="42N-pG-RPa" id="gfV-LL-QHO"/>
+                        <outlet property="runTimeLabel" destination="42N-pG-RPa" id="gfV-LL-QHO"/>
                         <outlet property="succeedView" destination="8qb-jZ-8br" id="Dl6-2P-JfT"/>
                     </connections>
                 </viewController>

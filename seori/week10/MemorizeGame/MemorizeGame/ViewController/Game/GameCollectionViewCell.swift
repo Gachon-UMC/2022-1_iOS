@@ -13,7 +13,14 @@ class GameCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var dataLabel: UILabel!
     
-    // 카드의 앞면을 구성.
+    /// - 게임 시작되고 초기 셀 보이게 하는 메서드.
+    public func appearCell() {
+        self.backgroundColor = .systemOrange
+        self.dataLabel.isHidden = true
+        self.isUserInteractionEnabled = true
+    }
+    
+    /// - 카드의 앞면을 구성.
     public func showFront() {
         print("Show Front") // test
         self.dataLabel.isHidden = false
@@ -23,7 +30,7 @@ class GameCollectionViewCell: UICollectionViewCell {
         flipCard()
     }
     
-    // 카드의 뒷면을 구성.
+    /// - 카드의 뒷면을 구성.
     public func showBack() {
         print("Show Back") // test
         self.dataLabel.isHidden = true
@@ -31,7 +38,7 @@ class GameCollectionViewCell: UICollectionViewCell {
         flipCard()
     }
     
-    // Card Flip Animation.
+    /// - Card Flip Animation.
     private func flipCard() {
         UIView.transition(with: self, duration: 0.3, options: .transitionFlipFromLeft, animations: nil, completion: nil)
     }
