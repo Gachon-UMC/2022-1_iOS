@@ -18,4 +18,8 @@ class MenuVM: ObservableObject{
     func selectMenu(index: Int){
         model.selectMenu(index: index)
     }
+    
+    func getCardList(index: Int) -> [String]{
+        return model.cardList[index]
+    }
 }

@@ -66,7 +66,7 @@ class RegisterViewController: UIViewController {
         
         switch sender{
         case emailTextField:
-            self.isValidEmail = text.isValidEmail()
+            self.isValidEmail = text.count>5
             self.email = text
         case nameTextField:
             self.isValidName = text.count > 2
@@ -75,7 +75,7 @@ class RegisterViewController: UIViewController {
             self.isValidNickname = text.count > 2
             self.nickname = text
         case pwTextField:
-            self.isValidPassword = text.isValidPassword()
+            self.isValidPassword = text.count>5
             self.password = text
         default:
             fatalError("Missing TF")

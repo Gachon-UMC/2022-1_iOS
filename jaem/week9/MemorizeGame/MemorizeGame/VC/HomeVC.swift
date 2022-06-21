@@ -10,8 +10,10 @@ import UIKit
 class HomeVC: UIViewController {
     
     var menuVM = MenuVM()
+    var gameVM = GameVM()
     @IBOutlet weak var menuTableView: UITableView!
     @IBOutlet weak var startBtn: UIBarButtonItem!
+    var selectedMenu = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +24,19 @@ class HomeVC: UIViewController {
         self.menuTableView.tableHeaderView = UIView()
         self.menuTableView.dataSource = self
         self.menuTableView.delegate = self
+        
     }
-
+    
+    
+    @IBAction func startBtnTapped(_ sender: UIBarButtonItem) {
+        
+        guard let gameVC = self.storyboard?.instantiateViewController(withIdentifier: "GameVC") as? GameVC else {return}
+        gameVC.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        gameVC.cardDataSource = menuVM.getCardList(index: selectedMenu).shuffled()
+        
+        self.present(gameVC, animated: true)
+    }
+    
 
 }
 
@@ -39,9 +52,13 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate{
         cell.titleLabel.text = menuVM.getMenuList()[indexPath.row].title
         cell.accessoryType = .none
         
-        menuVM.getMenuList()[indexPath.row].isSelected
-        ? (cell.accessoryType = .checkmark)
-        : (cell.accessoryType = .none)
+        if(menuVM.getMenuList()[indexPath.row].isSelected){
+            cell.accessoryType = .checkmark
+            selectedMenu = indexPath.row
+        }
+        else{
+            cell.accessoryType = .none
+        }
         
         return cell
     }
